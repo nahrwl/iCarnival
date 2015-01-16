@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		D81A64971A68C5C8007086AD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D81A64961A68C5C8007086AD /* main.m */; };
-		D81A64A01A68C5C8007086AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D81A649E1A68C5C8007086AD /* Main.storyboard */; };
 		D81A64A21A68C5C8007086AD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D81A64A11A68C5C8007086AD /* Images.xcassets */; };
 		D81A64A51A68C5C8007086AD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D81A64A31A68C5C8007086AD /* LaunchScreen.xib */; };
 		D81A64B11A68C5C8007086AD /* iCarnivalTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D81A64B01A68C5C8007086AD /* iCarnivalTests.m */; };
@@ -36,6 +35,20 @@
 		D81A64E91A68D00A007086AD /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D81A64E61A68D00A007086AD /* TwitterKitResources.bundle */; };
 		D81A64EA1A68D00A007086AD /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D81A64E71A68D00A007086AD /* Fabric.framework */; };
 		D81A64EC1A68D26E007086AD /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = D81A64EB1A68D26E007086AD /* .gitignore */; };
+		D81A64F11A68DCB6007086AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D81A64EF1A68DCB6007086AD /* Main.storyboard */; };
+		D81A64F41A68DE22007086AD /* items.plist in Resources */ = {isa = PBXBuildFile; fileRef = D81A64F31A68DE22007086AD /* items.plist */; };
+		D81A64F71A68DE39007086AD /* CNotificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = D81A64F61A68DE39007086AD /* CNotificationCenter.m */; };
+		D81A64FB1A68DE5D007086AD /* NSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = D81A64FA1A68DE5D007086AD /* NSString+HTML.m */; };
+		D81A64FE1A68DE63007086AD /* GTMNSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = D81A64FD1A68DE63007086AD /* GTMNSString+HTML.m */; };
+		D81A65031A68DF43007086AD /* CGeneralInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D81A65021A68DF43007086AD /* CGeneralInfoViewController.m */; };
+		D81A65071A68DF69007086AD /* CSocialTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D81A65061A68DF69007086AD /* CSocialTableViewController.m */; };
+		D81A650F1A68FD85007086AD /* CNotificationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D81A650C1A68FD85007086AD /* CNotificationCell.m */; };
+		D81A65101A68FD85007086AD /* CNotificationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D81A650E1A68FD85007086AD /* CNotificationsViewController.m */; };
+		D81A65121A68FE73007086AD /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D81A65111A68FE73007086AD /* ParseUI.framework */; };
+		D81A65151A68FF0A007086AD /* CMapItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D81A65141A68FF0A007086AD /* CMapItem.m */; };
+		D81A651C1A68FF67007086AD /* CMapPickerDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D81A65171A68FF67007086AD /* CMapPickerDetailViewController.m */; };
+		D81A651D1A68FF67007086AD /* CMapPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D81A65191A68FF67007086AD /* CMapPickerViewController.m */; };
+		D81A651E1A68FF67007086AD /* CMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D81A651B1A68FF67007086AD /* CMapViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +65,6 @@
 		D81A64911A68C5C8007086AD /* iCarnival.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iCarnival.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D81A64951A68C5C8007086AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D81A64961A68C5C8007086AD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		D81A649F1A68C5C8007086AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D81A64A11A68C5C8007086AD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D81A64A41A68C5C8007086AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		D81A64AA1A68C5C8007086AD /* iCarnivalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iCarnivalTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,6 +95,31 @@
 		D81A64E61A68D00A007086AD /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = "<group>"; };
 		D81A64E71A68D00A007086AD /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		D81A64EB1A68D26E007086AD /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		D81A64F01A68DCB6007086AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D81A64F31A68DE22007086AD /* items.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = items.plist; sourceTree = "<group>"; };
+		D81A64F51A68DE39007086AD /* CNotificationCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNotificationCenter.h; sourceTree = "<group>"; };
+		D81A64F61A68DE39007086AD /* CNotificationCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNotificationCenter.m; sourceTree = "<group>"; };
+		D81A64F91A68DE5D007086AD /* NSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+HTML.h"; sourceTree = "<group>"; };
+		D81A64FA1A68DE5D007086AD /* NSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HTML.m"; sourceTree = "<group>"; };
+		D81A64FC1A68DE63007086AD /* GTMNSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GTMNSString+HTML.h"; sourceTree = "<group>"; };
+		D81A64FD1A68DE63007086AD /* GTMNSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GTMNSString+HTML.m"; sourceTree = "<group>"; };
+		D81A65011A68DF43007086AD /* CGeneralInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGeneralInfoViewController.h; sourceTree = "<group>"; };
+		D81A65021A68DF43007086AD /* CGeneralInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGeneralInfoViewController.m; sourceTree = "<group>"; };
+		D81A65051A68DF69007086AD /* CSocialTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSocialTableViewController.h; sourceTree = "<group>"; };
+		D81A65061A68DF69007086AD /* CSocialTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSocialTableViewController.m; sourceTree = "<group>"; };
+		D81A650B1A68FD85007086AD /* CNotificationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNotificationCell.h; sourceTree = "<group>"; };
+		D81A650C1A68FD85007086AD /* CNotificationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNotificationCell.m; sourceTree = "<group>"; };
+		D81A650D1A68FD85007086AD /* CNotificationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNotificationsViewController.h; sourceTree = "<group>"; };
+		D81A650E1A68FD85007086AD /* CNotificationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNotificationsViewController.m; sourceTree = "<group>"; };
+		D81A65111A68FE73007086AD /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
+		D81A65131A68FF0A007086AD /* CMapItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMapItem.h; sourceTree = "<group>"; };
+		D81A65141A68FF0A007086AD /* CMapItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMapItem.m; sourceTree = "<group>"; };
+		D81A65161A68FF67007086AD /* CMapPickerDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMapPickerDetailViewController.h; sourceTree = "<group>"; };
+		D81A65171A68FF67007086AD /* CMapPickerDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMapPickerDetailViewController.m; sourceTree = "<group>"; };
+		D81A65181A68FF67007086AD /* CMapPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMapPickerViewController.h; sourceTree = "<group>"; };
+		D81A65191A68FF67007086AD /* CMapPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMapPickerViewController.m; sourceTree = "<group>"; };
+		D81A651A1A68FF67007086AD /* CMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMapViewController.h; sourceTree = "<group>"; };
+		D81A651B1A68FF67007086AD /* CMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMapViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +127,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D81A65121A68FE73007086AD /* ParseUI.framework in Frameworks */,
 				D81A64E31A68C988007086AD /* StoreKit.framework in Frameworks */,
 				D81A64E11A68C964007086AD /* libsqlite3.dylib in Frameworks */,
 				D81A64DB1A68C845007086AD /* Foundation.framework in Frameworks */,
@@ -148,10 +186,13 @@
 			isa = PBXGroup;
 			children = (
 				D81A64A11A68C5C8007086AD /* Images.xcassets */,
-				D81A649E1A68C5C8007086AD /* Main.storyboard */,
+				D81A64EF1A68DCB6007086AD /* Main.storyboard */,
 				D81A64A31A68C5C8007086AD /* LaunchScreen.xib */,
 				D81A64BA1A68C628007086AD /* CAppDelegate.h */,
 				D81A64BB1A68C628007086AD /* CAppDelegate.m */,
+				D81A64F81A68DE4B007086AD /* Extras */,
+				D81A64F21A68DDF5007086AD /* Model */,
+				D81A64FF1A68DF1F007086AD /* View Controllers */,
 				D81A64941A68C5C8007086AD /* Supporting Files */,
 			);
 			path = iCarnival;
@@ -186,6 +227,7 @@
 		D81A64BF1A68C7B2007086AD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D81A65111A68FE73007086AD /* ParseUI.framework */,
 				D81A64E51A68D00A007086AD /* TwitterKit.framework */,
 				D81A64E61A68D00A007086AD /* TwitterKitResources.bundle */,
 				D81A64E71A68D00A007086AD /* Fabric.framework */,
@@ -210,6 +252,90 @@
 				D81A64BD1A68C7AD007086AD /* SystemConfiguration.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D81A64F21A68DDF5007086AD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D81A64F31A68DE22007086AD /* items.plist */,
+				D81A64F51A68DE39007086AD /* CNotificationCenter.h */,
+				D81A64F61A68DE39007086AD /* CNotificationCenter.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		D81A64F81A68DE4B007086AD /* Extras */ = {
+			isa = PBXGroup;
+			children = (
+				D81A64F91A68DE5D007086AD /* NSString+HTML.h */,
+				D81A64FA1A68DE5D007086AD /* NSString+HTML.m */,
+				D81A64FC1A68DE63007086AD /* GTMNSString+HTML.h */,
+				D81A64FD1A68DE63007086AD /* GTMNSString+HTML.m */,
+			);
+			name = Extras;
+			sourceTree = "<group>";
+		};
+		D81A64FF1A68DF1F007086AD /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D81A650A1A68FD76007086AD /* Soundbooth Tab */,
+				D81A65081A68FD62007086AD /* Map Tab */,
+				D81A65041A68DF48007086AD /* Twitter Tab */,
+				D81A65001A68DF2D007086AD /* Info Tab */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		D81A65001A68DF2D007086AD /* Info Tab */ = {
+			isa = PBXGroup;
+			children = (
+				D81A65011A68DF43007086AD /* CGeneralInfoViewController.h */,
+				D81A65021A68DF43007086AD /* CGeneralInfoViewController.m */,
+			);
+			name = "Info Tab";
+			sourceTree = "<group>";
+		};
+		D81A65041A68DF48007086AD /* Twitter Tab */ = {
+			isa = PBXGroup;
+			children = (
+				D81A65051A68DF69007086AD /* CSocialTableViewController.h */,
+				D81A65061A68DF69007086AD /* CSocialTableViewController.m */,
+			);
+			name = "Twitter Tab";
+			sourceTree = "<group>";
+		};
+		D81A65081A68FD62007086AD /* Map Tab */ = {
+			isa = PBXGroup;
+			children = (
+				D81A65091A68FD71007086AD /* Model */,
+				D81A65161A68FF67007086AD /* CMapPickerDetailViewController.h */,
+				D81A65171A68FF67007086AD /* CMapPickerDetailViewController.m */,
+				D81A65181A68FF67007086AD /* CMapPickerViewController.h */,
+				D81A65191A68FF67007086AD /* CMapPickerViewController.m */,
+				D81A651A1A68FF67007086AD /* CMapViewController.h */,
+				D81A651B1A68FF67007086AD /* CMapViewController.m */,
+			);
+			name = "Map Tab";
+			sourceTree = "<group>";
+		};
+		D81A65091A68FD71007086AD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D81A65131A68FF0A007086AD /* CMapItem.h */,
+				D81A65141A68FF0A007086AD /* CMapItem.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		D81A650A1A68FD76007086AD /* Soundbooth Tab */ = {
+			isa = PBXGroup;
+			children = (
+				D81A650B1A68FD85007086AD /* CNotificationCell.h */,
+				D81A650C1A68FD85007086AD /* CNotificationCell.m */,
+				D81A650D1A68FD85007086AD /* CNotificationsViewController.h */,
+				D81A650E1A68FD85007086AD /* CNotificationsViewController.m */,
+			);
+			name = "Soundbooth Tab";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,10 +420,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				D81A64EC1A68D26E007086AD /* .gitignore in Resources */,
+				D81A64F11A68DCB6007086AD /* Main.storyboard in Resources */,
 				D81A64E91A68D00A007086AD /* TwitterKitResources.bundle in Resources */,
-				D81A64A01A68C5C8007086AD /* Main.storyboard in Resources */,
 				D81A64A51A68C5C8007086AD /* LaunchScreen.xib in Resources */,
 				D81A64A21A68C5C8007086AD /* Images.xcassets in Resources */,
+				D81A64F41A68DE22007086AD /* items.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,8 +458,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D81A650F1A68FD85007086AD /* CNotificationCell.m in Sources */,
+				D81A651E1A68FF67007086AD /* CMapViewController.m in Sources */,
+				D81A65071A68DF69007086AD /* CSocialTableViewController.m in Sources */,
 				D81A64BC1A68C628007086AD /* CAppDelegate.m in Sources */,
+				D81A64F71A68DE39007086AD /* CNotificationCenter.m in Sources */,
+				D81A64FE1A68DE63007086AD /* GTMNSString+HTML.m in Sources */,
+				D81A65151A68FF0A007086AD /* CMapItem.m in Sources */,
+				D81A64FB1A68DE5D007086AD /* NSString+HTML.m in Sources */,
 				D81A64971A68C5C8007086AD /* main.m in Sources */,
+				D81A651C1A68FF67007086AD /* CMapPickerDetailViewController.m in Sources */,
+				D81A65031A68DF43007086AD /* CGeneralInfoViewController.m in Sources */,
+				D81A65101A68FD85007086AD /* CNotificationsViewController.m in Sources */,
+				D81A651D1A68FF67007086AD /* CMapPickerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,20 +493,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		D81A649E1A68C5C8007086AD /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D81A649F1A68C5C8007086AD /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		D81A64A31A68C5C8007086AD /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				D81A64A41A68C5C8007086AD /* Base */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		D81A64EF1A68DCB6007086AD /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D81A64F01A68DCB6007086AD /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
