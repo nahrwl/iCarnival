@@ -1,0 +1,427 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D81A64971A68C5C8007086AD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D81A64961A68C5C8007086AD /* main.m */; };
+		D81A649A1A68C5C8007086AD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D81A64991A68C5C8007086AD /* AppDelegate.m */; };
+		D81A649D1A68C5C8007086AD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D81A649C1A68C5C8007086AD /* ViewController.m */; };
+		D81A64A01A68C5C8007086AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D81A649E1A68C5C8007086AD /* Main.storyboard */; };
+		D81A64A21A68C5C8007086AD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D81A64A11A68C5C8007086AD /* Images.xcassets */; };
+		D81A64A51A68C5C8007086AD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D81A64A31A68C5C8007086AD /* LaunchScreen.xib */; };
+		D81A64B11A68C5C8007086AD /* iCarnivalTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D81A64B01A68C5C8007086AD /* iCarnivalTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D81A64AB1A68C5C8007086AD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D81A64891A68C5C8007086AD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D81A64901A68C5C8007086AD;
+			remoteInfo = iCarnival;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D81A64911A68C5C8007086AD /* iCarnival.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iCarnival.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D81A64951A68C5C8007086AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D81A64961A68C5C8007086AD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D81A64981A68C5C8007086AD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		D81A64991A68C5C8007086AD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		D81A649B1A68C5C8007086AD /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		D81A649C1A68C5C8007086AD /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		D81A649F1A68C5C8007086AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D81A64A11A68C5C8007086AD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		D81A64A41A68C5C8007086AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		D81A64AA1A68C5C8007086AD /* iCarnivalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iCarnivalTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D81A64AF1A68C5C8007086AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D81A64B01A68C5C8007086AD /* iCarnivalTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iCarnivalTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D81A648E1A68C5C8007086AD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D81A64A71A68C5C8007086AD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D81A64881A68C5C8007086AD = {
+			isa = PBXGroup;
+			children = (
+				D81A64931A68C5C8007086AD /* iCarnival */,
+				D81A64AD1A68C5C8007086AD /* iCarnivalTests */,
+				D81A64921A68C5C8007086AD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D81A64921A68C5C8007086AD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D81A64911A68C5C8007086AD /* iCarnival.app */,
+				D81A64AA1A68C5C8007086AD /* iCarnivalTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D81A64931A68C5C8007086AD /* iCarnival */ = {
+			isa = PBXGroup;
+			children = (
+				D81A64981A68C5C8007086AD /* AppDelegate.h */,
+				D81A64991A68C5C8007086AD /* AppDelegate.m */,
+				D81A649B1A68C5C8007086AD /* ViewController.h */,
+				D81A649C1A68C5C8007086AD /* ViewController.m */,
+				D81A649E1A68C5C8007086AD /* Main.storyboard */,
+				D81A64A11A68C5C8007086AD /* Images.xcassets */,
+				D81A64A31A68C5C8007086AD /* LaunchScreen.xib */,
+				D81A64941A68C5C8007086AD /* Supporting Files */,
+			);
+			path = iCarnival;
+			sourceTree = "<group>";
+		};
+		D81A64941A68C5C8007086AD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D81A64951A68C5C8007086AD /* Info.plist */,
+				D81A64961A68C5C8007086AD /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D81A64AD1A68C5C8007086AD /* iCarnivalTests */ = {
+			isa = PBXGroup;
+			children = (
+				D81A64B01A68C5C8007086AD /* iCarnivalTests.m */,
+				D81A64AE1A68C5C8007086AD /* Supporting Files */,
+			);
+			path = iCarnivalTests;
+			sourceTree = "<group>";
+		};
+		D81A64AE1A68C5C8007086AD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D81A64AF1A68C5C8007086AD /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D81A64901A68C5C8007086AD /* iCarnival */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D81A64B41A68C5C8007086AD /* Build configuration list for PBXNativeTarget "iCarnival" */;
+			buildPhases = (
+				D81A648D1A68C5C8007086AD /* Sources */,
+				D81A648E1A68C5C8007086AD /* Frameworks */,
+				D81A648F1A68C5C8007086AD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iCarnival;
+			productName = iCarnival;
+			productReference = D81A64911A68C5C8007086AD /* iCarnival.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D81A64A91A68C5C8007086AD /* iCarnivalTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D81A64B71A68C5C8007086AD /* Build configuration list for PBXNativeTarget "iCarnivalTests" */;
+			buildPhases = (
+				D81A64A61A68C5C8007086AD /* Sources */,
+				D81A64A71A68C5C8007086AD /* Frameworks */,
+				D81A64A81A68C5C8007086AD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D81A64AC1A68C5C8007086AD /* PBXTargetDependency */,
+			);
+			name = iCarnivalTests;
+			productName = iCarnivalTests;
+			productReference = D81A64AA1A68C5C8007086AD /* iCarnivalTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D81A64891A68C5C8007086AD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Punahou School - Nathan Wallace";
+				TargetAttributes = {
+					D81A64901A68C5C8007086AD = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					D81A64A91A68C5C8007086AD = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = D81A64901A68C5C8007086AD;
+					};
+				};
+			};
+			buildConfigurationList = D81A648C1A68C5C8007086AD /* Build configuration list for PBXProject "iCarnival" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D81A64881A68C5C8007086AD;
+			productRefGroup = D81A64921A68C5C8007086AD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D81A64901A68C5C8007086AD /* iCarnival */,
+				D81A64A91A68C5C8007086AD /* iCarnivalTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D81A648F1A68C5C8007086AD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D81A64A01A68C5C8007086AD /* Main.storyboard in Resources */,
+				D81A64A51A68C5C8007086AD /* LaunchScreen.xib in Resources */,
+				D81A64A21A68C5C8007086AD /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D81A64A81A68C5C8007086AD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D81A648D1A68C5C8007086AD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D81A649D1A68C5C8007086AD /* ViewController.m in Sources */,
+				D81A649A1A68C5C8007086AD /* AppDelegate.m in Sources */,
+				D81A64971A68C5C8007086AD /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D81A64A61A68C5C8007086AD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D81A64B11A68C5C8007086AD /* iCarnivalTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D81A64AC1A68C5C8007086AD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D81A64901A68C5C8007086AD /* iCarnival */;
+			targetProxy = D81A64AB1A68C5C8007086AD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D81A649E1A68C5C8007086AD /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D81A649F1A68C5C8007086AD /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D81A64A31A68C5C8007086AD /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D81A64A41A68C5C8007086AD /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D81A64B21A68C5C8007086AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		D81A64B31A68C5C8007086AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D81A64B51A68C5C8007086AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = iCarnival/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D81A64B61A68C5C8007086AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = iCarnival/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		D81A64B81A68C5C8007086AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = iCarnivalTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iCarnival.app/iCarnival";
+			};
+			name = Debug;
+		};
+		D81A64B91A68C5C8007086AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = iCarnivalTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iCarnival.app/iCarnival";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D81A648C1A68C5C8007086AD /* Build configuration list for PBXProject "iCarnival" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D81A64B21A68C5C8007086AD /* Debug */,
+				D81A64B31A68C5C8007086AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D81A64B41A68C5C8007086AD /* Build configuration list for PBXNativeTarget "iCarnival" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D81A64B51A68C5C8007086AD /* Debug */,
+				D81A64B61A68C5C8007086AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D81A64B71A68C5C8007086AD /* Build configuration list for PBXNativeTarget "iCarnivalTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D81A64B81A68C5C8007086AD /* Debug */,
+				D81A64B91A68C5C8007086AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D81A64891A68C5C8007086AD /* Project object */;
+}
