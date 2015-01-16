@@ -42,7 +42,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="hybrid" pitchEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lpf-Gt-kHY">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="hybrid" pitchEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lpf-Gt-kHY">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="tintColor" red="0.72537364130000004" green="0.63171794619999999" blue="0.278071603" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
@@ -51,6 +51,12 @@
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="lpf-Gt-kHY" secondAttribute="trailing" constant="-16" id="2pT-5f-i8c"/>
+                            <constraint firstItem="lpf-Gt-kHY" firstAttribute="leading" secondItem="bCt-ZX-PKd" secondAttribute="leadingMargin" constant="-16" id="c4L-MP-RQV"/>
+                            <constraint firstItem="lpf-Gt-kHY" firstAttribute="bottom" secondItem="bCt-ZX-PKd" secondAttribute="bottomMargin" id="gcb-3P-Gg0"/>
+                            <constraint firstItem="lpf-Gt-kHY" firstAttribute="top" secondItem="bCt-ZX-PKd" secondAttribute="topMargin" id="jnH-Am-wv6"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Map" id="9g8-Ql-x0m">
                         <barButtonItem key="leftBarButtonItem" image="cars" id="IjV-cB-ISc">
@@ -102,7 +108,7 @@
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="280" placeholderIntrinsicHeight="44" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="Dxp-gy-fyf">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="280" placeholderIntrinsicHeight="44" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="Dxp-gy-fyf">
                                             <rect key="frame" x="20" y="20" width="280" height="44"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
                                             <nil key="highlightedColor"/>

@@ -10,7 +10,7 @@
 #import "CNotificationCenter.h"
 #import "CNotificationCell.h"
 
-#define kCellWidth 320.0
+#define kCellWidth 300.0
 #define kCellPadding 30.0
 #define kMinCellHeight 75.0
 #define kNormalCellHeight 75.0
@@ -21,6 +21,7 @@ static NSString *kNotificationsOnKey = @"iCarnival_kNotificationsOnKey";
 
 @property (nonatomic) BOOL notificationsOn;
 @property (nonatomic) BOOL needsReload;
+@property (nonatomic) int width;
 
 @end
 
@@ -56,6 +57,14 @@ static NSString *kNotificationsOnKey = @"iCarnival_kNotificationsOnKey";
 {
     [super viewDidLoad];
     
+    self.width = 0;
+    int size = self.view.frame.size.width;
+    if (size > 413) {
+        self.width = 2;
+    } else if (size > 320) {
+        self.width = 1;
+    }
+
     /*NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSNumber *onValue = [defaults objectForKey:kNotificationsOnKey];
     if (!onValue) {
@@ -133,6 +142,20 @@ static NSString *kNotificationsOnKey = @"iCarnival_kNotificationsOnKey";
 //
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    float cellWidth = kCellWidth;
+    if (self.width == 1) {
+        cellWidth = kCellWidth + 35.0;
+    } else if (self.width == 2) {
+        cellWidth = kCellWidth + 100.0;
+    }
+    
+    float cellPadding = kCellPadding;
+    if (self.width == 1) {
+        cellPadding = kCellPadding + 10.0;
+    } else if (self.width == 2) {
+        cellPadding = kCellPadding + 10.0;
+    }
+    
     PFObject *obj = [self objectAtIndexPath:indexPath];
     NSString *notification = [obj objectForKey:self.textKey];
     if (notification)
@@ -147,11 +170,11 @@ static NSString *kNotificationsOnKey = @"iCarnival_kNotificationsOnKey";
         NSStringDrawingContext *context = [[NSStringDrawingContext alloc] init];
         [context setMinimumScaleFactor:0.0];
         
-        CGRect bounds = [notification boundingRectWithSize:CGSizeMake(kCellWidth, FLT_MAX) options:NSStringDrawingUsesLineFragmentOrigin attributes:attributes context:context];
+        CGRect bounds = [notification boundingRectWithSize:CGSizeMake(cellWidth, FLT_MAX) options:NSStringDrawingUsesLineFragmentOrigin attributes:attributes context:context];
         
         CGFloat height = bounds.size.height;
         CGFloat roundedHeight = ceilf(height);
-        CGFloat textHeight = roundedHeight + kCellPadding;
+        CGFloat textHeight = roundedHeight + cellPadding;
         
         //CGFloat textHeight = ceil(bounds.size.height) + kCellPadding;
         if (textHeight < kMinCellHeight) textHeight = kMinCellHeight;
