@@ -83,7 +83,7 @@
             </objects>
             <point key="canvasLocation" x="1154" y="180"/>
         </scene>
-        <!--Notifications-->
+        <!--Sound Booth-->
         <scene sceneID="SD2-T6-tpK">
             <objects>
                 <tableViewController id="MkY-t9-lGe" customClass="CNotificationsViewController" sceneMemberID="viewController">
@@ -136,7 +136,7 @@
                             <outlet property="delegate" destination="MkY-t9-lGe" id="tYS-fL-Fce"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Notifications" id="wp5-4V-VHS">
+                    <navigationItem key="navigationItem" title="Sound Booth" id="wp5-4V-VHS">
                         <barButtonItem key="rightBarButtonItem" id="Uaa-m3-G4e">
                             <switch key="customView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="Sst-sh-EU3">
                                 <rect key="frame" x="16" y="6" width="51" height="31"/>
@@ -1087,11 +1087,11 @@ Punahou School</string>
             </objects>
             <point key="canvasLocation" x="1119" y="1604"/>
         </scene>
-        <!--Notifications-->
+        <!--Sound Booth-->
         <scene sceneID="sNE-4Q-VdA">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ac2-Pl-96q" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Notifications" image="megaphone" id="DuE-0N-cwj"/>
+                    <tabBarItem key="tabBarItem" title="Sound Booth" image="megaphone" id="DuE-0N-cwj"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="NIC-nA-5V9">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
