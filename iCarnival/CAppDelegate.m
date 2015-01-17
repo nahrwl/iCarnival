@@ -40,6 +40,7 @@
                                                                              categories:nil];
     [application registerUserNotificationSettings:settings];
     [application registerForRemoteNotifications];
+    
     return YES;
 }
 
@@ -76,6 +77,7 @@
     // Store the deviceToken in the current installation and save it to Parse.
     PFInstallation *currentInstallation = [PFInstallation currentInstallation];
     [currentInstallation setDeviceTokenFromData:deviceToken];
+    currentInstallation.channels = @[ @"global" ];
     [currentInstallation saveInBackground];
 }
 
@@ -84,9 +86,9 @@ didReceiveRemoteNotification:(NSDictionary *)userInfo {
     [PFPush handlePush:userInfo];
     
     UITabBarController *tbc = (UITabBarController *)self.window.rootViewController;
-    CNotificationsViewController *cnvc = (CNotificationsViewController *)[(UINavigationController *)tbc.viewControllers[2] viewControllers][0];
+    CNotificationsViewController *cnvc = (CNotificationsViewController *)[(UINavigationController *)tbc.viewControllers[0] viewControllers][0];
     if (cnvc) {
-        if (tbc.selectedIndex == 2) {
+        if (tbc.selectedIndex == 0) {
             [cnvc updateNotifications];
         } else {
             [cnvc shouldUpdateNotifications];

@@ -10,7 +10,7 @@
 #import "CNotificationCenter.h"
 #import "CNotificationCell.h"
 
-#define kCellWidth 300.0
+#define kCellWidth 290.0
 #define kCellPadding 30.0
 #define kMinCellHeight 75.0
 #define kNormalCellHeight 75.0
@@ -78,8 +78,9 @@ static NSString *kNotificationsOnKey = @"iCarnival_kNotificationsOnKey";
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    UIRemoteNotificationType types = [[UIApplication sharedApplication] isRegisteredForRemoteNotifications];
-    if (types) {
+    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+    BOOL subscribed = currentInstallation.channels.count > 0;
+    if (subscribed) {
         _notificationsOn = YES;
     } else {
         _notificationsOn = NO;
@@ -101,9 +102,11 @@ static NSString *kNotificationsOnKey = @"iCarnival_kNotificationsOnKey";
 
 - (void)setNotificationsOn:(BOOL)notificationsOn
 {
+    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
     if (!notificationsOn) {
         // turn off notifications
-        [[UIApplication sharedApplication] unregisterForRemoteNotifications];
+        [currentInstallation removeObject:@"global" forKey:@"channels"];
+        [currentInstallation saveInBackground];
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Push Disabled"
                                                         message:@"Notifications have been disabled."
                                                        delegate:self
@@ -112,8 +115,8 @@ static NSString *kNotificationsOnKey = @"iCarnival_kNotificationsOnKey";
         [alert show];
     } else {
         // turn notifications on
-        [[UIApplication sharedApplication] registerForRemoteNotifications];
-        [[UIApplication sharedApplication] registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeBadge|UIUserNotificationTypeAlert|UIUserNotificationTypeSound categories:nil]];
+        [currentInstallation addUniqueObject:@"global" forKey:@"channels"];
+        [currentInstallation saveInBackground];
         
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Push Enabled"
                                                         message:@"Notifications have been enabled."
