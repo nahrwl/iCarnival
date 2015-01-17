@@ -891,54 +891,82 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cL8-F1-ort">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="568" translatesAutoresizingMaskIntoConstraints="NO" id="cL8-F1-ort">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" preferredMaxLayoutWidth="279" translatesAutoresizingMaskIntoConstraints="NO" id="yrP-Jx-6MS">
-                                        <rect key="frame" x="22" y="108" width="279" height="66"/>
-                                        <string key="text">Created with help from Jaz '14, Lauren H. '14, Aliya '16, Isaac '14, Connor '14, Christopher S. '14, Oliver '14, Aidan '14, Nolan '14, and Andrew C. '14. Thank you!</string>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" ambiguous="YES" misplaced="YES" text="Developers" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Atm-gc-JxN">
+                                        <rect key="frame" x="20" y="20" width="280" height="35"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="20"/>
                                         <color key="textColor" red="0.61176472900000001" green="0.63921570780000003" blue="0.71372550729999995" alpha="1" colorSpace="deviceRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" preferredMaxLayoutWidth="298" translatesAutoresizingMaskIntoConstraints="NO" id="nTS-EA-tNM">
-                                        <rect key="frame" x="21" y="318" width="298" height="76"/>
-                                        <string key="text">Jordan Feeley '13
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" ambiguous="YES" misplaced="YES" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" preferredMaxLayoutWidth="298" translatesAutoresizingMaskIntoConstraints="NO" id="nTS-EA-tNM">
+                                        <rect key="frame" x="21" y="302" width="298" height="60"/>
+                                        <attributedString key="attributedText">
+                                            <fragment>
+                                                <string key="content">Punahou Class of 2016
 Punahou School
 Douglas Kiang</string>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
-                                        <color key="textColor" red="0.61176472900000001" green="0.63921570780000003" blue="0.71372550729999995" alpha="1" colorSpace="deviceRGB"/>
+                                                <attributes>
+                                                    <color key="NSColor" red="0.54117647058823526" green="0.56862745098039214" blue="0.65490196078431373" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <font key="NSFont" size="13" name="HelveticaNeue"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Developers" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Atm-gc-JxN">
-                                        <rect key="frame" x="20" y="20" width="289" height="35"/>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" ambiguous="YES" misplaced="YES" text="Special Thanks" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WWY-bI-SFo">
+                                        <rect key="frame" x="20" y="270" width="289" height="29"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="20"/>
                                         <color key="textColor" red="0.61176472900000001" green="0.63921570780000003" blue="0.71372550729999995" alpha="1" colorSpace="deviceRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Alexander Chai '14 and Nathan Wallace '14, with additional code from Travis Le '12 and Ezra Varady '13." lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="279" translatesAutoresizingMaskIntoConstraints="NO" id="S0D-rA-xHv">
-                                        <rect key="frame" x="21" y="51" width="279" height="49"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                                        <color key="textColor" red="0.61176472900000001" green="0.63921570780000003" blue="0.71372550729999995" alpha="1" colorSpace="deviceRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Special Thanks" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WWY-bI-SFo">
-                                        <rect key="frame" x="21" y="281" width="289" height="29"/>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" ambiguous="YES" misplaced="YES" text="Art" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qb0-8u-g3z">
+                                        <rect key="frame" x="21" y="177" width="289" height="29"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="20"/>
                                         <color key="textColor" red="0.61176472900000001" green="0.63921570780000003" blue="0.71372550729999995" alpha="1" colorSpace="deviceRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Art" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qb0-8u-g3z">
-                                        <rect key="frame" x="22" y="182" width="289" height="29"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="20"/>
-                                        <color key="textColor" red="0.61176472900000001" green="0.63921570780000003" blue="0.71372550729999995" alpha="1" colorSpace="deviceRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" preferredMaxLayoutWidth="298" translatesAutoresizingMaskIntoConstraints="NO" id="A4p-cW-7TV">
-                                        <rect key="frame" x="20" y="219" width="298" height="54"/>
-                                        <string key="text">Icons8 - http://icons8.com/license
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" ambiguous="YES" misplaced="YES" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" preferredMaxLayoutWidth="298" translatesAutoresizingMaskIntoConstraints="NO" id="A4p-cW-7TV">
+                                        <rect key="frame" x="21" y="208" width="298" height="54"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Icons8 - ">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.61176472900000001" green="0.63921570780000003" blue="0.71372550729999995" alpha="1" colorSpace="deviceRGB"/>
+                                                    <font key="NSFont" size="13" name="HelveticaNeue"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="http://icons8.com/license">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.61176472900000001" green="0.63921570780000003" blue="0.71372550729999995" alpha="1" colorSpace="deviceRGB"/>
+                                                    <font key="NSFont" size="13" name="HelveticaNeue-Italic"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment>
+                                                <string key="content">
 Nathan Wallace
 Punahou School</string>
+                                                <attributes>
+                                                    <color key="NSColor" red="0.61176472900000001" green="0.63921570780000003" blue="0.71372550729999995" alpha="1" colorSpace="deviceRGB"/>
+                                                    <font key="NSFont" size="13" name="HelveticaNeue"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" ambiguous="YES" misplaced="YES" text="iCarnival 4.0 was developed by Nathan Wallace '14." lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="J2Y-bL-xV1">
+                                        <rect key="frame" x="20" y="58" width="280" height="38"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="13"/>
+                                        <color key="textColor" red="0.61176472900000001" green="0.63921570780000003" blue="0.71372550729999995" alpha="1" colorSpace="deviceRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" ambiguous="YES" misplaced="YES" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="279" translatesAutoresizingMaskIntoConstraints="NO" id="S0D-rA-xHv">
+                                        <rect key="frame" x="21" y="103" width="279" height="66"/>
+                                        <string key="text">Previous versions developed by Alexander Chai '14 and Nathan Wallace '14, with additional code from Travis Le '12 and Ezra Varady '13.</string>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
                                         <color key="textColor" red="0.61176472900000001" green="0.63921570780000003" blue="0.71372550729999995" alpha="1" colorSpace="deviceRGB"/>
                                         <nil key="highlightedColor"/>
@@ -947,12 +975,6 @@ Punahou School</string>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="cL8-F1-ort" firstAttribute="top" secondItem="kzw-mK-nMD" secondAttribute="top" id="FlN-2s-BFf"/>
-                            <constraint firstAttribute="trailing" secondItem="cL8-F1-ort" secondAttribute="trailing" id="aEX-vh-aLM"/>
-                            <constraint firstAttribute="bottom" secondItem="cL8-F1-ort" secondAttribute="bottom" id="kX4-fz-LAC"/>
-                            <constraint firstItem="cL8-F1-ort" firstAttribute="leading" secondItem="kzw-mK-nMD" secondAttribute="leading" id="nPd-oO-IeT"/>
-                        </constraints>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="About the App" id="lzK-EQ-Q6M">
@@ -984,7 +1006,7 @@ Punahou School</string>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="QVJ-0n-ax9" kind="relationship" relationship="rootViewController" id="QvH-CW-WnK"/>
+                        <segue destination="QVJ-0n-ax9" kind="relationship" relationship="rootViewController" id="U2Y-6q-ctC"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Opc-So-PwJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
