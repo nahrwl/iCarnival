@@ -91,7 +91,9 @@ didReceiveRemoteNotification:(NSDictionary *)userInfo {
     if ( application.applicationState == UIApplicationStateInactive || application.applicationState == UIApplicationStateBackground  )
     {
         //opened from a push notification when the app was on background
-        tbc.selectedIndex = 0;
+        if (tbc) {
+            tbc.selectedIndex = 0;
+        }
     }
     if (cnvc) {
         if (tbc.selectedIndex == 0) {
