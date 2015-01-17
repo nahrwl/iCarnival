@@ -87,6 +87,12 @@ didReceiveRemoteNotification:(NSDictionary *)userInfo {
     
     UITabBarController *tbc = (UITabBarController *)self.window.rootViewController;
     CNotificationsViewController *cnvc = (CNotificationsViewController *)[(UINavigationController *)tbc.viewControllers[0] viewControllers][0];
+    
+    if ( application.applicationState == UIApplicationStateInactive || application.applicationState == UIApplicationStateBackground  )
+    {
+        //opened from a push notification when the app was on background
+        tbc.selectedIndex = 0;
+    }
     if (cnvc) {
         if (tbc.selectedIndex == 0) {
             [cnvc updateNotifications];
