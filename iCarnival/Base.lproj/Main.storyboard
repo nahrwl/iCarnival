@@ -842,7 +842,7 @@
                                                     <color key="textColor" red="0.7402230501" green="0.56268745659999997" blue="0.024498587469999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" misplaced="YES" text="Cornuelle Lecture Hall in Mamiya Science Center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NTy-ij-2TV">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Cornuelle Lecture Hall in Mamiya Science Center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NTy-ij-2TV">
                                                     <rect key="frame" x="112" y="12" width="200" height="34.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -850,7 +850,7 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="NTy-ij-2TV" firstAttribute="bottom" secondItem="XDP-2x-YDa" secondAttribute="bottomMargin" constant="-3" id="6Gd-dE-qQI"/>
+                                                <constraint firstItem="NTy-ij-2TV" firstAttribute="bottom" secondItem="XDP-2x-YDa" secondAttribute="bottomMargin" constant="-4" id="6Gd-dE-qQI"/>
                                                 <constraint firstItem="Hw6-vI-uON" firstAttribute="top" secondItem="XDP-2x-YDa" secondAttribute="topMargin" constant="4" id="KZn-HN-B5e"/>
                                                 <constraint firstItem="NTy-ij-2TV" firstAttribute="trailing" secondItem="XDP-2x-YDa" secondAttribute="trailingMargin" id="WID-eB-wIu"/>
                                                 <constraint firstItem="NTy-ij-2TV" firstAttribute="leading" secondItem="Hw6-vI-uON" secondAttribute="trailing" constant="6" id="amr-0V-uEX"/>
@@ -867,7 +867,13 @@
                             <outlet property="delegate" destination="I6V-PK-Nzw" id="oiu-8G-TTa"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Information" id="04W-yC-4Iy"/>
+                    <navigationItem key="navigationItem" title="Information" id="04W-yC-4Iy">
+                        <barButtonItem key="rightBarButtonItem" image="about" id="MgS-mV-0MQ">
+                            <connections>
+                                <segue destination="FGB-Kw-nGx" kind="modal" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="eh6-lg-x6a"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Aqo-nw-ao5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -949,14 +955,22 @@ Punahou School</string>
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="About the App" id="lzK-EQ-Q6M"/>
+                    <navigationItem key="navigationItem" title="About the App" id="lzK-EQ-Q6M">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="1p7-cj-LHa">
+                            <color key="tintColor" red="0.72537364130000004" green="0.63171794619999999" blue="0.278071603" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <segue destination="PfI-8I-QCj" kind="unwind" unwindAction="unwindToInfoView:" id="exL-TY-Nu8"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="scrollView" destination="cL8-F1-ort" id="ysa-n2-p20"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VHP-Qj-bvV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="PfI-8I-QCj" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1154" y="2312"/>
+            <point key="canvasLocation" x="1945" y="-782"/>
         </scene>
         <!--About-->
         <scene sceneID="W9o-o1-BED">
@@ -975,7 +989,7 @@ Punahou School</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Opc-So-PwJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="628" y="2312"/>
+            <point key="canvasLocation" x="1486" y="-782"/>
         </scene>
         <!--Map-->
         <scene sceneID="nvo-uz-00E">
@@ -1112,6 +1126,7 @@ Punahou School</string>
         </scene>
     </scenes>
     <resources>
+        <image name="about" width="22" height="22"/>
         <image name="cars" width="22" height="22"/>
         <image name="info" width="25" height="25"/>
         <image name="map" width="25" height="25"/>

@@ -115,7 +115,7 @@ static NSString *kLongitudeKey = @"iCarnival_kLongitudeKey";
         // set the right button item to say "Done"
         self.rightButtonItem = self.searchButtonItem;
         UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneButtonTapped)];
-        button.tintColor = [UIColor colorWithRed:0 green:0.011764 blue:0.41569 alpha:1.0];
+        button.tintColor = [UIColor colorWithRed:0.72549 green:0.63137 blue:0.27843 alpha:1.0];
         self.navigationItem.rightBarButtonItem = button;
     } else {
         // set the right button item to be the search button

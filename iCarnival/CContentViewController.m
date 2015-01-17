@@ -46,7 +46,11 @@
     // Dispose of any resources that can be recreated.
 }
 
-
+- (IBAction)unwindToInfoView:(UIStoryboardSegue *)unwindSegue
+{
+    // stuff happens here I guess
+    // this is used in the storyboard, don't touch this even though there's not code here!
+}
 
 #pragma mark - Scroll view delegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
@@ -74,5 +78,6 @@
         self.navigationController.navigationBar.alpha = 1.0;
     }
 }
+
 
 @end
