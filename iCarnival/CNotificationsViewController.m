@@ -78,8 +78,8 @@ static NSString *kNotificationsOnKey = @"iCarnival_kNotificationsOnKey";
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    UIRemoteNotificationType types = [[UIApplication sharedApplication] enabledRemoteNotificationTypes];
-    if (types != UIRemoteNotificationTypeNone) {
+    UIRemoteNotificationType types = [[UIApplication sharedApplication] isRegisteredForRemoteNotifications];
+    if (types) {
         _notificationsOn = YES;
     } else {
         _notificationsOn = NO;
@@ -112,9 +112,8 @@ static NSString *kNotificationsOnKey = @"iCarnival_kNotificationsOnKey";
         [alert show];
     } else {
         // turn notifications on
-        [[UIApplication sharedApplication] registerForRemoteNotificationTypes:UIRemoteNotificationTypeBadge|
-         UIRemoteNotificationTypeAlert|
-         UIRemoteNotificationTypeSound];
+        [[UIApplication sharedApplication] registerForRemoteNotifications];
+        [[UIApplication sharedApplication] registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeBadge|UIUserNotificationTypeAlert|UIUserNotificationTypeSound categories:nil]];
         
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Push Enabled"
                                                         message:@"Notifications have been enabled."
