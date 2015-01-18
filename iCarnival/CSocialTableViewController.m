@@ -282,6 +282,38 @@ static NSString * const kTwitterLoginTypeKey = @"iCarnival-kTwitterLoginTypeKey"
     return self;
 }
 
+- (void)tweetView:(TWTRTweetView *)tweetView
+   didSelectTweet:(TWTRTweet *)tweet {
+    NSLog(@"log in my app that user selected tweet");
+    UIViewController *webViewController = [[UIViewController alloc] init];
+    UIWebView *webView = [[UIWebView alloc]
+                          initWithFrame:webViewController.view.bounds];
+    [webView loadRequest:[NSURLRequest
+                          requestWithURL:tweet.permalink]];
+    webViewController.view = webView;
+    
+    [self.navigationController pushViewController:
+     webViewController animated:YES];
+}
+
+- (void)tweetView:(TWTRTweetView *)tweetView didTapURL:(NSURL *)url {
+    // Open your own custom webview
+    //MyWebViewController *webViewController =
+    //MyWebViewController alloc] init];
+    
+    // *or* Use a system webview
+    NSLog(@"User tapped URL.");
+    UIViewController *webViewController = [[UIViewController alloc] init];
+    UIWebView *webView = [[UIWebView alloc]
+                          initWithFrame:webViewController.view.bounds];
+    [webView loadRequest:[NSURLRequest
+                          requestWithURL:url]];
+    webViewController.view = webView;
+    
+    [self.navigationController pushViewController:
+     webViewController animated:YES];
+}
+
 /*
  #pragma mark - Navigation
  
