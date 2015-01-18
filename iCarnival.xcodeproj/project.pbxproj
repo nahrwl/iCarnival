@@ -50,6 +50,7 @@
 		D81A651E1A68FF67007086AD /* CMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D81A651B1A68FF67007086AD /* CMapViewController.m */; };
 		D81A65211A690F0B007086AD /* CContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D81A65201A690F0B007086AD /* CContentViewController.m */; };
 		D876F73F1A69DBB200C2FDF7 /* CAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D876F73E1A69DBB200C2FDF7 /* CAboutViewController.m */; };
+		D8EBE77C1A6BF59700F9A5A0 /* CWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8EBE77B1A6BF59700F9A5A0 /* CWebViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,6 +124,8 @@
 		D81A65201A690F0B007086AD /* CContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CContentViewController.m; sourceTree = "<group>"; };
 		D876F73D1A69DBB200C2FDF7 /* CAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAboutViewController.h; sourceTree = "<group>"; };
 		D876F73E1A69DBB200C2FDF7 /* CAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CAboutViewController.m; sourceTree = "<group>"; };
+		D8EBE77A1A6BF59700F9A5A0 /* CWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWebViewController.h; sourceTree = "<group>"; };
+		D8EBE77B1A6BF59700F9A5A0 /* CWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWebViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -305,6 +308,8 @@
 			children = (
 				D81A65051A68DF69007086AD /* CSocialTableViewController.h */,
 				D81A65061A68DF69007086AD /* CSocialTableViewController.m */,
+				D8EBE77A1A6BF59700F9A5A0 /* CWebViewController.h */,
+				D8EBE77B1A6BF59700F9A5A0 /* CWebViewController.m */,
 			);
 			name = "Twitter Tab";
 			sourceTree = "<group>";
@@ -463,6 +468,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8EBE77C1A6BF59700F9A5A0 /* CWebViewController.m in Sources */,
 				D81A650F1A68FD85007086AD /* CNotificationCell.m in Sources */,
 				D81A651E1A68FF67007086AD /* CMapViewController.m in Sources */,
 				D81A65071A68DF69007086AD /* CSocialTableViewController.m in Sources */,

@@ -9,6 +9,7 @@
 //  https://dev.twitter.com/twitter-kit/ios/show-tweets
 
 #import "CSocialTableViewController.h"
+#import "CWebViewController.h"
 
 // ** FABRIC ** //
 #import <Fabric/Fabric.h>
@@ -28,6 +29,10 @@ static NSString * const kTwitterLoginTypeKey = @"iCarnival-kTwitterLoginTypeKey"
 
 - (void)refresh;
 - (void)reloadTableViewWithTweets;
+
+- (void)displayWebViewWithURL:(NSURL *)url;
+
+
 
 @end
 
@@ -300,34 +305,37 @@ static NSString * const kTwitterLoginTypeKey = @"iCarnival-kTwitterLoginTypeKey"
 - (void)tweetView:(TWTRTweetView *)tweetView
    didSelectTweet:(TWTRTweet *)tweet {
     NSLog(@"log in my app that user selected tweet");
-    UIViewController *webViewController = [[UIViewController alloc] init];
-    UIWebView *webView = [[UIWebView alloc]
-                          initWithFrame:webViewController.view.bounds];
-    [webView loadRequest:[NSURLRequest
-                          requestWithURL:tweet.permalink]];
-    webViewController.view = webView;
-    
-    [self.navigationController pushViewController:
-     webViewController animated:YES];
+    [self displayWebViewWithURL:tweet.permalink];
 }
 
 - (void)tweetView:(TWTRTweetView *)tweetView didTapURL:(NSURL *)url {
     // Open your own custom webview
-    //MyWebViewController *webViewController =
-    //MyWebViewController alloc] init];
     
     // *or* Use a system webview
     NSLog(@"User tapped URL.");
-    UIViewController *webViewController = [[UIViewController alloc] init];
+    [self displayWebViewWithURL:url];
+}
+
+- (void)displayWebViewWithURL:(NSURL *)url
+{
+    CWebViewController *webViewController = [[CWebViewController alloc] init];
     UIWebView *webView = [[UIWebView alloc]
                           initWithFrame:webViewController.view.bounds];
     [webView loadRequest:[NSURLRequest
                           requestWithURL:url]];
     webViewController.view = webView;
+    webViewController.webView = webView; // just because I can and its convenient.
+    
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"back"] style:UIBarButtonItemStylePlain target:webViewController action:@selector(back)];
+    UIBarButtonItem *forwardButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"forward"] style:UIBarButtonItemStylePlain target:webViewController action:@selector(forward)];
+    
+    webViewController.navigationItem.rightBarButtonItems = @[forwardButton, backButton];
     
     [self.navigationController pushViewController:
      webViewController animated:YES];
 }
+
+
 
 /*
  #pragma mark - Navigation
