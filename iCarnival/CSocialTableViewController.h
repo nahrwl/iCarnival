@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <TwitterKit/TwitterKit.h>
 
-@interface CSocialTableViewController : UITableViewController
+@interface CSocialTableViewController : UITableViewController <TWTRTweetViewDelegate, UIAlertViewDelegate>
 
 - (IBAction)refreshTimeline;
 - (IBAction)composeTweet;
