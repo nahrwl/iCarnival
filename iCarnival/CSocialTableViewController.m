@@ -261,6 +261,21 @@ static NSString * const kTwitterLoginTypeKey = @"iCarnival-kTwitterLoginTypeKey"
      (TWTRSession *session, NSError *error) {
          if (session) {
              NSLog(@"signed in as %@", [session userName]);
+             if (![[[NSUserDefaults standardUserDefaults] stringForKey:kTwitterLoginTypeKey] isEqualToString:@"User"]) {
+                 [[NSUserDefaults standardUserDefaults] setObject:@"User" forKey:kTwitterLoginTypeKey];
+             }
+             TWTRComposer *composer = [[TWTRComposer alloc] init];
+             
+             [composer setText:@"#PunahouCarnival "];
+             
+             [composer showWithCompletion:^(TWTRComposerResult result) {
+                 if (result == TWTRComposerResultCancelled) {
+                     NSLog(@"Tweet composition cancelled");
+                 }
+                 else {
+                     NSLog(@"Sending Tweet!");
+                 }
+             }];
          } else {
              NSLog(@"error: %@", [error localizedDescription]);
          }
