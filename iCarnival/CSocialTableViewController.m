@@ -198,7 +198,7 @@ static NSString * const kTwitterLoginTypeKey = @"iCarnival-kTwitterLoginTypeKey"
 {
     // Search for tweets
     NSString *statusesShowEndpoint = @"https://api.twitter.com/1.1/search/tweets.json";
-    NSDictionary *params = @{@"q" : @"Punahou Carnival"};
+    NSDictionary *params = @{@"q" : @"(Punahou AND Carnival) OR #PunahouCarnival OR @PunahouCarnival", @"result_type" : @"recent", @"count" : @"30"};
     NSError *clientError;
     NSURLRequest *request = [[[Twitter sharedInstance] APIClient]
                              URLRequestWithMethod:@"GET"
