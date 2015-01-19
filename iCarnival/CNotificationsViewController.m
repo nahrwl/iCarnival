@@ -7,7 +7,6 @@
 //
 
 #import "CNotificationsViewController.h"
-#import "CNotificationCenter.h"
 #import "CNotificationCell.h"
 
 #define kCellWidth 290.0

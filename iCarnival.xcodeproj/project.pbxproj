@@ -37,7 +37,6 @@
 		D81A64EC1A68D26E007086AD /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = D81A64EB1A68D26E007086AD /* .gitignore */; };
 		D81A64F11A68DCB6007086AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D81A64EF1A68DCB6007086AD /* Main.storyboard */; };
 		D81A64F41A68DE22007086AD /* items.plist in Resources */ = {isa = PBXBuildFile; fileRef = D81A64F31A68DE22007086AD /* items.plist */; };
-		D81A64F71A68DE39007086AD /* CNotificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = D81A64F61A68DE39007086AD /* CNotificationCenter.m */; };
 		D81A64FB1A68DE5D007086AD /* NSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = D81A64FA1A68DE5D007086AD /* NSString+HTML.m */; };
 		D81A64FE1A68DE63007086AD /* GTMNSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = D81A64FD1A68DE63007086AD /* GTMNSString+HTML.m */; };
 		D81A65071A68DF69007086AD /* CSocialTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D81A65061A68DF69007086AD /* CSocialTableViewController.m */; };
@@ -99,8 +98,6 @@
 		D81A64EB1A68D26E007086AD /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		D81A64F01A68DCB6007086AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D81A64F31A68DE22007086AD /* items.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = items.plist; sourceTree = "<group>"; };
-		D81A64F51A68DE39007086AD /* CNotificationCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNotificationCenter.h; sourceTree = "<group>"; };
-		D81A64F61A68DE39007086AD /* CNotificationCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNotificationCenter.m; sourceTree = "<group>"; };
 		D81A64F91A68DE5D007086AD /* NSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+HTML.h"; sourceTree = "<group>"; };
 		D81A64FA1A68DE5D007086AD /* NSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HTML.m"; sourceTree = "<group>"; };
 		D81A64FC1A68DE63007086AD /* GTMNSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GTMNSString+HTML.h"; sourceTree = "<group>"; };
@@ -264,8 +261,6 @@
 			isa = PBXGroup;
 			children = (
 				D81A64F31A68DE22007086AD /* items.plist */,
-				D81A64F51A68DE39007086AD /* CNotificationCenter.h */,
-				D81A64F61A68DE39007086AD /* CNotificationCenter.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -473,7 +468,6 @@
 				D81A651E1A68FF67007086AD /* CMapViewController.m in Sources */,
 				D81A65071A68DF69007086AD /* CSocialTableViewController.m in Sources */,
 				D81A64BC1A68C628007086AD /* CAppDelegate.m in Sources */,
-				D81A64F71A68DE39007086AD /* CNotificationCenter.m in Sources */,
 				D81A64FE1A68DE63007086AD /* GTMNSString+HTML.m in Sources */,
 				D876F73F1A69DBB200C2FDF7 /* CAboutViewController.m in Sources */,
 				D81A65151A68FF0A007086AD /* CMapItem.m in Sources */,
