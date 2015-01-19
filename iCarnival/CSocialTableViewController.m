@@ -110,6 +110,7 @@ static NSString * const kTwitterLoginTypeKey = @"iCarnival-kTwitterLoginTypeKey"
             [self refresh];
         } else {
             [stdUserDefaults setBool:NO forKey:kPromptTwitterLoginKey]; // No means YES - prompt the user next time
+            [stdUserDefaults synchronize];
             NSLog(@"Error identifying login type. User not logged in.");
         }
     }
@@ -124,6 +125,7 @@ static NSString * const kTwitterLoginTypeKey = @"iCarnival-kTwitterLoginTypeKey"
         // Cancel
         [stdUserDefaults setObject:@"Guest" forKey:kTwitterLoginTypeKey];
         [stdUserDefaults setBool:YES forKey:kPromptTwitterLoginKey]; // YES means NO
+        [stdUserDefaults synchronize];
         [self refresh];
     } else {
         // we home free!! Login to Twitter, baby.
@@ -133,6 +135,7 @@ static NSString * const kTwitterLoginTypeKey = @"iCarnival-kTwitterLoginTypeKey"
                  NSLog(@"signed in as %@", [session userName]);
                  [stdUserDefaults setObject:@"User" forKey:kTwitterLoginTypeKey];
                  [stdUserDefaults setBool:YES forKey:kPromptTwitterLoginKey]; // YES means NO
+                 [stdUserDefaults synchronize];
              } else {
                  NSLog(@"error: %@", [error localizedDescription]);
                  // If we got rejected for some reason
@@ -142,6 +145,7 @@ static NSString * const kTwitterLoginTypeKey = @"iCarnival-kTwitterLoginTypeKey"
                  
                  [stdUserDefaults setObject:@"Guest" forKey:kTwitterLoginTypeKey];
                  [stdUserDefaults setBool:NO forKey:kPromptTwitterLoginKey]; // we want the user to be prompted to log in again next time because it failed for some reason
+                 [stdUserDefaults synchronize];
              }
             typeof(self) strongSelf = weakSelf;
             [strongSelf refresh];

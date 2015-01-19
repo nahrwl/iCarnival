@@ -24,9 +24,13 @@
 @property (nonatomic) CLLocationCoordinate2D parkingCoordinates;
 @property (strong, nonatomic) MKPointAnnotation *parkingAnnotation;
 
+//for location finding purposes
+@property (strong, nonatomic) CLLocation *bestLocation;
+
 - (void)loadMapItemsFromPlistInBundle:(NSString *)nameInBundle;
 - (void)dropPinsForMapItems:(NSArray *)items;
 - (void)saveCurrentLocation:(CLLocationCoordinate2D)coordinate;
+- (void)cancelLocationUpdates;
 
 @end
 
@@ -61,6 +65,8 @@ static NSString *kLongitudeKey = @"iCarnival_kLongitudeKey";
     } else {
         parkingSaved = NO;
     }
+    
+    self.bestLocation = nil;
     
     [self loadMapItemsFromPlistInBundle:@"items"];
     [self dropPinsForMapItems:self.mapItems];
@@ -229,23 +235,48 @@ static NSString *kLongitudeKey = @"iCarnival_kLongitudeKey";
             [defaults synchronize];
             
         } else {
-            // attempt to save the user's parking
-            [self.locationManager startUpdatingLocation];
+            // ask for permission
+            // Check for iOS 8. Without this guard the code will crash with "unknown selector" on iOS 7.
+            if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
+                [self.locationManager requestWhenInUseAuthorization];
+            }
             
-            UIActivityIndicatorView *indicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-            UIBarButtonItem *indicator = [[UIBarButtonItem alloc] initWithCustomView:indicatorView];
-            self.leftButtonItem = self.navigationItem.leftBarButtonItem;
-            self.navigationItem.leftBarButtonItem = indicator;
-            [indicatorView startAnimating];
+            if ([CLLocationManager locationServicesEnabled]) {
+                
+                // attempt to save the user's parking
+                [self.locationManager startUpdatingLocation];
+                
+                // start a timer so location updating will time out eventually
+                [self performSelector:@selector(cancelLocationUpdates) withObject:nil afterDelay:20];
+                
+                // update UI
+                UIActivityIndicatorView *indicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+                UIBarButtonItem *indicator = [[UIBarButtonItem alloc] initWithCustomView:indicatorView];
+                self.leftButtonItem = self.navigationItem.leftBarButtonItem;
+                self.navigationItem.leftBarButtonItem = indicator;
+                [indicatorView startAnimating];
+            } else {
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Location Services Disabled"
+                                                                message:@"Turn on Location Services in Preferences to save your parking spot."
+                                                               delegate:self
+                                                      cancelButtonTitle:@"OK"
+                                                      otherButtonTitles:nil];
+                [alert show];
+            }
             
-            //[self performSelector:@selector(cancelLocationUpdates) withObject:nil afterDelay:15];
+            
         }
     }
 }
 
-/*- (void)cancelLocationUpdates
+- (void)cancelLocationUpdates
 {
-    if (!parkingSaved) {
+    if (self.bestLocation) {
+        NSLog(@"Going with the best location <= 100m found.");
+        [self saveCurrentLocation:self.bestLocation.coordinate];
+        self.bestLocation = nil;
+    }
+    else if (self.locationManager) {
         [self.locationManager stopUpdatingLocation];
         // explain that parking spot saving failed
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Could not find current location"
@@ -258,39 +289,49 @@ static NSString *kLongitudeKey = @"iCarnival_kLongitudeKey";
         self.leftButtonItem = nil;
         [alert show];
     }
-}*/
+}
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
-    // If it's a relatively recent event, turn off updates to save power.
-    static int count = 0;
     
-    CLLocation* location = [locations lastObject];
-    NSDate* eventDate = location.timestamp;
+    CLLocation *newLocation = [locations lastObject];
+    NSDate* eventDate = newLocation.timestamp;
     NSTimeInterval howRecent = [eventDate timeIntervalSinceNow];
-    if (abs(howRecent) < 10.0) {
-        // If the event is recent, do something with it.
-        NSLog(@"latitude %+.6f, longitude %+.6f\n",
-              location.coordinate.latitude,
-              location.coordinate.longitude);
-        count++;
-        if (count > 3) {
-            [self saveCurrentLocation:location.coordinate];
-            count = 0;
+    if (abs(howRecent) < 15.0) {
+        if (!self.bestLocation) {
+            self.bestLocation = newLocation;
+            NSLog(@"Created bestLocation.");
+        } else if (self.bestLocation.horizontalAccuracy >= newLocation.horizontalAccuracy) {
+            self.bestLocation = newLocation;
+            NSLog(@"Found more accurate location!");
+        }
+        if (self.bestLocation.horizontalAccuracy <= 15.0f) {
+            NSLog(@"Found a very accurate location.");
+            [self saveCurrentLocation:self.bestLocation.coordinate];
+            self.bestLocation = nil;
         }
     }
+    
+     NSLog(@"%@", newLocation);
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
 {
-    NSLog(@"didFailWithError: %@", error);
-    UIAlertView *errorAlert = [[UIAlertView alloc]
-                               initWithTitle:@"Error" message:@"Failed to Get Your Location" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-    [errorAlert show];
+    if(error.code == kCLErrorDenied) {
+        [manager stopUpdatingLocation];
+    } else if(error.code == kCLErrorLocationUnknown) {
+        // retry
+    } else {
+        NSLog(@"didFailWithError: %@", error);
+        UIAlertView *errorAlert = [[UIAlertView alloc]
+                                   initWithTitle:@"Location Error" message:@"Failed to Find Parking Location." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [errorAlert show];
+    }
 }
 
 - (void)saveCurrentLocation:(CLLocationCoordinate2D)coordinate
 {
     [self.locationManager stopUpdatingLocation];
+    [CMapViewController cancelPreviousPerformRequestsWithTarget:self]; // cancel the timer
     if (!parkingSaved) {
         parkingSaved = YES;
     
@@ -305,6 +346,8 @@ static NSString *kLongitudeKey = @"iCarnival_kLongitudeKey";
     
         self.parkingAnnotation = annotation;
         [self.mapView addAnnotation:annotation];
+        
+        [self.mapView setCenterCoordinate:coordinate animated:YES];
         
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         [defaults setObject:[NSNumber numberWithDouble:coordinate.latitude] forKey:kLatitudeKey];
