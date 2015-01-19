@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		D81A64971A68C5C8007086AD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D81A64961A68C5C8007086AD /* main.m */; };
 		D81A64A21A68C5C8007086AD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D81A64A11A68C5C8007086AD /* Images.xcassets */; };
-		D81A64A51A68C5C8007086AD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D81A64A31A68C5C8007086AD /* LaunchScreen.xib */; };
 		D81A64B11A68C5C8007086AD /* iCarnivalTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D81A64B01A68C5C8007086AD /* iCarnivalTests.m */; };
 		D81A64BC1A68C628007086AD /* CAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D81A64BB1A68C628007086AD /* CAppDelegate.m */; };
 		D81A64BE1A68C7AD007086AD /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D81A64BD1A68C7AD007086AD /* SystemConfiguration.framework */; };
@@ -50,6 +49,7 @@
 		D81A65211A690F0B007086AD /* CContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D81A65201A690F0B007086AD /* CContentViewController.m */; };
 		D876F73F1A69DBB200C2FDF7 /* CAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D876F73E1A69DBB200C2FDF7 /* CAboutViewController.m */; };
 		D8EBE77C1A6BF59700F9A5A0 /* CWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8EBE77B1A6BF59700F9A5A0 /* CWebViewController.m */; };
+		D8EBE7801A6D00E000F9A5A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8EBE77F1A6D00E000F9A5A0 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,7 +67,6 @@
 		D81A64951A68C5C8007086AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D81A64961A68C5C8007086AD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D81A64A11A68C5C8007086AD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		D81A64A41A68C5C8007086AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		D81A64AA1A68C5C8007086AD /* iCarnivalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iCarnivalTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D81A64AF1A68C5C8007086AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D81A64B01A68C5C8007086AD /* iCarnivalTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iCarnivalTests.m; sourceTree = "<group>"; };
@@ -123,6 +122,7 @@
 		D876F73E1A69DBB200C2FDF7 /* CAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CAboutViewController.m; sourceTree = "<group>"; };
 		D8EBE77A1A6BF59700F9A5A0 /* CWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWebViewController.h; sourceTree = "<group>"; };
 		D8EBE77B1A6BF59700F9A5A0 /* CWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWebViewController.m; sourceTree = "<group>"; };
+		D8EBE77F1A6D00E000F9A5A0 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,7 +190,7 @@
 			children = (
 				D81A64A11A68C5C8007086AD /* Images.xcassets */,
 				D81A64EF1A68DCB6007086AD /* Main.storyboard */,
-				D81A64A31A68C5C8007086AD /* LaunchScreen.xib */,
+				D8EBE77F1A6D00E000F9A5A0 /* LaunchScreen.storyboard */,
 				D81A64BA1A68C628007086AD /* CAppDelegate.h */,
 				D81A64BB1A68C628007086AD /* CAppDelegate.m */,
 				D81A64F81A68DE4B007086AD /* Extras */,
@@ -427,7 +427,7 @@
 				D81A64EC1A68D26E007086AD /* .gitignore in Resources */,
 				D81A64F11A68DCB6007086AD /* Main.storyboard in Resources */,
 				D81A64E91A68D00A007086AD /* TwitterKitResources.bundle in Resources */,
-				D81A64A51A68C5C8007086AD /* LaunchScreen.xib in Resources */,
+				D8EBE7801A6D00E000F9A5A0 /* LaunchScreen.storyboard in Resources */,
 				D81A64A21A68C5C8007086AD /* Images.xcassets in Resources */,
 				D81A64F41A68DE22007086AD /* items.plist in Resources */,
 			);
@@ -499,14 +499,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		D81A64A31A68C5C8007086AD /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D81A64A41A68C5C8007086AD /* Base */,
-			);
-			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
 		D81A64EF1A68DCB6007086AD /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

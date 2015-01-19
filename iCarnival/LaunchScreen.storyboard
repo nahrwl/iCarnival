@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Hpj-w5-HYN">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Sound Booth-->
+        <scene sceneID="k4V-Rg-gUA">
+            <objects>
+                <viewController id="HTs-4i-6EK" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="InW-1d-0fA"/>
+                        <viewControllerLayoutGuide type="bottom" id="aO0-3l-ysk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yUi-Rq-Qlu">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Vn-h1-sAS">
+                                <rect key="frame" x="0.0" y="431" width="480" height="49"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="eWI-u9-AXl"/>
+                                </constraints>
+                                <items>
+                                    <tabBarItem title="Sound Booth" image="megaphone" id="TpJ-lH-gIS"/>
+                                    <tabBarItem title="Map" image="map" id="6Qc-8D-Hrm"/>
+                                    <tabBarItem title="Social" image="speech" id="7Th-U9-DPG"/>
+                                    <tabBarItem title="Information" image="info" id="hwk-fT-E9W"/>
+                                </items>
+                                <color key="barTintColor" red="0.0" green="0.01332576703" blue="0.41412618890000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </tabBar>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="441" placeholderIntrinsicHeight="55" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="syF-cy-Rz1">
+                                <rect key="frame" x="20" y="352" width="441" height="55"/>
+                                <string key="text">Copyright (c) 2015 Punahou School.
+Created by Nathan Wallace '14. All rights reserved.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0Vn-h1-sAS" firstAttribute="leading" secondItem="yUi-Rq-Qlu" secondAttribute="leadingMargin" constant="-16" id="0cy-eF-ObU"/>
+                            <constraint firstItem="0Vn-h1-sAS" firstAttribute="top" secondItem="syF-cy-Rz1" secondAttribute="bottom" constant="24" id="2Cd-Cr-KRC"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="syF-cy-Rz1" secondAttribute="trailing" constant="3" id="BCR-tZ-2KP"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="0Vn-h1-sAS" secondAttribute="trailing" constant="-16" id="JGb-LX-elg"/>
+                            <constraint firstItem="syF-cy-Rz1" firstAttribute="leading" secondItem="yUi-Rq-Qlu" secondAttribute="leadingMargin" constant="4" id="eD5-mW-qSo"/>
+                            <constraint firstItem="aO0-3l-ysk" firstAttribute="top" secondItem="0Vn-h1-sAS" secondAttribute="bottom" id="uFa-P4-UcL"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Sound Booth" id="fy3-AA-K4Z">
+                        <barButtonItem key="rightBarButtonItem" image="settings" id="K2p-mM-Lbx">
+                            <color key="tintColor" red="0.72537364130000004" green="0.63171794619999999" blue="0.278071603" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="480" height="480"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="doj-Nh-kXb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1135" y="337"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="rQe-bD-ILW">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Hpj-w5-HYN" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="480" height="480"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Kwa-o1-mXU">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="HTs-4i-6EK" kind="relationship" relationship="rootViewController" id="bVP-ck-34z"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pch-KC-uQm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="323" y="337"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="info" width="25" height="25"/>
+        <image name="map" width="25" height="25"/>
+        <image name="megaphone" width="25" height="25"/>
+        <image name="settings" width="22" height="22"/>
+        <image name="speech" width="25" height="25"/>
+    </resources>
+</document>
