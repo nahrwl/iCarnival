@@ -51,6 +51,12 @@ static NSString * const kTwitterLoginTypeKey = @"iCarnival-kTwitterLoginTypeKey"
     // Create a single prototype cell for height calculations
     self.prototypeCell = [[TWTRTweetTableViewCell alloc] init];
     
+    // Setup refresh control
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    [refreshControl addTarget:self action:@selector(refresh) forControlEvents:UIControlEventValueChanged];
+    refreshControl.tintColor = [UIColor colorWithRed:0.72549 green:0.63137 blue:0.27843 alpha:1.0];
+    self.refreshControl = refreshControl;
+    
     [self checkFirstTimeLogIn];
     
 }
@@ -174,6 +180,8 @@ static NSString * const kTwitterLoginTypeKey = @"iCarnival-kTwitterLoginTypeKey"
 
 - (void)refresh
 {
+    NSLog(@"Refresh called. Initiating API call.");
+    
     Twitter *twtr = [Twitter sharedInstance];
     
     if ([twtr session] || [twtr guestSession]) {
@@ -219,7 +227,7 @@ static NSString * const kTwitterLoginTypeKey = @"iCarnival-kTwitterLoginTypeKey"
                       NSData *data,
                       NSError *connectionError) {
              if (data) {
-                 NSLog(@"Data: %@",[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
+                 // NSLog(@"Data: %@",[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
                  // handle the response data e.g.
                  NSError *jsonError;
                  NSDictionary *jsonDic = [NSJSONSerialization
@@ -229,7 +237,7 @@ static NSString * const kTwitterLoginTypeKey = @"iCarnival-kTwitterLoginTypeKey"
                  
                  NSArray *json = [jsonDic objectForKey:@"statuses"];
                  
-                 NSLog(@"Array: %@",json);
+                 // NSLog(@"Array: %@",json);
                  
                  if (json) {
                      NSArray *tweets = [TWTRTweet tweetsWithJSONArray:json];
@@ -248,10 +256,12 @@ static NSString * const kTwitterLoginTypeKey = @"iCarnival-kTwitterLoginTypeKey"
              else {
                  NSLog(@"Error: %@", connectionError);
              }
+             [self.refreshControl endRefreshing];
          }];
     }
     else {
         NSLog(@"Error: %@", clientError);
+        [self.refreshControl endRefreshing];
     }
 }
 

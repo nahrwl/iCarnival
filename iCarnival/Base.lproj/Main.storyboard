@@ -1082,11 +1082,6 @@ Punahou School</string>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="#PunahouCarnival" id="tKW-E9-2AL">
-                        <barButtonItem key="leftBarButtonItem" title="Item" systemItem="refresh" id="vRM-Su-Kcz">
-                            <connections>
-                                <action selector="refreshTimeline" destination="ufP-yy-9jv" id="l9t-WY-4am"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="compose" id="TDo-hW-b6N">
                             <connections>
                                 <action selector="composeTweet" destination="ufP-yy-9jv" id="tzo-Sx-Yl2"/>
@@ -1095,7 +1090,6 @@ Punahou School</string>
                     </navigationItem>
                     <connections>
                         <outlet property="composeButton" destination="TDo-hW-b6N" id="eZI-GA-mlz"/>
-                        <outlet property="refreshButton" destination="vRM-Su-Kcz" id="wyu-RJ-t3D"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CAF-Z1-Lvn" userLabel="First Responder" sceneMemberID="firstResponder"/>
