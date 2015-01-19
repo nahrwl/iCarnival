@@ -138,21 +138,13 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Sound Booth" id="wp5-4V-VHS">
-                        <barButtonItem key="rightBarButtonItem" id="Uaa-m3-G4e">
-                            <switch key="customView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="Sst-sh-EU3">
-                                <rect key="frame" x="16" y="6" width="51" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="onTintColor" red="0.72537364130000004" green="0.63171794619999999" blue="0.278071603" alpha="1" colorSpace="calibratedRGB"/>
-                                <connections>
-                                    <action selector="switchValueChanged:" destination="MkY-t9-lGe" eventType="valueChanged" id="ecX-gW-2g6"/>
-                                </connections>
-                            </switch>
+                        <barButtonItem key="rightBarButtonItem" image="settings" id="D1s-M5-CeA">
                             <color key="tintColor" red="0.72537364130000004" green="0.63171794619999999" blue="0.278071603" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="settingsButtonTapped:" destination="MkY-t9-lGe" id="URw-Zs-iUe"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="barSwitch" destination="Sst-sh-EU3" id="IIP-B8-Q73"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eh0-ZL-Ynp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1140,6 +1132,7 @@ Punahou School</string>
         <image name="info" width="25" height="25"/>
         <image name="map" width="25" height="25"/>
         <image name="megaphone" width="25" height="25"/>
+        <image name="settings" width="22" height="22"/>
         <image name="speech" width="25" height="25"/>
         <image name="variety-show" width="320" height="247"/>
     </resources>

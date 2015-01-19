@@ -10,11 +10,12 @@
 #import <Parse/Parse.h>
 #import <ParseUI/ParseUI.h>
 
-@interface CNotificationsViewController : PFQueryTableViewController
+@interface CNotificationsViewController : PFQueryTableViewController <UIActionSheetDelegate>
 
 @property (weak, nonatomic) IBOutlet UISwitch *barSwitch;
 
 - (IBAction)switchValueChanged:(id)sender;
+- (IBAction)settingsButtonTapped:(id)sender;
 
 - (void)updateNotifications;
 - (void)shouldUpdateNotifications;
