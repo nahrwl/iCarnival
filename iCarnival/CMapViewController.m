@@ -14,7 +14,6 @@
     BOOL parkingSaved;
 }
 
-@property (strong, nonatomic) UIBarButtonItem *leftButtonItem;
 @property (strong, nonatomic) UIBarButtonItem *rightButtonItem;
 @property (nonatomic) BOOL isSearching;
 
@@ -27,10 +26,16 @@
 //for location finding purposes
 @property (strong, nonatomic) CLLocation *bestLocation;
 
+//to continue to display an error message after didChangeAuthorizationStatus does it the first time
+@property (nonatomic) BOOL displayLocationError;
+
 - (void)loadMapItemsFromPlistInBundle:(NSString *)nameInBundle;
 - (void)dropPinsForMapItems:(NSArray *)items;
 - (void)saveCurrentLocation:(CLLocationCoordinate2D)coordinate;
 - (void)cancelLocationUpdates;
+- (void)stopUpdatingLocation;
+
+- (UIBarButtonItem *)createParkingButtonItem;
 
 @end
 
@@ -241,7 +246,7 @@ static NSString *kLongitudeKey = @"iCarnival_kLongitudeKey";
                 [self.locationManager requestWhenInUseAuthorization];
             }
             
-            if ([CLLocationManager locationServicesEnabled]) {
+            if ([CLLocationManager locationServicesEnabled] && [CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorizedWhenInUse) {
                 
                 // attempt to save the user's parking
                 [self.locationManager startUpdatingLocation];
@@ -252,16 +257,18 @@ static NSString *kLongitudeKey = @"iCarnival_kLongitudeKey";
                 // update UI
                 UIActivityIndicatorView *indicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
                 UIBarButtonItem *indicator = [[UIBarButtonItem alloc] initWithCustomView:indicatorView];
-                self.leftButtonItem = self.navigationItem.leftBarButtonItem;
                 self.navigationItem.leftBarButtonItem = indicator;
                 [indicatorView startAnimating];
             } else {
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Location Services Disabled"
-                                                                message:@"Turn on Location Services in Preferences to save your parking spot."
-                                                               delegate:self
-                                                      cancelButtonTitle:@"OK"
-                                                      otherButtonTitles:nil];
-                [alert show];
+                NSLog(@"LocationServices access denied.");
+                if (self.displayLocationError) {
+                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Location Services Disabled"
+                                                                    message:@"Enable location services in Settings to save your parking spot."
+                                                                   delegate:self
+                                                          cancelButtonTitle:@"OK"
+                                                          otherButtonTitles:nil];
+                    [alert show];
+                }
             }
             
             
@@ -277,16 +284,13 @@ static NSString *kLongitudeKey = @"iCarnival_kLongitudeKey";
         self.bestLocation = nil;
     }
     else if (self.locationManager) {
-        [self.locationManager stopUpdatingLocation];
+        [self stopUpdatingLocation];
         // explain that parking spot saving failed
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Could not find current location"
                                                     message:@"Your parking spot could not be saved because your current location could not be found."
                                                    delegate:self
                                           cancelButtonTitle:@"OK"
                                           otherButtonTitles:nil];
-    
-        self.navigationItem.leftBarButtonItem = self.leftButtonItem;
-        self.leftButtonItem = nil;
         [alert show];
     }
 }
@@ -317,7 +321,7 @@ static NSString *kLongitudeKey = @"iCarnival_kLongitudeKey";
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
 {
     if(error.code == kCLErrorDenied) {
-        [manager stopUpdatingLocation];
+        [self stopUpdatingLocation];
     } else if(error.code == kCLErrorLocationUnknown) {
         // retry
     } else {
@@ -330,13 +334,9 @@ static NSString *kLongitudeKey = @"iCarnival_kLongitudeKey";
 
 - (void)saveCurrentLocation:(CLLocationCoordinate2D)coordinate
 {
-    [self.locationManager stopUpdatingLocation];
-    [CMapViewController cancelPreviousPerformRequestsWithTarget:self]; // cancel the timer
+    [self stopUpdatingLocation];
     if (!parkingSaved) {
         parkingSaved = YES;
-    
-        self.navigationItem.leftBarButtonItem = self.leftButtonItem;
-        self.leftButtonItem = nil;
     
         self.parkingCoordinates = coordinate;
     
@@ -353,6 +353,30 @@ static NSString *kLongitudeKey = @"iCarnival_kLongitudeKey";
         [defaults setObject:[NSNumber numberWithDouble:coordinate.latitude] forKey:kLatitudeKey];
         [defaults setObject:[NSNumber numberWithDouble:coordinate.longitude] forKey:kLongitudeKey];
         [defaults synchronize];
+    }
+}
+
+- (void)stopUpdatingLocation
+{
+    [self.locationManager stopUpdatingLocation];
+    [CMapViewController cancelPreviousPerformRequestsWithTarget:self]; // cancel the timer
+    
+    // Update the UI
+    self.navigationItem.leftBarButtonItem = [self createParkingButtonItem];
+}
+
+- (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status
+{
+    if (status == kCLAuthorizationStatusDenied) {
+        self.displayLocationError = YES;
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Location Services Disabled"
+                                                        message:@"Enable location services in Settings to save your parking spot."
+                                                       delegate:self
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+        [self stopUpdatingLocation];
     }
 }
 
@@ -386,7 +410,16 @@ static NSString *kLongitudeKey = @"iCarnival_kLongitudeKey";
                                               cancelButtonTitle:@"OK"
                                               otherButtonTitles:nil];
         [alert show];
+        [self stopUpdatingLocation];
     }
+}
+
+- (UIBarButtonItem *)createParkingButtonItem
+{
+    UIBarButtonItem *bbi = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"cars"] style:UIBarButtonItemStyleBordered target:self action:@selector(parkingButtonTapped:)];
+    bbi.tintColor = [UIColor colorWithRed:0.72549 green:0.63137 blue:0.27843 alpha:1.0];
+    
+    return bbi;
 }
 
 - (IBAction)unwindToMap:(UIStoryboardSegue *)unwindSegue
