@@ -416,7 +416,7 @@ static NSString *kLongitudeKey = @"iCarnival_kLongitudeKey";
 
 - (UIBarButtonItem *)createParkingButtonItem
 {
-    UIBarButtonItem *bbi = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"cars"] style:UIBarButtonItemStyleBordered target:self action:@selector(parkingButtonTapped:)];
+    UIBarButtonItem *bbi = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"cars"] style:UIBarButtonItemStylePlain target:self action:@selector(parkingButtonTapped:)];
     bbi.tintColor = [UIColor colorWithRed:0.72549 green:0.63137 blue:0.27843 alpha:1.0];
     
     return bbi;
