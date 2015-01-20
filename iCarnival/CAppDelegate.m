@@ -23,11 +23,6 @@
 {
     // Override point for customization after application launch.
     
-    /* TWITTER FABRIC */
-    
-    [Fabric with:@[TwitterKit, CrashlyticsKit]];
-
-    
     /* PARSE */
     
     [Parse setApplicationId:@"***REMOVED***"
@@ -41,6 +36,10 @@
                                                                              categories:nil];
     [application registerUserNotificationSettings:settings];
     [application registerForRemoteNotifications];
+    
+    /* TWITTER FABRIC */
+    
+    [Fabric with:@[TwitterKit, CrashlyticsKit]];
     
     return YES;
 }
