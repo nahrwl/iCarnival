@@ -11,6 +11,8 @@
 // ** FABRIC ** //
 #import <Fabric/Fabric.h>
 #import <TwitterKit/TwitterKit.h>
+#import <Crashlytics/Crashlytics.h>
+
 
 // My headers //
 #import "CNotificationsViewController.h"
@@ -23,7 +25,7 @@
     
     /* TWITTER FABRIC */
     
-    [Fabric with:@[TwitterKit]];
+    [Fabric with:@[TwitterKit, CrashlyticsKit]];
 
     
     /* PARSE */

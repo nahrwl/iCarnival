@@ -50,6 +50,7 @@
 		D8EBE7801A6D00E000F9A5A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8EBE77F1A6D00E000F9A5A0 /* LaunchScreen.storyboard */; };
 		D8EBE7831A6E595900F9A5A0 /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = D8EBE7811A6E595900F9A5A0 /* iTunesArtwork.png */; };
 		D8EBE7841A6E595900F9A5A0 /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8EBE7821A6E595900F9A5A0 /* iTunesArtwork@2x.png */; };
+		D8EBE7861A6E61F600F9A5A0 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8EBE7851A6E61F600F9A5A0 /* Crashlytics.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +122,7 @@
 		D8EBE77F1A6D00E000F9A5A0 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D8EBE7811A6E595900F9A5A0 /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
 		D8EBE7821A6E595900F9A5A0 /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
+		D8EBE7851A6E61F600F9A5A0 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 				D81A64E31A68C988007086AD /* StoreKit.framework in Frameworks */,
 				D81A64E11A68C964007086AD /* libsqlite3.dylib in Frameworks */,
 				D81A64DB1A68C845007086AD /* Foundation.framework in Frameworks */,
+				D8EBE7861A6E61F600F9A5A0 /* Crashlytics.framework in Frameworks */,
 				D81A64D91A68C83B007086AD /* UIKit.framework in Frameworks */,
 				D81A64D71A68C834007086AD /* CoreGraphics.framework in Frameworks */,
 				D81A64D51A68C82F007086AD /* MapKit.framework in Frameworks */,
@@ -229,6 +232,7 @@
 		D81A64BF1A68C7B2007086AD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D8EBE7851A6E61F600F9A5A0 /* Crashlytics.framework */,
 				D81A65111A68FE73007086AD /* ParseUI.framework */,
 				D81A64E51A68D00A007086AD /* TwitterKit.framework */,
 				D81A64E61A68D00A007086AD /* TwitterKitResources.bundle */,
