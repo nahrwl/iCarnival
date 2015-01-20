@@ -77,6 +77,8 @@ static NSString *kNotificationsOnKey = @"iCarnival_kNotificationsOnKey";
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    [super viewWillAppear:animated];
+    
     PFInstallation *currentInstallation = [PFInstallation currentInstallation];
     BOOL subscribed = currentInstallation.channels.count > 0;
     if (subscribed) {
