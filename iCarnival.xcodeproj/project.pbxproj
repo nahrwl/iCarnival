@@ -36,8 +36,6 @@
 		D81A64EC1A68D26E007086AD /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = D81A64EB1A68D26E007086AD /* .gitignore */; };
 		D81A64F11A68DCB6007086AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D81A64EF1A68DCB6007086AD /* Main.storyboard */; };
 		D81A64F41A68DE22007086AD /* items.plist in Resources */ = {isa = PBXBuildFile; fileRef = D81A64F31A68DE22007086AD /* items.plist */; };
-		D81A64FB1A68DE5D007086AD /* NSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = D81A64FA1A68DE5D007086AD /* NSString+HTML.m */; };
-		D81A64FE1A68DE63007086AD /* GTMNSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = D81A64FD1A68DE63007086AD /* GTMNSString+HTML.m */; };
 		D81A65071A68DF69007086AD /* CSocialTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D81A65061A68DF69007086AD /* CSocialTableViewController.m */; };
 		D81A650F1A68FD85007086AD /* CNotificationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D81A650C1A68FD85007086AD /* CNotificationCell.m */; };
 		D81A65101A68FD85007086AD /* CNotificationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D81A650E1A68FD85007086AD /* CNotificationsViewController.m */; };
@@ -99,10 +97,6 @@
 		D81A64EB1A68D26E007086AD /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		D81A64F01A68DCB6007086AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D81A64F31A68DE22007086AD /* items.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = items.plist; sourceTree = "<group>"; };
-		D81A64F91A68DE5D007086AD /* NSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+HTML.h"; sourceTree = "<group>"; };
-		D81A64FA1A68DE5D007086AD /* NSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HTML.m"; sourceTree = "<group>"; };
-		D81A64FC1A68DE63007086AD /* GTMNSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GTMNSString+HTML.h"; sourceTree = "<group>"; };
-		D81A64FD1A68DE63007086AD /* GTMNSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GTMNSString+HTML.m"; sourceTree = "<group>"; };
 		D81A65051A68DF69007086AD /* CSocialTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSocialTableViewController.h; sourceTree = "<group>"; };
 		D81A65061A68DF69007086AD /* CSocialTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSocialTableViewController.m; sourceTree = "<group>"; };
 		D81A650B1A68FD85007086AD /* CNotificationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNotificationCell.h; sourceTree = "<group>"; };
@@ -199,7 +193,6 @@
 				D8EBE77F1A6D00E000F9A5A0 /* LaunchScreen.storyboard */,
 				D81A64BA1A68C628007086AD /* CAppDelegate.h */,
 				D81A64BB1A68C628007086AD /* CAppDelegate.m */,
-				D81A64F81A68DE4B007086AD /* Extras */,
 				D81A64F21A68DDF5007086AD /* Model */,
 				D81A64FF1A68DF1F007086AD /* View Controllers */,
 				D81A64941A68C5C8007086AD /* Supporting Files */,
@@ -269,17 +262,6 @@
 				D81A64F31A68DE22007086AD /* items.plist */,
 			);
 			name = Model;
-			sourceTree = "<group>";
-		};
-		D81A64F81A68DE4B007086AD /* Extras */ = {
-			isa = PBXGroup;
-			children = (
-				D81A64F91A68DE5D007086AD /* NSString+HTML.h */,
-				D81A64FA1A68DE5D007086AD /* NSString+HTML.m */,
-				D81A64FC1A68DE63007086AD /* GTMNSString+HTML.h */,
-				D81A64FD1A68DE63007086AD /* GTMNSString+HTML.m */,
-			);
-			name = Extras;
 			sourceTree = "<group>";
 		};
 		D81A64FF1A68DF1F007086AD /* View Controllers */ = {
@@ -476,10 +458,8 @@
 				D81A651E1A68FF67007086AD /* CMapViewController.m in Sources */,
 				D81A65071A68DF69007086AD /* CSocialTableViewController.m in Sources */,
 				D81A64BC1A68C628007086AD /* CAppDelegate.m in Sources */,
-				D81A64FE1A68DE63007086AD /* GTMNSString+HTML.m in Sources */,
 				D876F73F1A69DBB200C2FDF7 /* CAboutViewController.m in Sources */,
 				D81A65151A68FF0A007086AD /* CMapItem.m in Sources */,
-				D81A64FB1A68DE5D007086AD /* NSString+HTML.m in Sources */,
 				D81A64971A68C5C8007086AD /* main.m in Sources */,
 				D81A651C1A68FF67007086AD /* CMapPickerDetailViewController.m in Sources */,
 				D81A65101A68FD85007086AD /* CNotificationsViewController.m in Sources */,
