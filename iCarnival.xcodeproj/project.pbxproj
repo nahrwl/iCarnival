@@ -50,6 +50,8 @@
 		D876F73F1A69DBB200C2FDF7 /* CAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D876F73E1A69DBB200C2FDF7 /* CAboutViewController.m */; };
 		D8EBE77C1A6BF59700F9A5A0 /* CWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8EBE77B1A6BF59700F9A5A0 /* CWebViewController.m */; };
 		D8EBE7801A6D00E000F9A5A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8EBE77F1A6D00E000F9A5A0 /* LaunchScreen.storyboard */; };
+		D8EBE7831A6E595900F9A5A0 /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = D8EBE7811A6E595900F9A5A0 /* iTunesArtwork.png */; };
+		D8EBE7841A6E595900F9A5A0 /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8EBE7821A6E595900F9A5A0 /* iTunesArtwork@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,6 +125,8 @@
 		D8EBE77A1A6BF59700F9A5A0 /* CWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWebViewController.h; sourceTree = "<group>"; };
 		D8EBE77B1A6BF59700F9A5A0 /* CWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWebViewController.m; sourceTree = "<group>"; };
 		D8EBE77F1A6D00E000F9A5A0 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D8EBE7811A6E595900F9A5A0 /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
+		D8EBE7821A6E595900F9A5A0 /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +173,8 @@
 			isa = PBXGroup;
 			children = (
 				D81A64EB1A68D26E007086AD /* .gitignore */,
+				D8EBE7811A6E595900F9A5A0 /* iTunesArtwork.png */,
+				D8EBE7821A6E595900F9A5A0 /* iTunesArtwork@2x.png */,
 				D81A64BF1A68C7B2007086AD /* Frameworks */,
 				D81A64931A68C5C8007086AD /* iCarnival */,
 				D81A64AD1A68C5C8007086AD /* iCarnivalTests */,
@@ -427,6 +433,8 @@
 				D81A64EC1A68D26E007086AD /* .gitignore in Resources */,
 				D81A64F11A68DCB6007086AD /* Main.storyboard in Resources */,
 				D81A64E91A68D00A007086AD /* TwitterKitResources.bundle in Resources */,
+				D8EBE7841A6E595900F9A5A0 /* iTunesArtwork@2x.png in Resources */,
+				D8EBE7831A6E595900F9A5A0 /* iTunesArtwork.png in Resources */,
 				D8EBE7801A6D00E000F9A5A0 /* LaunchScreen.storyboard in Resources */,
 				D81A64A21A68C5C8007086AD /* Images.xcassets in Resources */,
 				D81A64F41A68DE22007086AD /* items.plist in Resources */,
