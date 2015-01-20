@@ -63,13 +63,13 @@ static NSString *kNotificationsOnKey = @"iCarnival_kNotificationsOnKey";
     } else if (size > 320) {
         self.width = 1;
     }
-
+    
     /*NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSNumber *onValue = [defaults objectForKey:kNotificationsOnKey];
-    if (!onValue) {
-        onValue = [NSNumber numberWithBool:NO];
-    }
-    self.notificationsOn = [onValue boolValue];*/
+     NSNumber *onValue = [defaults objectForKey:kNotificationsOnKey];
+     if (!onValue) {
+     onValue = [NSNumber numberWithBool:NO];
+     }
+     self.notificationsOn = [onValue boolValue];*/
     
     
     
@@ -157,30 +157,33 @@ static NSString *kNotificationsOnKey = @"iCarnival_kNotificationsOnKey";
         cellPadding = kCellPadding + 10.0;
     }
     
-    PFObject *obj = [self objectAtIndexPath:indexPath];
-    NSString *notification = [obj objectForKey:self.textKey];
-    if (notification)
-    {
-        NSMutableDictionary *attributes = [[NSMutableDictionary alloc] initWithCapacity:2];
-        [attributes setObject:[UIFont systemFontOfSize:18.0f] forKey:NSFontAttributeName];
-        
-        NSShadow *shadow = [[NSShadow alloc] init];
-        [shadow setShadowOffset:CGSizeMake(0, -1)];
-        [attributes setObject:shadow forKey:NSShadowAttributeName];
-        
-        NSStringDrawingContext *context = [[NSStringDrawingContext alloc] init];
-        [context setMinimumScaleFactor:0.0];
-        
-        CGRect bounds = [notification boundingRectWithSize:CGSizeMake(cellWidth, FLT_MAX) options:NSStringDrawingUsesLineFragmentOrigin attributes:attributes context:context];
-        
-        CGFloat height = bounds.size.height;
-        CGFloat roundedHeight = ceilf(height);
-        CGFloat textHeight = roundedHeight + cellPadding;
-        
-        //CGFloat textHeight = ceil(bounds.size.height) + kCellPadding;
-        if (textHeight < kMinCellHeight) textHeight = kMinCellHeight;
-        
-        return textHeight;
+    if (self.objects.count > indexPath.row) { // Bug in Parse that causes the next line to crash
+                                              // if this If statement is not here when airplane mode is on.
+        PFObject *obj = [self objectAtIndexPath:indexPath];
+        NSString *notification = [obj objectForKey:self.textKey];
+        if (notification)
+        {
+            NSMutableDictionary *attributes = [[NSMutableDictionary alloc] initWithCapacity:2];
+            [attributes setObject:[UIFont systemFontOfSize:18.0f] forKey:NSFontAttributeName];
+            
+            NSShadow *shadow = [[NSShadow alloc] init];
+            [shadow setShadowOffset:CGSizeMake(0, -1)];
+            [attributes setObject:shadow forKey:NSShadowAttributeName];
+            
+            NSStringDrawingContext *context = [[NSStringDrawingContext alloc] init];
+            [context setMinimumScaleFactor:0.0];
+            
+            CGRect bounds = [notification boundingRectWithSize:CGSizeMake(cellWidth, FLT_MAX) options:NSStringDrawingUsesLineFragmentOrigin attributes:attributes context:context];
+            
+            CGFloat height = bounds.size.height;
+            CGFloat roundedHeight = ceilf(height);
+            CGFloat textHeight = roundedHeight + cellPadding;
+            
+            //CGFloat textHeight = ceil(bounds.size.height) + kCellPadding;
+            if (textHeight < kMinCellHeight) textHeight = kMinCellHeight;
+            
+            return textHeight;
+        }
     }
     return kNormalCellHeight;
 }
