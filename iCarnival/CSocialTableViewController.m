@@ -327,7 +327,9 @@ static NSString * const kTwitterLoginTypeKey = @"iCarnival-kTwitterLoginTypeKey"
     
     // *or* Use a system webview
     NSLog(@"User tapped URL.");
-    [self displayWebViewWithURL:url];
+    //[self displayWebViewWithURL:url];
+    
+    [[UIApplication sharedApplication] openURL:url];
 }
 
 - (void)displayWebViewWithURL:(NSURL *)url
