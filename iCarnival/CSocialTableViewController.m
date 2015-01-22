@@ -340,10 +340,16 @@ static NSString * const kTwitterLoginTypeKey = @"iCarnival-kTwitterLoginTypeKey"
     webViewController.view = webView;
     webViewController.webView = webView; // just because I can and its convenient.
     
-    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"back"] style:UIBarButtonItemStylePlain target:webViewController action:@selector(back)];
-    UIBarButtonItem *forwardButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"forward"] style:UIBarButtonItemStylePlain target:webViewController action:@selector(forward)];
+    //UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"back"] style:UIBarButtonItemStylePlain target:webViewController action:@selector(back)];
+    //UIBarButtonItem *forwardButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"forward"] style:UIBarButtonItemStylePlain target:webViewController action:@selector(forward)];
     
-    webViewController.navigationItem.rightBarButtonItems = @[forwardButton, backButton];
+    //webViewController.navigationItem.rightBarButtonItems = @[forwardButton, backButton];
+    
+    UIBarButtonItem *openButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:webViewController action:@selector(open)];
+    
+    webViewController.navigationItem.rightBarButtonItem = openButton;
+    
+    webView.delegate = webViewController;
     
     [self.navigationController pushViewController:
      webViewController animated:YES];

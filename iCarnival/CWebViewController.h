@@ -8,12 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CWebViewController : UIViewController
+@interface CWebViewController : UIViewController <UIWebViewDelegate, UIActionSheetDelegate>
 
 @property (weak, nonatomic) UIWebView *webView;
 
 // Web view selectors
 - (void)back;
 - (void)forward;
+- (void)open;
 
 @end

@@ -1035,16 +1035,7 @@ Punahou School</string>
                             <outlet property="delegate" destination="ufP-yy-9jv" id="Wq9-HK-EJB"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="#PunahouCarnival" id="tKW-E9-2AL">
-                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="TDo-hW-b6N">
-                            <connections>
-                                <action selector="composeTweet" destination="ufP-yy-9jv" id="tzo-Sx-Yl2"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="composeButton" destination="TDo-hW-b6N" id="eZI-GA-mlz"/>
-                    </connections>
+                    <navigationItem key="navigationItem" title="#PunahouCarnival" id="tKW-E9-2AL"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CAF-Z1-Lvn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
