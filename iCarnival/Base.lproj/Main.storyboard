@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
-        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -323,18 +322,18 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="1601 Punahou Street" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="wvv-OD-AP9">
-                                                    <rect key="frame" x="112" y="13" width="200" height="20"/>
+                                                    <rect key="frame" x="112" y="12" width="200" height="20"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="wvv-OD-AP9" firstAttribute="bottom" secondItem="55T-ot-CJk" secondAttribute="bottomMargin" constant="-3.5" id="9yE-Qf-iL8"/>
+                                                <constraint firstItem="wvv-OD-AP9" firstAttribute="bottom" secondItem="55T-ot-CJk" secondAttribute="bottomMargin" constant="-4.5" id="9yE-Qf-iL8"/>
                                                 <constraint firstItem="wvv-OD-AP9" firstAttribute="trailing" secondItem="55T-ot-CJk" secondAttribute="trailingMargin" id="A33-AW-LJf"/>
                                                 <constraint firstItem="wvv-OD-AP9" firstAttribute="leading" secondItem="WpL-mi-lUi" secondAttribute="trailing" constant="6" id="csd-cA-1uU"/>
                                                 <constraint firstItem="WpL-mi-lUi" firstAttribute="top" secondItem="55T-ot-CJk" secondAttribute="topMargin" constant="4" id="mBm-4W-WJa"/>
-                                                <constraint firstItem="wvv-OD-AP9" firstAttribute="top" secondItem="55T-ot-CJk" secondAttribute="topMargin" constant="5" id="osA-zj-GC7"/>
+                                                <constraint firstItem="wvv-OD-AP9" firstAttribute="top" secondItem="55T-ot-CJk" secondAttribute="topMargin" constant="4" id="osA-zj-GC7"/>
                                                 <constraint firstItem="WpL-mi-lUi" firstAttribute="leading" secondItem="55T-ot-CJk" secondAttribute="leadingMargin" constant="7" id="wcl-1H-UrC"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -501,7 +500,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Pre-Carnival" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sRa-h0-g6G">
-                                                    <rect key="frame" x="15" y="12" width="91" height="15"/>
+                                                    <rect key="frame" x="15" y="12" width="91" height="14.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="91" id="M3s-lw-cvd"/>
                                                     </constraints>
@@ -510,7 +509,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Begins Jan. 29, Mon - Fri" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="De3-i4-JdD">
-                                                    <rect key="frame" x="112" y="12" width="200" height="16"/>
+                                                    <rect key="frame" x="112" y="13" width="200" height="13.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -529,18 +528,19 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="De3-i4-JdD" firstAttribute="baseline" secondItem="sRa-h0-g6G" secondAttribute="baseline" id="1Oq-Wq-TVR"/>
                                                 <constraint firstItem="pXJ-1d-IRX" firstAttribute="trailing" secondItem="usm-NN-t04" secondAttribute="trailing" id="1Oz-jW-8Gg"/>
                                                 <constraint firstItem="sRa-h0-g6G" firstAttribute="centerY" secondItem="De3-i4-JdD" secondAttribute="centerY" id="388-Cv-oU1"/>
                                                 <constraint firstItem="usm-NN-t04" firstAttribute="leading" secondItem="De3-i4-JdD" secondAttribute="leading" id="3vj-9P-sZR"/>
-                                                <constraint firstItem="De3-i4-JdD" firstAttribute="firstBaseline" secondItem="sRa-h0-g6G" secondAttribute="firstBaseline" id="DNl-OB-J7I"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="pXJ-1d-IRX" secondAttribute="bottom" constant="3.5" id="KO1-Dd-Ufm"/>
                                                 <constraint firstItem="pXJ-1d-IRX" firstAttribute="leading" secondItem="usm-NN-t04" secondAttribute="leading" id="Ki1-t6-f6J"/>
                                                 <constraint firstItem="usm-NN-t04" firstAttribute="top" secondItem="7FB-Y2-IPT" secondAttribute="topMargin" constant="21" id="Oe9-3d-Lcg"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="usm-NN-t04" secondAttribute="bottom" constant="34.5" id="QHf-cN-1dS"/>
                                                 <constraint firstItem="sRa-h0-g6G" firstAttribute="leading" secondItem="7FB-Y2-IPT" secondAttribute="leadingMargin" constant="7" id="Qjp-f3-PtG"/>
+                                                <constraint firstItem="pXJ-1d-IRX" firstAttribute="top" secondItem="usm-NN-t04" secondAttribute="bottom" constant="1" id="SFu-KC-Tmn"/>
                                                 <constraint firstItem="De3-i4-JdD" firstAttribute="trailing" secondItem="7FB-Y2-IPT" secondAttribute="trailingMargin" id="Snv-Bx-EbV"/>
-                                                <constraint firstItem="pXJ-1d-IRX" firstAttribute="top" secondItem="De3-i4-JdD" secondAttribute="bottom" constant="24" id="Vbz-5D-eYA"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="De3-i4-JdD" secondAttribute="bottom" constant="58" id="ZE2-B9-Ef2"/>
+                                                <constraint firstItem="pXJ-1d-IRX" firstAttribute="top" secondItem="De3-i4-JdD" secondAttribute="bottom" constant="25.5" id="Vbz-5D-eYA"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="De3-i4-JdD" secondAttribute="bottom" constant="59" id="ZE2-B9-Ef2"/>
                                                 <constraint firstItem="sRa-h0-g6G" firstAttribute="top" secondItem="7FB-Y2-IPT" secondAttribute="topMargin" constant="4" id="ZSq-CY-Uez"/>
                                                 <constraint firstItem="De3-i4-JdD" firstAttribute="trailing" secondItem="usm-NN-t04" secondAttribute="trailing" id="jRc-MC-zSd"/>
                                                 <constraint firstItem="De3-i4-JdD" firstAttribute="leading" secondItem="sRa-h0-g6G" secondAttribute="trailing" constant="6" id="zzU-sQ-Qre"/>
