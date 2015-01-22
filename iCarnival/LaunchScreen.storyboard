@@ -32,7 +32,7 @@
                                 </items>
                                 <color key="barTintColor" red="0.0" green="0.01332576703" blue="0.41412618890000003" alpha="1" colorSpace="calibratedRGB"/>
                             </tabBar>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="441" placeholderIntrinsicHeight="55" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="syF-cy-Rz1">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="441" placeholderIntrinsicHeight="55" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="9" preferredMaxLayoutWidth="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="syF-cy-Rz1">
                                 <rect key="frame" x="20" y="352" width="441" height="55"/>
                                 <string key="text">Copyright (c) 2015 Punahou School.
 Created by Nathan Wallace '14. All rights reserved.</string>
