@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -278,14 +279,14 @@
                                                     <color key="textColor" red="0.74022305011749268" green="0.5626874566078186" blue="0.024498587474226952" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="February 6 and 7" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2E6-O5-zNa">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="February 6 and 7" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="2E6-O5-zNa">
                                                     <rect key="frame" x="112" y="11" width="200" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="11:00 AM - 11:00 PM" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HzH-Jk-nMF">
-                                                    <rect key="frame" x="112" y="29" width="200" height="21"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="11:00 AM - 11:00 PM" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="HzH-Jk-nMF">
+                                                    <rect key="frame" x="112" y="31" width="200" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -293,8 +294,8 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Y7V-uP-bVY" firstAttribute="centerY" secondItem="2E6-O5-zNa" secondAttribute="centerY" id="2Cq-6R-6Yl"/>
-                                                <constraint firstItem="HzH-Jk-nMF" firstAttribute="top" secondItem="hH6-C9-afk" secondAttribute="topMargin" constant="21" id="6zE-vB-lZg"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="HzH-Jk-nMF" secondAttribute="bottom" constant="4" id="VDV-l0-dQp"/>
+                                                <constraint firstItem="HzH-Jk-nMF" firstAttribute="top" secondItem="hH6-C9-afk" secondAttribute="topMargin" constant="23" id="6zE-vB-lZg"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="HzH-Jk-nMF" secondAttribute="bottom" constant="1.5" id="VDV-l0-dQp"/>
                                                 <constraint firstItem="Y7V-uP-bVY" firstAttribute="leading" secondItem="hH6-C9-afk" secondAttribute="leadingMargin" constant="7" id="Zep-G4-Cbf"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="2E6-O5-zNa" secondAttribute="bottom" constant="22" id="ddQ-yq-VnQ"/>
                                                 <constraint firstItem="HzH-Jk-nMF" firstAttribute="leading" secondItem="2E6-O5-zNa" secondAttribute="leading" id="gJm-iu-9Wv"/>
@@ -321,19 +322,19 @@
                                                     <color key="textColor" red="0.7402230501" green="0.56268745659999997" blue="0.024498587469999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="1601 Punahou Street" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wvv-OD-AP9">
-                                                    <rect key="frame" x="112" y="12" width="200" height="20"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="1601 Punahou Street" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="wvv-OD-AP9">
+                                                    <rect key="frame" x="112" y="13" width="200" height="20"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="wvv-OD-AP9" firstAttribute="bottom" secondItem="55T-ot-CJk" secondAttribute="bottomMargin" constant="-5" id="9yE-Qf-iL8"/>
+                                                <constraint firstItem="wvv-OD-AP9" firstAttribute="bottom" secondItem="55T-ot-CJk" secondAttribute="bottomMargin" constant="-3.5" id="9yE-Qf-iL8"/>
                                                 <constraint firstItem="wvv-OD-AP9" firstAttribute="trailing" secondItem="55T-ot-CJk" secondAttribute="trailingMargin" id="A33-AW-LJf"/>
                                                 <constraint firstItem="wvv-OD-AP9" firstAttribute="leading" secondItem="WpL-mi-lUi" secondAttribute="trailing" constant="6" id="csd-cA-1uU"/>
                                                 <constraint firstItem="WpL-mi-lUi" firstAttribute="top" secondItem="55T-ot-CJk" secondAttribute="topMargin" constant="4" id="mBm-4W-WJa"/>
-                                                <constraint firstItem="wvv-OD-AP9" firstAttribute="top" secondItem="55T-ot-CJk" secondAttribute="topMargin" constant="4" id="osA-zj-GC7"/>
+                                                <constraint firstItem="wvv-OD-AP9" firstAttribute="top" secondItem="55T-ot-CJk" secondAttribute="topMargin" constant="5" id="osA-zj-GC7"/>
                                                 <constraint firstItem="WpL-mi-lUi" firstAttribute="leading" secondItem="55T-ot-CJk" secondAttribute="leadingMargin" constant="7" id="wcl-1H-UrC"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -352,13 +353,13 @@
                                                     <color key="textColor" red="0.7402230501" green="0.56268745659999997" blue="0.024498587469999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="1 Scrip = $0.50" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7sF-YS-krw">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="1 Scrip = $0.50" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="7sF-YS-krw">
                                                     <rect key="frame" x="112" y="11" width="200" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="1 Ride Coupon = 3 Scrip" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lex-iD-dgr">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="1 Ride Coupon = 3 Scrip" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="lex-iD-dgr">
                                                     <rect key="frame" x="112" y="29" width="200" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -398,13 +399,13 @@
                                                     <color key="textColor" red="0.7402230501" green="0.56268745659999997" blue="0.024498587469999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="February 6 and 7" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KT3-Vz-9XY">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="February 6 and 7" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="KT3-Vz-9XY">
                                                     <rect key="frame" x="112" y="11" width="200" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="2:30 PM, 5:30 PM, 8:30 PM" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z1d-5g-iwg">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="2:30 PM, 5:30 PM, 8:30 PM" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="Z1d-5g-iwg">
                                                     <rect key="frame" x="112" y="29" width="200" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -441,7 +442,7 @@
                                                     <color key="textColor" red="0.7402230501" green="0.56268745659999997" blue="0.024498587469999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Dillingham Hall" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vq0-aZ-vYE">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Dillingham Hall" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="vq0-aZ-vYE">
                                                     <rect key="frame" x="112" y="12" width="200" height="20"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -451,7 +452,7 @@
                                             <constraints>
                                                 <constraint firstItem="THM-JK-MxX" firstAttribute="leading" secondItem="IWN-Eu-ut8" secondAttribute="leadingMargin" constant="7" id="2vI-db-BaS"/>
                                                 <constraint firstItem="vq0-aZ-vYE" firstAttribute="leading" secondItem="THM-JK-MxX" secondAttribute="trailing" constant="6" id="P1L-ah-zGE"/>
-                                                <constraint firstItem="vq0-aZ-vYE" firstAttribute="bottom" secondItem="IWN-Eu-ut8" secondAttribute="bottomMargin" constant="-5" id="Rgz-SW-1ye"/>
+                                                <constraint firstItem="vq0-aZ-vYE" firstAttribute="bottom" secondItem="IWN-Eu-ut8" secondAttribute="bottomMargin" constant="-4.5" id="Rgz-SW-1ye"/>
                                                 <constraint firstItem="vq0-aZ-vYE" firstAttribute="top" secondItem="IWN-Eu-ut8" secondAttribute="topMargin" constant="4" id="ehr-hZ-XHF"/>
                                                 <constraint firstItem="THM-JK-MxX" firstAttribute="top" secondItem="IWN-Eu-ut8" secondAttribute="topMargin" constant="4" id="kGO-xl-QPG"/>
                                                 <constraint firstItem="vq0-aZ-vYE" firstAttribute="trailing" secondItem="IWN-Eu-ut8" secondAttribute="trailingMargin" id="ptH-xc-OqZ"/>
@@ -473,7 +474,7 @@
                                                     <color key="textColor" red="0.7402230501" green="0.56268745659999997" blue="0.024498587469999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="$15.00" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CgT-3q-Xlu">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="$15.00" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="CgT-3q-Xlu">
                                                     <rect key="frame" x="112" y="12" width="200" height="20"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -508,20 +509,20 @@
                                                     <color key="textColor" red="0.7402230501" green="0.56268745659999997" blue="0.024498587469999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Begins Jan. 29, Mon - Fri" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="De3-i4-JdD">
-                                                    <rect key="frame" x="112" y="12" width="200" height="14"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Begins Jan. 29, Mon - Fri" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="De3-i4-JdD">
+                                                    <rect key="frame" x="112" y="12" width="200" height="16"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="3:00 PM - 5:00 PM" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="usm-NN-t04">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="3:00 PM - 5:00 PM" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="usm-NN-t04">
                                                     <rect key="frame" x="112" y="29" width="200" height="22"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Box Office in Sullivan Admin. Building" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pXJ-1d-IRX">
-                                                    <rect key="frame" x="112" y="50" width="200" height="30"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Box Office in Sullivan Admin. Building" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="pXJ-1d-IRX">
+                                                    <rect key="frame" x="112" y="52" width="200" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -531,14 +532,15 @@
                                                 <constraint firstItem="pXJ-1d-IRX" firstAttribute="trailing" secondItem="usm-NN-t04" secondAttribute="trailing" id="1Oz-jW-8Gg"/>
                                                 <constraint firstItem="sRa-h0-g6G" firstAttribute="centerY" secondItem="De3-i4-JdD" secondAttribute="centerY" id="388-Cv-oU1"/>
                                                 <constraint firstItem="usm-NN-t04" firstAttribute="leading" secondItem="De3-i4-JdD" secondAttribute="leading" id="3vj-9P-sZR"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="pXJ-1d-IRX" secondAttribute="bottom" constant="5.5" id="KO1-Dd-Ufm"/>
+                                                <constraint firstItem="De3-i4-JdD" firstAttribute="firstBaseline" secondItem="sRa-h0-g6G" secondAttribute="firstBaseline" id="DNl-OB-J7I"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="pXJ-1d-IRX" secondAttribute="bottom" constant="3.5" id="KO1-Dd-Ufm"/>
                                                 <constraint firstItem="pXJ-1d-IRX" firstAttribute="leading" secondItem="usm-NN-t04" secondAttribute="leading" id="Ki1-t6-f6J"/>
                                                 <constraint firstItem="usm-NN-t04" firstAttribute="top" secondItem="7FB-Y2-IPT" secondAttribute="topMargin" constant="21" id="Oe9-3d-Lcg"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="usm-NN-t04" secondAttribute="bottom" constant="34.5" id="QHf-cN-1dS"/>
                                                 <constraint firstItem="sRa-h0-g6G" firstAttribute="leading" secondItem="7FB-Y2-IPT" secondAttribute="leadingMargin" constant="7" id="Qjp-f3-PtG"/>
                                                 <constraint firstItem="De3-i4-JdD" firstAttribute="trailing" secondItem="7FB-Y2-IPT" secondAttribute="trailingMargin" id="Snv-Bx-EbV"/>
                                                 <constraint firstItem="pXJ-1d-IRX" firstAttribute="top" secondItem="De3-i4-JdD" secondAttribute="bottom" constant="24" id="Vbz-5D-eYA"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="De3-i4-JdD" secondAttribute="bottom" constant="60" id="ZE2-B9-Ef2"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="De3-i4-JdD" secondAttribute="bottom" constant="58" id="ZE2-B9-Ef2"/>
                                                 <constraint firstItem="sRa-h0-g6G" firstAttribute="top" secondItem="7FB-Y2-IPT" secondAttribute="topMargin" constant="4" id="ZSq-CY-Uez"/>
                                                 <constraint firstItem="De3-i4-JdD" firstAttribute="trailing" secondItem="usm-NN-t04" secondAttribute="trailing" id="jRc-MC-zSd"/>
                                                 <constraint firstItem="De3-i4-JdD" firstAttribute="leading" secondItem="sRa-h0-g6G" secondAttribute="trailing" constant="6" id="zzU-sQ-Qre"/>
@@ -559,20 +561,20 @@
                                                     <color key="textColor" red="0.7402230501" green="0.56268745659999997" blue="0.024498587469999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="February 6 &amp; 7" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YdM-rh-iIx">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="February 6 &amp; 7" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="YdM-rh-iIx">
                                                     <rect key="frame" x="112" y="11" width="200" height="22"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="1 hour prior to show" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="atx-2k-avV">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="1 hour prior to show" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="atx-2k-avV">
                                                     <rect key="frame" x="112" y="29" width="200" height="22"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Front Lanai of Dillingham Auditorium" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="526-Xc-TmG">
-                                                    <rect key="frame" x="112" y="50" width="200" height="30"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Front Lanai of Dillingham Auditorium" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="526-Xc-TmG">
+                                                    <rect key="frame" x="112" y="52" width="200" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -581,7 +583,7 @@
                                             <constraints>
                                                 <constraint firstItem="DRD-np-t6b" firstAttribute="leading" secondItem="PCb-C1-p2Y" secondAttribute="leadingMargin" constant="7" id="2pi-2P-el7"/>
                                                 <constraint firstItem="YdM-rh-iIx" firstAttribute="leading" secondItem="DRD-np-t6b" secondAttribute="trailing" constant="6" id="I6K-ZR-uTq"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="526-Xc-TmG" secondAttribute="bottom" constant="5.5" id="Jei-YU-7VI"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="526-Xc-TmG" secondAttribute="bottom" constant="3.5" id="Jei-YU-7VI"/>
                                                 <constraint firstItem="DRD-np-t6b" firstAttribute="centerY" secondItem="YdM-rh-iIx" secondAttribute="centerY" id="PIH-XO-HaT"/>
                                                 <constraint firstItem="YdM-rh-iIx" firstAttribute="trailing" secondItem="atx-2k-avV" secondAttribute="trailing" id="TOA-Ks-Roe"/>
                                                 <constraint firstItem="526-Xc-TmG" firstAttribute="trailing" secondItem="atx-2k-avV" secondAttribute="trailing" id="UOs-68-PbB"/>
@@ -590,7 +592,7 @@
                                                 <constraint firstItem="DRD-np-t6b" firstAttribute="baseline" secondItem="YdM-rh-iIx" secondAttribute="baseline" id="fbk-bc-wAL"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="atx-2k-avV" secondAttribute="bottom" constant="35" id="j0S-Gr-eMN"/>
                                                 <constraint firstItem="526-Xc-TmG" firstAttribute="leading" secondItem="atx-2k-avV" secondAttribute="leading" id="pUd-CQ-i6S"/>
-                                                <constraint firstItem="526-Xc-TmG" firstAttribute="top" secondItem="YdM-rh-iIx" secondAttribute="bottom" constant="17" id="pqi-W6-buk"/>
+                                                <constraint firstItem="526-Xc-TmG" firstAttribute="top" secondItem="YdM-rh-iIx" secondAttribute="bottom" constant="19" id="pqi-W6-buk"/>
                                                 <constraint firstItem="atx-2k-avV" firstAttribute="top" secondItem="PCb-C1-p2Y" secondAttribute="topMargin" constant="21" id="qrp-eg-iNQ"/>
                                                 <constraint firstItem="DRD-np-t6b" firstAttribute="top" secondItem="PCb-C1-p2Y" secondAttribute="topMargin" constant="4" id="rk9-sJ-tHe"/>
                                                 <constraint firstItem="YdM-rh-iIx" firstAttribute="trailing" secondItem="PCb-C1-p2Y" secondAttribute="trailingMargin" id="xn2-Pw-u5l"/>
@@ -638,19 +640,19 @@
                                                     <color key="textColor" red="0.7402230501" green="0.56268745659999997" blue="0.024498587469999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="February 3" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="200" translatesAutoresizingMaskIntoConstraints="NO" id="8go-Px-JFf">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="February 3" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="8go-Px-JFf">
                                                     <rect key="frame" x="112" y="11" width="200" height="22"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="4:30 PM - 8:00 PM" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="200" translatesAutoresizingMaskIntoConstraints="NO" id="lB1-ud-pZe">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="4:30 PM - 8:00 PM" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="lB1-ud-pZe">
                                                     <rect key="frame" x="112" y="29" width="200" height="22"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Gates Workshop in Mamiya Science Center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="200" translatesAutoresizingMaskIntoConstraints="NO" id="bkB-YW-8rh">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Gates Workshop in Mamiya Science Center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="bkB-YW-8rh">
                                                     <rect key="frame" x="112" y="50" width="200" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -690,19 +692,19 @@
                                                     <color key="textColor" red="0.7402230501" green="0.56268745659999997" blue="0.024498587469999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="February 6 &amp; 7" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="200" translatesAutoresizingMaskIntoConstraints="NO" id="LhV-VT-adp">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="February 6 &amp; 7" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="LhV-VT-adp">
                                                     <rect key="frame" x="112" y="11" width="200" height="22"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="11:00 AM - 11:00 PM" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="200" translatesAutoresizingMaskIntoConstraints="NO" id="kt6-p7-cYP">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="11:00 AM - 11:00 PM" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="kt6-p7-cYP">
                                                     <rect key="frame" x="112" y="29" width="200" height="22"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Gates Workshop in Mamiya Science Center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="200" translatesAutoresizingMaskIntoConstraints="NO" id="dat-gj-ZHq">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Gates Workshop in Mamiya Science Center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="dat-gj-ZHq">
                                                     <rect key="frame" x="112" y="50" width="200" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -746,13 +748,13 @@
                                                     <color key="textColor" red="0.7402230501" green="0.56268745659999997" blue="0.024498587469999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="February 6 and 7" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ci7-kh-GQx">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="February 6 and 7" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="ci7-kh-GQx">
                                                     <rect key="frame" x="112" y="11" width="200" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="12:00 PM - 4:00 PM" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bSN-Ju-ccM">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="12:00 PM - 4:00 PM" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="bSN-Ju-ccM">
                                                     <rect key="frame" x="112" y="29" width="200" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -789,7 +791,7 @@
                                                     <color key="textColor" red="0.7402230501" green="0.56268745659999997" blue="0.024498587469999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Cornuelle Lecture Hall in Mamiya Science Center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NTy-ij-2TV">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Cornuelle Lecture Hall in Mamiya Science Center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="NTy-ij-2TV">
                                                     <rect key="frame" x="112" y="12" width="200" height="34.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
