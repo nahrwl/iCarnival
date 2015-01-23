@@ -319,7 +319,7 @@ static NSString * const kTwitterLoginTypeKey = @"iCarnival-kTwitterLoginTypeKey"
 - (void)tweetView:(TWTRTweetView *)tweetView
    didSelectTweet:(TWTRTweet *)tweet {
     NSLog(@"log in my app that user selected tweet");
-    [self displayWebViewWithURL:tweet.permalink];
+    //[self displayWebViewWithURL:tweet.permalink];
 }
 
 - (void)tweetView:(TWTRTweetView *)tweetView didTapURL:(NSURL *)url {
