@@ -17,6 +17,13 @@
 // My headers //
 #import "CNotificationsViewController.h"
 
+// KEYS //
+
+static NSString *kFirstLaunchKey = @"iCarnival_kFirstLaunchKey";
+
+// MACROS //
+#define SYSTEM_VERSION_LESS_THAN(v) ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedAscending)
+
 @implementation CAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -28,14 +35,35 @@
     [Parse setApplicationId:@"***REMOVED***"
                   clientKey:@"***REMOVED***"];
     
-    // Register for Push Notitications
-    UIUserNotificationType userNotificationTypes = (UIUserNotificationTypeAlert |
-                                                    UIUserNotificationTypeBadge |
-                                                    UIUserNotificationTypeSound);
-    UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:userNotificationTypes
-                                                                             categories:nil];
-    [application registerUserNotificationSettings:settings];
-    [application registerForRemoteNotifications];
+    
+    if (SYSTEM_VERSION_LESS_THAN(@"8.0")) {
+        // Register for Push Notifications in OSes less than 8.0
+        [application registerForRemoteNotificationTypes:UIRemoteNotificationTypeBadge|
+         UIRemoteNotificationTypeAlert|
+         UIRemoteNotificationTypeSound];
+    } else {
+        // Register for Push Notifications
+        UIUserNotificationType userNotificationTypes = (UIUserNotificationTypeAlert |
+                                                        UIUserNotificationTypeBadge |
+                                                        UIUserNotificationTypeSound);
+        UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:userNotificationTypes
+                                                                                 categories:nil];
+        
+        [application registerUserNotificationSettings:settings];
+        [application registerForRemoteNotifications];
+    }
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    BOOL firstLaunch = [defaults boolForKey:kFirstLaunchKey];
+    if (!firstLaunch) {  // opposite because it will be no by default
+        // Register the user for the correct channel as necessary
+        PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+        
+        [currentInstallation addUniqueObject:@"global" forKey:@"channels"];
+        [currentInstallation saveInBackground];
+        
+        [defaults setBool:YES forKey:kFirstLaunchKey];
+    }
     
     /* TWITTER FABRIC */
     

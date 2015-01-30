@@ -14,7 +14,6 @@
 
 @property (weak, nonatomic) IBOutlet UISwitch *barSwitch;
 
-- (IBAction)switchValueChanged:(id)sender;
 - (IBAction)settingsButtonTapped:(id)sender;
 
 - (void)updateNotifications;

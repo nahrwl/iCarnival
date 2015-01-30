@@ -34,7 +34,6 @@
 		D81A64E91A68D00A007086AD /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D81A64E61A68D00A007086AD /* TwitterKitResources.bundle */; };
 		D81A64EA1A68D00A007086AD /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D81A64E71A68D00A007086AD /* Fabric.framework */; };
 		D81A64EC1A68D26E007086AD /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = D81A64EB1A68D26E007086AD /* .gitignore */; };
-		D81A64F11A68DCB6007086AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D81A64EF1A68DCB6007086AD /* Main.storyboard */; };
 		D81A64F41A68DE22007086AD /* items.plist in Resources */ = {isa = PBXBuildFile; fileRef = D81A64F31A68DE22007086AD /* items.plist */; };
 		D81A65071A68DF69007086AD /* CSocialTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D81A65061A68DF69007086AD /* CSocialTableViewController.m */; };
 		D81A650F1A68FD85007086AD /* CNotificationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D81A650C1A68FD85007086AD /* CNotificationCell.m */; };
@@ -46,6 +45,7 @@
 		D81A651E1A68FF67007086AD /* CMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D81A651B1A68FF67007086AD /* CMapViewController.m */; };
 		D81A65211A690F0B007086AD /* CContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D81A65201A690F0B007086AD /* CContentViewController.m */; };
 		D876F73F1A69DBB200C2FDF7 /* CAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D876F73E1A69DBB200C2FDF7 /* CAboutViewController.m */; };
+		D8CB78D51A7B13F800C46C83 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D81A64EF1A68DCB6007086AD /* Main.storyboard */; };
 		D8EBE77C1A6BF59700F9A5A0 /* CWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8EBE77B1A6BF59700F9A5A0 /* CWebViewController.m */; };
 		D8EBE7801A6D00E000F9A5A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8EBE77F1A6D00E000F9A5A0 /* LaunchScreen.storyboard */; };
 		D8EBE7831A6E595900F9A5A0 /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = D8EBE7811A6E595900F9A5A0 /* iTunesArtwork.png */; };
@@ -417,8 +417,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8CB78D51A7B13F800C46C83 /* Main.storyboard in Resources */,
 				D81A64EC1A68D26E007086AD /* .gitignore in Resources */,
-				D81A64F11A68DCB6007086AD /* Main.storyboard in Resources */,
 				D81A64E91A68D00A007086AD /* TwitterKitResources.bundle in Resources */,
 				D8EBE7841A6E595900F9A5A0 /* iTunesArtwork@2x.png in Resources */,
 				D8EBE7831A6E595900F9A5A0 /* iTunesArtwork.png in Resources */,

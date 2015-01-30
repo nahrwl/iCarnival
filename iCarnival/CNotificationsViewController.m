@@ -14,8 +14,6 @@
 #define kMinCellHeight 75.0
 #define kNormalCellHeight 75.0
 
-static NSString *kNotificationsOnKey = @"iCarnival_kNotificationsOnKey";
-
 @interface CNotificationsViewController ()
 
 @property (nonatomic) BOOL notificationsOn;
@@ -63,30 +61,11 @@ static NSString *kNotificationsOnKey = @"iCarnival_kNotificationsOnKey";
     } else if (size > 320) {
         self.width = 1;
     }
-    
-    /*NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-     NSNumber *onValue = [defaults objectForKey:kNotificationsOnKey];
-     if (!onValue) {
-     onValue = [NSNumber numberWithBool:NO];
-     }
-     self.notificationsOn = [onValue boolValue];*/
-    
-    
-    
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
-    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
-    BOOL subscribed = currentInstallation.channels.count > 0;
-    if (subscribed) {
-        _notificationsOn = YES;
-    } else {
-        _notificationsOn = NO;
-    }
-    [self.barSwitch setOn:self.notificationsOn];
     
     if (self.needsReload) {
         // reload data
@@ -126,23 +105,15 @@ static NSString *kNotificationsOnKey = @"iCarnival_kNotificationsOnKey";
                                               otherButtonTitles:nil];
         [alert show];
     }
-    _notificationsOn = notificationsOn;
+    self.notificationsOn = notificationsOn;
 }
 
-//#pragma mark - Table view data source
-//
-//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-//{
-//    // Return the number of sections.
-//    return 1;
-//}
-//
-//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-//{
-//    // Return the number of rows in the section.
-//    return [[[CNotificationCenter sharedNotificationCenter] notificationsForChannel:@"soundbooth"] count];
-//}
-//
+// notificationsOn is a computed property
+- (BOOL)notificationsOn {
+    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+    return currentInstallation.channels.count > 0;
+}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     float cellWidth = kCellWidth;
@@ -217,14 +188,6 @@ static NSString *kNotificationsOnKey = @"iCarnival_kNotificationsOnKey";
 - (void)shouldUpdateNotifications
 {
     self.needsReload = YES;
-}
-
-- (IBAction)switchValueChanged:(id)sender {
-    if (self.barSwitch.on) {
-        self.notificationsOn = YES;
-    } else {
-        self.notificationsOn = NO;
-    }
 }
 
 - (IBAction)settingsButtonTapped:(id)sender {
