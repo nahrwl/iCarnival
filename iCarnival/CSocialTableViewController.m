@@ -19,6 +19,8 @@ static NSString * const kCellIdentifier = @"SocialCellIdentifier";
 static NSString * const kPromptTwitterLoginKey = @"iCarnival-kPromptTwitterLoginKey";
 static NSString * const kTwitterLoginTypeKey = @"iCarnival-kTwitterLoginTypeKey";
 
+static NSString * const kLastUpdatedKey = @"iCarnival-kLastUpdatedKey"; // ALSO CHANGE IN APP DELEGATE
+
 @interface CSocialTableViewController ()
 
 @property (nonatomic, strong) NSArray *tweets;
@@ -213,60 +215,76 @@ static NSString * const kTwitterLoginTypeKey = @"iCarnival-kTwitterLoginTypeKey"
 
 - (void)reloadTableViewWithTweets
 {
-    // Search for tweets
-    NSString *statusesShowEndpoint = @"https://api.twitter.com/1.1/search/tweets.json";
-    NSDictionary *params = @{@"q" : @"(Punahou AND Carnival) OR #PunahouCarnival OR @PunahouCarnival", @"result_type" : @"recent", @"count" : @"30"};
-    NSError *clientError;
-    NSURLRequest *request = [[[Twitter sharedInstance] APIClient]
-                             URLRequestWithMethod:@"GET"
-                             URL:statusesShowEndpoint
-                             parameters:params
-                             error:&clientError];
+    //Don't make API requests too fast
+    //NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    //NSDate *lastUpdated = [defaults objectForKey:kLastUpdatedKey];
     
-    __weak typeof(self) weakSelf = self;
-    if (request) {
-        [[[Twitter sharedInstance] APIClient]
-         sendTwitterRequest:request
-         completion:^(NSURLResponse *response,
-                      NSData *data,
-                      NSError *connectionError) {
-             if (data) {
-                 // NSLog(@"Data: %@",[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
-                 // handle the response data e.g.
-                 NSError *jsonError;
-                 NSDictionary *jsonDic = [NSJSONSerialization
-                                  JSONObjectWithData:data
-                                  options:0
-                                  error:&jsonError];
-                 
-                 NSArray *json = [jsonDic objectForKey:@"statuses"];
-                 
-                 // NSLog(@"Array: %@",json);
-                 
-                 if (json) {
-                     NSArray *tweets = [TWTRTweet tweetsWithJSONArray:json];
-                     if (tweets) {
-                         typeof(self) strongSelf = weakSelf;
-                         strongSelf.tweets = tweets;
-                         [strongSelf.tableView reloadData];
-                     } else {
-                         NSLog(@"Failed to convert NSArray from JSON data to Tweets.");
+    //if (lastUpdated) {
+        //if ([lastUpdated timeIntervalSinceNow] > 61.0) {
+            // Search for tweets
+            NSString *statusesShowEndpoint = @"https://api.twitter.com/1.1/lists/statuses.json";
+            NSDictionary *params = @{@"list_id" : @"194500457", @"count" : @"30", @"include_rts" : @"false"};
+            NSError *clientError;
+            NSURLRequest *request = [[[Twitter sharedInstance] APIClient]
+                                     URLRequestWithMethod:@"GET"
+                                     URL:statusesShowEndpoint
+                                     parameters:params
+                                     error:&clientError];
+            
+            __weak typeof(self) weakSelf = self;
+            if (request) {
+                [[[Twitter sharedInstance] APIClient]
+                 sendTwitterRequest:request
+                 completion:^(NSURLResponse *response,
+                              NSData *data,
+                              NSError *connectionError) {
+                     if (data) {
+                         //NSLog(@"Data: %@",[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
+                         // handle the response data e.g.
+                         NSError *jsonError;
+                         NSArray *json = [NSJSONSerialization
+                                          JSONObjectWithData:data
+                                          options:0
+                                          error:&jsonError];
+                         
+                         //NSArray *json = [jsonDic objectForKey:@"statuses"];
+                         
+                         // NSLog(@"Array: %@",json);
+                         
+                         if (json) {
+                             
+                             NSMutableArray *tweets = [[TWTRTweet tweetsWithJSONArray:json] mutableCopy];
+                             if (tweets) {
+                                 for (NSDictionary *tweet in tweets) {
+                                     NSArray *hashtags = [[tweet objectForKey:@"entities"]
+                                                          objectForKey:@"hashtags"];
+                                     
+                                 }
+                                 
+                                 
+                                 typeof(self) strongSelf = weakSelf;
+                                 strongSelf.tweets = tweets;
+                                 [strongSelf.tableView reloadData];
+                             } else {
+                                 NSLog(@"Failed to convert NSArray from JSON data to Tweets.");
+                             }
+                         } else {
+                             NSLog(@"Failed to load tweets: %@",
+                                   [jsonError localizedDescription]);
+                         }
                      }
-                 } else {
-                     NSLog(@"Failed to load tweets: %@",
-                           [jsonError localizedDescription]);
-                 }
-             }
-             else {
-                 NSLog(@"Error: %@", connectionError);
-             }
-             [self.refreshControl endRefreshing];
-         }];
-    }
-    else {
-        NSLog(@"Error: %@", clientError);
-        [self.refreshControl endRefreshing];
-    }
+                     else {
+                         NSLog(@"Error: %@", connectionError);
+                     }
+                     [self.refreshControl endRefreshing];
+                 }];
+            }
+            else {
+                NSLog(@"Error: %@", clientError);
+                [self.refreshControl endRefreshing];
+            }
+        //}
+    //}
 }
 
 - (IBAction)refreshTimeline

@@ -20,6 +20,7 @@
 // KEYS //
 
 static NSString *kFirstLaunchKey = @"iCarnival_kFirstLaunchKey";
+static NSString * const kLastUpdatedKey = @"iCarnival-kLastUpdatedKey"; // ALSO CHANGE IN SOCIAL TABLE VIEW CONTROLLER
 
 // MACROS //
 #define SYSTEM_VERSION_LESS_THAN(v) ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedAscending)
@@ -63,6 +64,7 @@ static NSString *kFirstLaunchKey = @"iCarnival_kFirstLaunchKey";
         [currentInstallation saveInBackground];
         
         [defaults setBool:YES forKey:kFirstLaunchKey];
+        [defaults setObject:[NSDate date] forKey:kLastUpdatedKey];
     }
     
     /* TWITTER FABRIC */
