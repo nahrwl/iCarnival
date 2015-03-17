@@ -33,8 +33,10 @@ static NSString * const kLastUpdatedKey = @"iCarnival-kLastUpdatedKey"; // ALSO 
     
     /* PARSE */
     
-    [Parse setApplicationId:@"***REMOVED***"
-                  clientKey:@"***REMOVED***"];
+    NSDictionary *parseKeys = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"Parse"];
+    
+    [Parse setApplicationId:parseKeys[@"appID"]
+                  clientKey:parseKeys[@"clientKey"]];
     
     
     if (SYSTEM_VERSION_LESS_THAN(@"8.0")) {

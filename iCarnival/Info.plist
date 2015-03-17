@@ -20,6 +20,13 @@
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>4.0.1a</string>
+	<key>Parse</key>
+	<dict>
+		<key>appID</key>
+		<string>***REMOVED***</string>
+		<key>clientKey</key>
+		<string>***REMOVED***</string>
+	</dict>
 	<key>Fabric</key>
 	<dict>
 		<key>APIKey</key>
