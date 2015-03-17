@@ -15,6 +15,13 @@
 #import <Fabric/Fabric.h>
 #import <TwitterKit/TwitterKit.h>
 
+// ** PARSE ** //
+#import <Parse/Parse.h>
+
+// Constants //
+#define kParseAPIMinWaitInterval (NSTimeInterval)15.0
+#define kParseAPITweetLimit 30
+
 static NSString * const kCellIdentifier = @"SocialCellIdentifier";
 static NSString * const kPromptTwitterLoginKey = @"iCarnival-kPromptTwitterLoginKey";
 static NSString * const kTwitterLoginTypeKey = @"iCarnival-kTwitterLoginTypeKey";
@@ -26,6 +33,8 @@ static NSString * const kLastUpdatedKey = @"iCarnival-kLastUpdatedKey"; // ALSO 
 @property (nonatomic, strong) NSArray *tweets;
 // Just for height calculation purposes, never rendered on screen
 @property (nonatomic, strong) TWTRTweetTableViewCell *prototypeCell;
+
+@property (nonatomic, strong) NSDate *lastParseAPICall;
 
 - (void)checkFirstTimeLogIn;
 
@@ -215,77 +224,52 @@ static NSString * const kLastUpdatedKey = @"iCarnival-kLastUpdatedKey"; // ALSO 
 
 - (void)reloadTableViewWithTweets
 {
-    //Don't make API requests too fast
-    //NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    //NSDate *lastUpdated = [defaults objectForKey:kLastUpdatedKey];
+    //If there is no record of a last api call, set an arbitrary date in the past
+    if (!self.lastParseAPICall) self.lastParseAPICall = [NSDate distantPast];
     
-    //if (lastUpdated) {
-        //if ([lastUpdated timeIntervalSinceNow] > 61.0) {
-            // Search for tweets
-            NSString *statusesShowEndpoint = @"https://api.twitter.com/1.1/lists/statuses.json";
-            NSDictionary *params = @{@"list_id" : @"194500457", @"count" : @"30", @"include_rts" : @"false"};
-            NSError *clientError;
-            NSURLRequest *request = [[[Twitter sharedInstance] APIClient]
-                                     URLRequestWithMethod:@"GET"
-                                     URL:statusesShowEndpoint
-                                     parameters:params
-                                     error:&clientError];
+    //Don't make API requests too fast
+    if ([[NSDate date] timeIntervalSinceDate:self.lastParseAPICall] > kParseAPIMinWaitInterval) {
+        
+        // Request list of approved tweet IDs from Parse
+        
+        PFQuery *query = [PFQuery queryWithClassName:@"tweets"];
+        query.limit = kParseAPITweetLimit;
+        
+        __weak typeof(self) weakSelf = self;
+        
+        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
             
-            __weak typeof(self) weakSelf = self;
-            if (request) {
-                [[[Twitter sharedInstance] APIClient]
-                 sendTwitterRequest:request
-                 completion:^(NSURLResponse *response,
-                              NSData *data,
-                              NSError *connectionError) {
-                     if (data) {
-                         //NSLog(@"Data: %@",[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
-                         // handle the response data e.g.
-                         NSError *jsonError;
-                         NSArray *json = [NSJSONSerialization
-                                          JSONObjectWithData:data
-                                          options:0
-                                          error:&jsonError];
-                         
-                         //NSArray *json = [jsonDic objectForKey:@"statuses"];
-                         
-                         // NSLog(@"Array: %@",json);
-                         
-                         if (json) {
-                             
-                             NSMutableArray *tweets = [[TWTRTweet tweetsWithJSONArray:json] mutableCopy];
-                             if (tweets) {
-                                 for (NSDictionary *tweet in tweets) {
-                                     NSArray *hashtags = [[tweet objectForKey:@"entities"]
-                                                          objectForKey:@"hashtags"];
-                                     
-                                 }
-                                 
-                                 
-                                 typeof(self) strongSelf = weakSelf;
-                                 strongSelf.tweets = tweets;
-                                 [strongSelf.tableView reloadData];
-                             } else {
-                                 NSLog(@"Failed to convert NSArray from JSON data to Tweets.");
-                             }
-                         } else {
-                             NSLog(@"Failed to load tweets: %@",
-                                   [jsonError localizedDescription]);
-                         }
-                     }
-                     else {
-                         NSLog(@"Error: %@", connectionError);
-                     }
-                     [self.refreshControl endRefreshing];
-                 }];
+            // Retrieve IDs from returned data
+            NSMutableArray *idArray = [[NSMutableArray alloc] initWithCapacity:[objects count]];
+            for (PFObject *object in objects) {
+                NSString *tid = object[@"tweetID"];
+                [idArray addObject:tid];
             }
-            else {
-                NSLog(@"Error: %@", clientError);
+            
+            // Retrieve tweets using list of IDs
+            [[[Twitter sharedInstance] APIClient] loadTweetsWithIDs:[idArray copy] completion:^(NSArray *tweets, NSError *error) {
+                if (tweets) {
+                    // Update the table view
+                    typeof(self) strongSelf = weakSelf;
+                    strongSelf.tweets = tweets;
+                    [strongSelf.tableView reloadData];
+                } else {
+                    NSLog(@"Failed to load tweet: %@", [error localizedDescription]);
+                }
+                
                 [self.refreshControl endRefreshing];
-            }
-        //}
-    //}
+            }];
+        }];
+        
+        self.lastParseAPICall = [NSDate date];
+    } else {
+        // Do nothing - don't update the table view
+        // End refreshing
+        [self.refreshControl endRefreshing];
+    }
+
 }
+
 
 - (IBAction)refreshTimeline
 {
@@ -324,8 +308,7 @@ static NSString * const kLastUpdatedKey = @"iCarnival-kLastUpdatedKey"; // ALSO 
     TWTRTweet *tweet = self.tweets[indexPath.row];
     [self.prototypeCell configureWithTweet:tweet];
     
-    return [self.prototypeCell calculatedHeightForWidth:
-            CGRectGetWidth(self.view.bounds)];
+    return [TWTRTweetTableViewCell heightForTweet:tweet width:CGRectGetWidth(self.view.bounds)];
 }
 
 # pragma mark - TWTRTweetViewDelegate Methods
