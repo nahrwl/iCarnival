@@ -44,6 +44,10 @@
 		D81A651D1A68FF67007086AD /* CMapPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D81A65191A68FF67007086AD /* CMapPickerViewController.m */; };
 		D81A651E1A68FF67007086AD /* CMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D81A651B1A68FF67007086AD /* CMapViewController.m */; };
 		D81A65211A690F0B007086AD /* CContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D81A65201A690F0B007086AD /* CContentViewController.m */; };
+		D86D31781AB8C2A60038009A /* Keys.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D86D31761AB8C2A60038009A /* Keys.xcconfig */; };
+		D86D31791AB8C2A60038009A /* Keys.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D86D31761AB8C2A60038009A /* Keys.xcconfig */; };
+		D86D317A1AB8C2A60038009A /* KeysTEMPLATE.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D86D31771AB8C2A60038009A /* KeysTEMPLATE.xcconfig */; };
+		D86D317B1AB8C2A60038009A /* KeysTEMPLATE.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D86D31771AB8C2A60038009A /* KeysTEMPLATE.xcconfig */; };
 		D876F73F1A69DBB200C2FDF7 /* CAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D876F73E1A69DBB200C2FDF7 /* CAboutViewController.m */; };
 		D8CB78D51A7B13F800C46C83 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D81A64EF1A68DCB6007086AD /* Main.storyboard */; };
 		D8EBE77C1A6BF59700F9A5A0 /* CWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8EBE77B1A6BF59700F9A5A0 /* CWebViewController.m */; };
@@ -64,7 +68,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		D813A0451AB7C50F00DEB62E /* Keys.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Keys.xcconfig; sourceTree = "<group>"; };
 		D81A64911A68C5C8007086AD /* iCarnival.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iCarnival.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D81A64951A68C5C8007086AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D81A64961A68C5C8007086AD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -116,6 +119,8 @@
 		D81A651B1A68FF67007086AD /* CMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMapViewController.m; sourceTree = "<group>"; };
 		D81A651F1A690F0B007086AD /* CContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CContentViewController.h; sourceTree = "<group>"; };
 		D81A65201A690F0B007086AD /* CContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CContentViewController.m; sourceTree = "<group>"; };
+		D86D31761AB8C2A60038009A /* Keys.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Keys.xcconfig; sourceTree = "<group>"; };
+		D86D31771AB8C2A60038009A /* KeysTEMPLATE.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = KeysTEMPLATE.xcconfig; sourceTree = "<group>"; };
 		D876F73D1A69DBB200C2FDF7 /* CAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAboutViewController.h; sourceTree = "<group>"; };
 		D876F73E1A69DBB200C2FDF7 /* CAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CAboutViewController.m; sourceTree = "<group>"; };
 		D8EBE77A1A6BF59700F9A5A0 /* CWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWebViewController.h; sourceTree = "<group>"; };
@@ -170,7 +175,8 @@
 		D81A64881A68C5C8007086AD = {
 			isa = PBXGroup;
 			children = (
-				D813A0451AB7C50F00DEB62E /* Keys.xcconfig */,
+				D86D31761AB8C2A60038009A /* Keys.xcconfig */,
+				D86D31771AB8C2A60038009A /* KeysTEMPLATE.xcconfig */,
 				D81A64EB1A68D26E007086AD /* .gitignore */,
 				D8EBE7811A6E595900F9A5A0 /* iTunesArtwork.png */,
 				D8EBE7821A6E595900F9A5A0 /* iTunesArtwork@2x.png */,
@@ -421,6 +427,8 @@
 			files = (
 				D8CB78D51A7B13F800C46C83 /* Main.storyboard in Resources */,
 				D81A64EC1A68D26E007086AD /* .gitignore in Resources */,
+				D86D317A1AB8C2A60038009A /* KeysTEMPLATE.xcconfig in Resources */,
+				D86D31781AB8C2A60038009A /* Keys.xcconfig in Resources */,
 				D81A64E91A68D00A007086AD /* TwitterKitResources.bundle in Resources */,
 				D8EBE7841A6E595900F9A5A0 /* iTunesArtwork@2x.png in Resources */,
 				D8EBE7831A6E595900F9A5A0 /* iTunesArtwork.png in Resources */,
@@ -434,6 +442,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D86D317B1AB8C2A60038009A /* KeysTEMPLATE.xcconfig in Resources */,
+				D86D31791AB8C2A60038009A /* Keys.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -451,7 +461,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "./Fabric.framework/run ***REMOVED*** ***REMOVED***";
+			shellScript = "./Fabric.framework/run $FABRIC_API_KEY $FABRIC_BUILD_SECRET";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -585,7 +595,6 @@
 		};
 		D81A64B51A68C5C8007086AD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D813A0451AB7C50F00DEB62E /* Keys.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -603,7 +612,6 @@
 		};
 		D81A64B61A68C5C8007086AD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D813A0451AB7C50F00DEB62E /* Keys.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;

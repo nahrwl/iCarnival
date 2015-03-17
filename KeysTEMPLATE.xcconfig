@@ -1,0 +1,23 @@
+//
+//  Keys.xcconfig
+//  iCarnival
+//
+//  Created by Nathan Wallace on 3/16/15.
+//  Copyright (c) 2015 Punahou School - Nathan Wallace. All rights reserved.
+//
+//  Duplicate this file and rename the duplicate to "Keys.xcconfig"
+//  This will remove the file from source control.
+//
+//  Then, Insert your API Keys for Parse and Fabric below:
+
+// Retrieve these keys from your Parse app on the Parse website
+PARSE_APP_ID =
+PARSE_CLIENT_KEY =
+
+// Should be generated when you install Fabric and attach it to this project
+FABRIC_API_KEY =
+FABRIC_BUILD_SECRET =
+
+// Generated when you install Twitter through Fabric. Find these keys at the fabric.io dashboard in the Twitter section.
+TWITTER_KIT_CONSUMER_KEY =
+TWITTER_KIT_CONSUMER_SECRET = 
