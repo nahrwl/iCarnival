@@ -4,7 +4,7 @@
 //  Copyright (c) 2014 Twitter. All rights reserved.
 //
 
-#import "DGTConstants.h"
+#import "DGTErrors.h"
 #import "TWTRAuthSession.h"
 
 /**

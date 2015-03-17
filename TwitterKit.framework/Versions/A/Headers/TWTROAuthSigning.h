@@ -33,7 +33,7 @@ FOUNDATION_EXPORT NSString * const TWTROAuthEchoAuthorizationHeaderKey;
  *  @see TWTRSession
  *  @see DGTSession
  */
-- (instancetype)initWithAuthConfig:(TWTRAuthConfig *)authConfig authSession:(id<TWTRAuthSession>)authSession __attribute((nonnull(1, 2)));
+- (instancetype)initWithAuthConfig:(TWTRAuthConfig *)authConfig authSession:(id<TWTRAuthSession>)authSession __attribute__((nonnull(1, 2)));
 
 /**
  *  Unavailable. Use `-initWithAuthConfig:authSession:` instead.
@@ -60,7 +60,7 @@ FOUNDATION_EXPORT NSString * const TWTROAuthEchoAuthorizationHeaderKey;
  *
  *  @see More information about OAuth Echo: https://dev.twitter.com/oauth/echo
  */
-- (NSDictionary *)OAuthEchoHeadersForRequestMethod:(NSString *)method URLString:(NSString *)URLString parameters:(NSDictionary *)parameters error:(NSError **)error __attribute((nonnull(1, 2)));
+- (NSDictionary *)OAuthEchoHeadersForRequestMethod:(NSString *)method URLString:(NSString *)URLString parameters:(NSDictionary *)parameters error:(NSError **)error __attribute__((nonnull(1, 2)));
 
 /**
  *  This method provides you with the OAuth signature, as well as the formed URL with the query string, to send a request to `verify_credentials`.
