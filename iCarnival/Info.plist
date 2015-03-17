@@ -19,20 +19,20 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>4.1.0a</string>
+	<string>4.1.0b</string>
 	<key>Fabric</key>
 	<dict>
 		<key>APIKey</key>
-		<string>$(FABRIC_API_KEY)</string>
+		<string>$FABRIC_API_KEY</string>
 		<key>Kits</key>
 		<array>
 			<dict>
 				<key>KitInfo</key>
 				<dict>
 					<key>consumerKey</key>
-					<string>$(TWITTER_KIT_CONSUMER_KEY)</string>
+					<string>$TWITTER_KIT_CONSUMER_KEY</string>
 					<key>consumerSecret</key>
-					<string>$(TWITTER_KIT_CONSUMER_SECRET)</string>
+					<string>$TWITTER_KIT_CONSUMER_SECRET</string>
 				</dict>
 				<key>KitName</key>
 				<string>Twitter</string>
@@ -52,9 +52,9 @@
 	<key>Parse</key>
 	<dict>
 		<key>appID</key>
-		<string>$(PARSE_APP_ID)</string>
+		<string>$PARSE_APP_ID</string>
 		<key>clientKey</key>
-		<string>$(PARSE_CLIENT_KEY)</string>
+		<string>$PARSE_CLIENT_KEY</string>
 	</dict>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
