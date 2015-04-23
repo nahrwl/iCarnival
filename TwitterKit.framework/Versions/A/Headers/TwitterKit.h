@@ -1,7 +1,7 @@
 //
 //  TwitterKit.h
 //
-//  Copyright (c) 2014 Twitter. All rights reserved.
+//  Copyright (c) 2015 Twitter. All rights reserved.
 //
 
 #if __has_feature(modules)
@@ -30,16 +30,20 @@
 #import "TWTRAPIErrorCode.h"
 #import "TWTRComposer.h"
 #import "TWTRConstants.h"
+#import "TWTRLogInButton.h"
 #import "TWTROAuthSigning.h"
 #import "TWTRSession.h"
 #import "TWTRShareEmailViewController.h"
-#import "TWTRLogInButton.h"
+#import "TWTRTimelineDataSource.h"
+#import "TWTRTimelineViewController.h"
+#import "TWTRUserTimelineDataSource.h"
+#import "TWTRSearchTimelineDataSource.h"
 #import "TWTRTweet.h"
 #import "TWTRTweetTableViewCell.h"
 #import "TWTRTweetView.h"
 #import "TWTRTweetViewDelegate.h"
 #import "TWTRUser.h"
-#import "TWTROAuthSigning.h"
+#import "Twitter.h"
 
 /**
  *  `TwitterKit` can be used as an element in the array passed to the `+[Fabric with:]`.

@@ -1,6 +1,5 @@
 //
 //  DGTUser.h
-//  TwitterKit
 //
 //  Copyright (c) 2015 Twitter. All rights reserved.
 //

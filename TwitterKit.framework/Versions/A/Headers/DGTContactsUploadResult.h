@@ -1,8 +1,6 @@
 //
 //  DGTContactsUploadResult.h
-//  TwitterKit
 //
-//  Created by Joey Carmello on 2/23/15.
 //  Copyright (c) 2015 Twitter. All rights reserved.
 //
 

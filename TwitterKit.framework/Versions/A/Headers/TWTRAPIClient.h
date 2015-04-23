@@ -1,7 +1,7 @@
 //
 //  TWTRAPIClient.h
 //
-//  Copyright (c) 2014 Twitter. All rights reserved.
+//  Copyright (c) 2015 Twitter. All rights reserved.
 //
 
 FOUNDATION_EXPORT NSString * const TWTRTweetsNotLoadedKey;

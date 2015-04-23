@@ -46,6 +46,8 @@
 /* Footnote when creating account */
 "FOOTNOTE_CREATE_ACCOUNT" = "By tapping \"Create account\" above, you agree to the <u>Terms of Service</u>, <u>Privacy Policy</u>, and <u>Cookies Policy</u> of Digits by Twitter, and that other users of %@ can discover you by phone number and/or email.";
 
+"FOOTNOTE_TOS_UPDATE" = "By tapping \"Sign in\" above, you agree to the updated <u>Terms of Service</u>, <u>Privacy Policy</u>, and <u>Cookies Policy</u> of Digits by Twitter, and that other users of %@ can discover you by phone number and/or email.";
+
 /* Text to be inserted when the name of the app is unknown in the sentence: "... other users of [app name] can discover you..." */
 "PARTIAL_FOOTNOTE_THIS_APP" = "this app";
 
