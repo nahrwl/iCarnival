@@ -44,6 +44,8 @@
 		D81A651D1A68FF67007086AD /* CMapPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D81A65191A68FF67007086AD /* CMapPickerViewController.m */; };
 		D81A651E1A68FF67007086AD /* CMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D81A651B1A68FF67007086AD /* CMapViewController.m */; };
 		D81A65211A690F0B007086AD /* CContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D81A65201A690F0B007086AD /* CContentViewController.m */; };
+		D829FDC21B8ED5D9000EB411 /* CTagboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D829FDC11B8ED5D9000EB411 /* CTagboardViewController.m */; };
+		D829FDC41B8ED693000EB411 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D829FDC31B8ED693000EB411 /* WebKit.framework */; };
 		D86D317D1AB8D6D10038009A /* Keys.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D86D317C1AB8D6D10038009A /* Keys.xcconfig */; };
 		D86D317E1AB8D6D10038009A /* Keys.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D86D317C1AB8D6D10038009A /* Keys.xcconfig */; };
 		D876F73F1A69DBB200C2FDF7 /* CAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D876F73E1A69DBB200C2FDF7 /* CAboutViewController.m */; };
@@ -117,6 +119,9 @@
 		D81A651B1A68FF67007086AD /* CMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMapViewController.m; sourceTree = "<group>"; };
 		D81A651F1A690F0B007086AD /* CContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CContentViewController.h; sourceTree = "<group>"; };
 		D81A65201A690F0B007086AD /* CContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CContentViewController.m; sourceTree = "<group>"; };
+		D829FDC01B8ED5D9000EB411 /* CTagboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTagboardViewController.h; sourceTree = "<group>"; };
+		D829FDC11B8ED5D9000EB411 /* CTagboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTagboardViewController.m; sourceTree = "<group>"; };
+		D829FDC31B8ED693000EB411 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		D86D31771AB8C2A60038009A /* KeysTEMPLATE.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = KeysTEMPLATE.xcconfig; sourceTree = "<group>"; };
 		D86D317C1AB8D6D10038009A /* Keys.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Keys.xcconfig; sourceTree = "<group>"; };
 		D876F73D1A69DBB200C2FDF7 /* CAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAboutViewController.h; sourceTree = "<group>"; };
@@ -134,6 +139,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D829FDC41B8ED693000EB411 /* WebKit.framework in Frameworks */,
 				D81A65121A68FE73007086AD /* ParseUI.framework in Frameworks */,
 				D81A64E31A68C988007086AD /* StoreKit.framework in Frameworks */,
 				D81A64E11A68C964007086AD /* libsqlite3.dylib in Frameworks */,
@@ -238,6 +244,7 @@
 		D81A64BF1A68C7B2007086AD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D829FDC31B8ED693000EB411 /* WebKit.framework */,
 				D8EBE7851A6E61F600F9A5A0 /* Crashlytics.framework */,
 				D81A65111A68FE73007086AD /* ParseUI.framework */,
 				D81A64E51A68D00A007086AD /* TwitterKit.framework */,
@@ -279,6 +286,7 @@
 			children = (
 				D81A650A1A68FD76007086AD /* Soundbooth Tab */,
 				D81A65081A68FD62007086AD /* Map Tab */,
+				D829FDBC1B8ED36B000EB411 /* Tagboard Tab */,
 				D81A65041A68DF48007086AD /* Twitter Tab */,
 				D81A65001A68DF2D007086AD /* Info Tab */,
 			);
@@ -339,6 +347,15 @@
 				D81A650E1A68FD85007086AD /* CNotificationsViewController.m */,
 			);
 			name = "Soundbooth Tab";
+			sourceTree = "<group>";
+		};
+		D829FDBC1B8ED36B000EB411 /* Tagboard Tab */ = {
+			isa = PBXGroup;
+			children = (
+				D829FDC01B8ED5D9000EB411 /* CTagboardViewController.h */,
+				D829FDC11B8ED5D9000EB411 /* CTagboardViewController.m */,
+			);
+			name = "Tagboard Tab";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -477,6 +494,7 @@
 				D81A651C1A68FF67007086AD /* CMapPickerDetailViewController.m in Sources */,
 				D81A65101A68FD85007086AD /* CNotificationsViewController.m in Sources */,
 				D81A65211A690F0B007086AD /* CContentViewController.m in Sources */,
+				D829FDC21B8ED5D9000EB411 /* CTagboardViewController.m in Sources */,
 				D81A651D1A68FF67007086AD /* CMapPickerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
