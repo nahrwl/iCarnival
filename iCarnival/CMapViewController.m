@@ -306,7 +306,7 @@ static NSString *kLongitudeKey = @"iCarnival_kLongitudeKey";
     CLLocation *newLocation = [locations lastObject];
     NSDate* eventDate = newLocation.timestamp;
     NSTimeInterval howRecent = [eventDate timeIntervalSinceNow];
-    if (abs(howRecent) < 15.0) {
+    if (fabs(howRecent) < 15.0) {
         if (!self.bestLocation) {
             self.bestLocation = newLocation;
             NSLog(@"Created bestLocation.");

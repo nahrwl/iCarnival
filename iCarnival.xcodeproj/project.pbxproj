@@ -46,8 +46,6 @@
 		D81A65211A690F0B007086AD /* CContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D81A65201A690F0B007086AD /* CContentViewController.m */; };
 		D829FDC21B8ED5D9000EB411 /* CTagboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D829FDC11B8ED5D9000EB411 /* CTagboardViewController.m */; };
 		D829FDC41B8ED693000EB411 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D829FDC31B8ED693000EB411 /* WebKit.framework */; };
-		D86D317D1AB8D6D10038009A /* Keys.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D86D317C1AB8D6D10038009A /* Keys.xcconfig */; };
-		D86D317E1AB8D6D10038009A /* Keys.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D86D317C1AB8D6D10038009A /* Keys.xcconfig */; };
 		D876F73F1A69DBB200C2FDF7 /* CAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D876F73E1A69DBB200C2FDF7 /* CAboutViewController.m */; };
 		D8CB78D51A7B13F800C46C83 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D81A64EF1A68DCB6007086AD /* Main.storyboard */; };
 		D8EBE77C1A6BF59700F9A5A0 /* CWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8EBE77B1A6BF59700F9A5A0 /* CWebViewController.m */; };
@@ -403,7 +401,7 @@
 		D81A64891A68C5C8007086AD /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0620;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Punahou School - Nathan Wallace";
 				TargetAttributes = {
 					D81A64901A68C5C8007086AD = {
@@ -442,7 +440,6 @@
 			files = (
 				D8CB78D51A7B13F800C46C83 /* Main.storyboard in Resources */,
 				D81A64EC1A68D26E007086AD /* .gitignore in Resources */,
-				D86D317D1AB8D6D10038009A /* Keys.xcconfig in Resources */,
 				D81A64E91A68D00A007086AD /* TwitterKitResources.bundle in Resources */,
 				D8EBE7841A6E595900F9A5A0 /* iTunesArtwork@2x.png in Resources */,
 				D8EBE7831A6E595900F9A5A0 /* iTunesArtwork.png in Resources */,
@@ -456,7 +453,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D86D317E1AB8D6D10038009A /* Keys.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -550,6 +546,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Gordon Wallace (XP2DYSCCNZ)";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -621,6 +618,7 @@
 				INFOPLIST_FILE = iCarnival/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = punahou.PunahouCarnival;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -639,6 +637,7 @@
 				INFOPLIST_FILE = iCarnival/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = punahou.PunahouCarnival;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -657,6 +656,7 @@
 				);
 				INFOPLIST_FILE = iCarnivalTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.punahou.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iCarnival.app/iCarnival";
 			};
@@ -672,6 +672,7 @@
 				);
 				INFOPLIST_FILE = iCarnivalTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.punahou.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iCarnival.app/iCarnival";
 			};
