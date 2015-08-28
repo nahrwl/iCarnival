@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <WebKit/WebKit.h>
 
-@interface CTagboardViewController : UIViewController
+@interface CTagboardViewController : UIViewController <WKNavigationDelegate>
+@property (weak, nonatomic) IBOutlet UIView *mainView;
 
 @end

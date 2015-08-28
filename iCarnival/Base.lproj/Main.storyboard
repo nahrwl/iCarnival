@@ -1072,9 +1072,18 @@ Punahou School</string>
                     <view key="view" contentMode="scaleToFill" id="lKC-6b-jdZ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nBA-MN-rjc">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" red="0.80700041118421051" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="#PunahouCarnival" id="net-6f-K97"/>
+                    <connections>
+                        <outlet property="mainView" destination="nBA-MN-rjc" id="eqR-25-tEI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="720-jf-dda" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

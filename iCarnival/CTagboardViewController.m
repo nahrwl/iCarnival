@@ -7,35 +7,46 @@
 //
 
 #import "CTagboardViewController.h"
-#import <WebKit/WebKit.h>
 
 @interface CTagboardViewController ()
 
-@property (strong, nonatomic) WKWebView *webView;
+@property (weak, nonatomic) WKWebView *wView;
 
 @end
 
 @implementation CTagboardViewController
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
-
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
+    
     WKWebViewConfiguration *config = [[WKWebViewConfiguration alloc] init];
     config.allowsInlineMediaPlayback = YES;
     config.mediaPlaybackRequiresUserAction = NO;
     config.mediaPlaybackAllowsAirPlay = NO;
     
-    self.webView = [[WKWebView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height) configuration:config];
-    self.webView.scrollView.contentInset = UIEdgeInsetsMake(64, 0, 50, 0);
+    WKWebView *webView = [[WKWebView alloc] initWithFrame:self.view.frame configuration:config];
+    
+    webView.navigationDelegate = self;
+    
+    //webView.scrollView.contentInset = UIEdgeInsetsMake(64, 0, 50, 0);
+    
+    webView.backgroundColor = [UIColor redColor];
+    
+    [self.mainView addSubview:webView];
+    self.wView = webView;
+    
+    
+    //[webView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[webView]|" options:NSLayoutFormatAlignAllLeft metrics:nil views:@{@"webView" : webView}]];
+    //[webView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[webView]|" options:NSLayoutFormatAlignAllLeft metrics:nil views:@{@"webView" : webView}]];
+    
+    
 }
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    
-    NSURL *url = [NSURL URLWithString:@"http://www.cnn.com"];
+- (void)viewWillAppear:(BOOL)animated {
+    NSURL *url = [NSURL URLWithString:@"http://www.google.com/"];
     if (url) {
-        [self.webView loadRequest:[NSURLRequest requestWithURL:url]];
+        [self.wView loadRequest:[NSURLRequest requestWithURL:url]];
     }
 }
 
