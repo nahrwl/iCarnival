@@ -23,7 +23,7 @@
 	<key>Fabric</key>
 	<dict>
 		<key>APIKey</key>
-		<string>$FABRIC_API_KEY</string>
+		<string>***REMOVED***</string>
 		<key>Kits</key>
 		<array>
 			<dict>
@@ -42,6 +42,17 @@
 				<dict/>
 				<key>KitName</key>
 				<string>Crashlytics</string>
+			</dict>
+			<dict>
+				<key>KitInfo</key>
+				<dict>
+					<key>consumerKey</key>
+					<string>***REMOVED***</string>
+					<key>consumerSecret</key>
+					<string>***REMOVED***</string>
+				</dict>
+				<key>KitName</key>
+				<string>Digits</string>
 			</dict>
 		</array>
 	</dict>
