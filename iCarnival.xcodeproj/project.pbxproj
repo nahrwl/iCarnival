@@ -44,6 +44,9 @@
 		D81A651D1A68FF67007086AD /* CMapPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D81A65191A68FF67007086AD /* CMapPickerViewController.m */; };
 		D81A651E1A68FF67007086AD /* CMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D81A651B1A68FF67007086AD /* CMapViewController.m */; };
 		D81A65211A690F0B007086AD /* CContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D81A65201A690F0B007086AD /* CContentViewController.m */; };
+		D82403C81C2D473500D6758F /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D82403C51C2D473500D6758F /* TwitterCore.framework */; };
+		D82403C91C2D473500D6758F /* DigitsKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D82403C61C2D473500D6758F /* DigitsKit.framework */; };
+		D82403CA1C2D473500D6758F /* DigitsKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D82403C71C2D473500D6758F /* DigitsKitResources.bundle */; };
 		D86D317D1AB8D6D10038009A /* Keys.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D86D317C1AB8D6D10038009A /* Keys.xcconfig */; };
 		D86D317E1AB8D6D10038009A /* Keys.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D86D317C1AB8D6D10038009A /* Keys.xcconfig */; };
 		D876F73F1A69DBB200C2FDF7 /* CAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D876F73E1A69DBB200C2FDF7 /* CAboutViewController.m */; };
@@ -117,6 +120,9 @@
 		D81A651B1A68FF67007086AD /* CMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMapViewController.m; sourceTree = "<group>"; };
 		D81A651F1A690F0B007086AD /* CContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CContentViewController.h; sourceTree = "<group>"; };
 		D81A65201A690F0B007086AD /* CContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CContentViewController.m; sourceTree = "<group>"; };
+		D82403C51C2D473500D6758F /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterCore.framework; sourceTree = "<group>"; };
+		D82403C61C2D473500D6758F /* DigitsKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DigitsKit.framework; sourceTree = "<group>"; };
+		D82403C71C2D473500D6758F /* DigitsKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = DigitsKitResources.bundle; path = DigitsKit.framework/Versions/A/Resources/DigitsKitResources.bundle; sourceTree = "<group>"; };
 		D86D31771AB8C2A60038009A /* KeysTEMPLATE.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = KeysTEMPLATE.xcconfig; sourceTree = "<group>"; };
 		D86D317C1AB8D6D10038009A /* Keys.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Keys.xcconfig; sourceTree = "<group>"; };
 		D876F73D1A69DBB200C2FDF7 /* CAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAboutViewController.h; sourceTree = "<group>"; };
@@ -143,10 +149,12 @@
 				D81A64D71A68C834007086AD /* CoreGraphics.framework in Frameworks */,
 				D81A64D51A68C82F007086AD /* MapKit.framework in Frameworks */,
 				D81A64D31A68C826007086AD /* Twitter.framework in Frameworks */,
+				D82403C91C2D473500D6758F /* DigitsKit.framework in Frameworks */,
 				D81A64D11A68C819007086AD /* Accounts.framework in Frameworks */,
 				D81A64DF1A68C873007086AD /* Parse.framework in Frameworks */,
 				D81A64CF1A68C813007086AD /* Social.framework in Frameworks */,
 				D81A64CD1A68C80B007086AD /* CoreLocation.framework in Frameworks */,
+				D82403C81C2D473500D6758F /* TwitterCore.framework in Frameworks */,
 				D81A64E81A68D00A007086AD /* TwitterKit.framework in Frameworks */,
 				D81A64CB1A68C7FC007086AD /* AudioToolbox.framework in Frameworks */,
 				D81A64C91A68C7F3007086AD /* CFNetwork.framework in Frameworks */,
@@ -238,6 +246,9 @@
 		D81A64BF1A68C7B2007086AD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D82403C51C2D473500D6758F /* TwitterCore.framework */,
+				D82403C61C2D473500D6758F /* DigitsKit.framework */,
+				D82403C71C2D473500D6758F /* DigitsKitResources.bundle */,
 				D8EBE7851A6E61F600F9A5A0 /* Crashlytics.framework */,
 				D81A65111A68FE73007086AD /* ParseUI.framework */,
 				D81A64E51A68D00A007086AD /* TwitterKit.framework */,
@@ -423,6 +434,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D82403CA1C2D473500D6758F /* DigitsKitResources.bundle in Resources */,
 				D8CB78D51A7B13F800C46C83 /* Main.storyboard in Resources */,
 				D81A64EC1A68D26E007086AD /* .gitignore in Resources */,
 				D86D317D1AB8D6D10038009A /* Keys.xcconfig in Resources */,
