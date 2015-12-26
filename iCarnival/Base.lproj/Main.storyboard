@@ -233,11 +233,11 @@
             </objects>
             <point key="canvasLocation" x="2555" y="180"/>
         </scene>
-        <!--Information-->
+        <!--Info-->
         <scene sceneID="8PS-nv-bkc">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="C1X-Xw-kw6" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Information" image="info" id="T0S-0k-gTO"/>
+                    <tabBarItem key="tabBarItem" title="Info" image="info" id="T0S-0k-gTO"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="eEt-M1-2Jh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -253,7 +253,7 @@
             </objects>
             <point key="canvasLocation" x="628" y="-782"/>
         </scene>
-        <!--Information-->
+        <!--Info-->
         <scene sceneID="qK2-ac-2IX">
             <objects>
                 <tableViewController id="I6V-PK-Nzw" customClass="CContentViewController" sceneMemberID="viewController">
@@ -842,8 +842,8 @@
                             <outlet property="delegate" destination="I6V-PK-Nzw" id="oiu-8G-TTa"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Information" id="04W-yC-4Iy">
-                        <barButtonItem key="rightBarButtonItem" image="about" id="MgS-mV-0MQ">
+                    <navigationItem key="navigationItem" title="Info" id="04W-yC-4Iy">
+                        <barButtonItem key="rightBarButtonItem" title="About" id="MgS-mV-0MQ">
                             <connections>
                                 <segue destination="FGB-Kw-nGx" kind="modal" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="eh6-lg-x6a"/>
                             </connections>
@@ -1125,7 +1125,6 @@ Punahou School</string>
         </scene>
     </scenes>
     <resources>
-        <image name="about" width="22" height="22"/>
         <image name="cars" width="22" height="22"/>
         <image name="info" width="25" height="25"/>
         <image name="map" width="25" height="25"/>
