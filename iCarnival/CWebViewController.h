@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface CWebViewController : UIViewController <UIActionSheetDelegate>
+- (IBAction)segmentedControlChanged:(UISegmentedControl *)sender;
 
 // Web view selectors
 - (void)back;
