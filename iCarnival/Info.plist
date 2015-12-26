@@ -28,7 +28,7 @@
 	<key>Fabric</key>
 	<dict>
 		<key>APIKey</key>
-		<string>***REMOVED***</string>
+		<string>d5238b829a7c1bdad9a30cd84c04fcb3f07a4ff8</string>
 		<key>Kits</key>
 		<array>
 			<dict>
@@ -52,9 +52,9 @@
 				<key>KitInfo</key>
 				<dict>
 					<key>consumerKey</key>
-					<string>***REMOVED***</string>
+					<string>989fOq0HcNSyB8DoLTPxYZlrs</string>
 					<key>consumerSecret</key>
-					<string>***REMOVED***</string>
+					<string>SXPD8DJsY0qWFITVWQt7xXGYdZhVJgdZDCECElx1Cv6Q0zRX28</string>
 				</dict>
 				<key>KitName</key>
 				<string>Digits</string>
