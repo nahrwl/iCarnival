@@ -1045,31 +1045,68 @@ Punahou School</string>
                         <color key="tintColor" red="0.72537364130000004" green="0.63171794619999999" blue="0.278071603" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="ufP-yy-9jv" kind="relationship" relationship="rootViewController" id="6Rb-ya-Mrb"/>
+                        <segue destination="KZE-Lq-ZHh" kind="relationship" relationship="rootViewController" id="QQG-Ua-yX2"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NpP-YD-mmE" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="628" y="1604"/>
         </scene>
-        <!--#PunahouCarnival-->
-        <scene sceneID="u6x-Tl-Rzo">
+        <!--Web View Controller-->
+        <scene sceneID="cJI-Bk-Wwb">
             <objects>
-                <tableViewController id="ufP-yy-9jv" customClass="CSocialTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Yl0-a4-Rfq">
+                <viewController id="KZE-Lq-ZHh" customClass="CWebViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uF9-xi-Ynw"/>
+                        <viewControllerLayoutGuide type="bottom" id="1G3-3J-6tC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="V8y-ZL-vc7">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <connections>
-                            <outlet property="dataSource" destination="ufP-yy-9jv" id="1Ax-9u-wgy"/>
-                            <outlet property="delegate" destination="ufP-yy-9jv" id="Wq9-HK-EJB"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="#PunahouCarnival" id="tKW-E9-2AL"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="CAF-Z1-Lvn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="YbP-R1-wLR">
+                                <rect key="frame" x="142" y="242" width="37" height="37"/>
+                                <color key="color" red="0.72537364130000004" green="0.63171794619999999" blue="0.278071603" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading #PunahouCarnival" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sKK-0c-jMR">
+                                <rect key="frame" x="55" y="305" width="210" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="sKK-0c-jMR" firstAttribute="centerX" secondItem="V8y-ZL-vc7" secondAttribute="centerX" id="U7n-MX-Dhy"/>
+                            <constraint firstItem="YbP-R1-wLR" firstAttribute="centerX" secondItem="V8y-ZL-vc7" secondAttribute="centerX" id="eBh-aR-Jnj"/>
+                            <constraint firstItem="YbP-R1-wLR" firstAttribute="centerY" secondItem="V8y-ZL-vc7" secondAttribute="centerY" constant="-23" id="o5P-ye-Xjz"/>
+                            <constraint firstItem="sKK-0c-jMR" firstAttribute="top" secondItem="YbP-R1-wLR" secondAttribute="bottom" constant="26" id="q20-bM-UWK"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="d0C-6B-alb">
+                        <nil key="title"/>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="SMj-KH-q7A">
+                            <rect key="frame" x="46.5" y="6.5" width="227" height="31"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="Featured"/>
+                                <segment title="Latest"/>
+                            </segments>
+                            <color key="tintColor" red="0.72537364130000004" green="0.63171794619999999" blue="0.278071603" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="segmentedControlChanged:" destination="KZE-Lq-ZHh" eventType="valueChanged" id="MZl-DS-oQb"/>
+                            </connections>
+                        </segmentedControl>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="activityIndicator" destination="YbP-R1-wLR" id="LTi-Iv-tlW"/>
+                        <outlet property="loadingLabel" destination="sKK-0c-jMR" id="AyO-b4-8i5"/>
+                        <outlet property="segmentedControl" destination="SMj-KH-q7A" id="pFg-tA-MCg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3MN-bs-det" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1119" y="1604"/>
+            <point key="canvasLocation" x="1154" y="1604"/>
         </scene>
         <!--Sound Booth-->
         <scene sceneID="sNE-4Q-VdA">
