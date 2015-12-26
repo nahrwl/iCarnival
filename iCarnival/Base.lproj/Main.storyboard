@@ -1059,7 +1059,25 @@ Punahou School</string>
                     <view key="view" contentMode="scaleToFill" id="V8y-ZL-vc7">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="YbP-R1-wLR">
+                                <rect key="frame" x="142" y="242" width="37" height="37"/>
+                                <color key="color" red="0.72537364130000004" green="0.63171794619999999" blue="0.278071603" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading #PunahouCarnival" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sKK-0c-jMR">
+                                <rect key="frame" x="55" y="305" width="210" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="sKK-0c-jMR" firstAttribute="centerX" secondItem="V8y-ZL-vc7" secondAttribute="centerX" id="U7n-MX-Dhy"/>
+                            <constraint firstItem="YbP-R1-wLR" firstAttribute="centerX" secondItem="V8y-ZL-vc7" secondAttribute="centerX" id="eBh-aR-Jnj"/>
+                            <constraint firstItem="YbP-R1-wLR" firstAttribute="centerY" secondItem="V8y-ZL-vc7" secondAttribute="centerY" constant="-23" id="o5P-ye-Xjz"/>
+                            <constraint firstItem="sKK-0c-jMR" firstAttribute="top" secondItem="YbP-R1-wLR" secondAttribute="bottom" constant="26" id="q20-bM-UWK"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="d0C-6B-alb">
                         <nil key="title"/>
@@ -1076,6 +1094,11 @@ Punahou School</string>
                             </connections>
                         </segmentedControl>
                     </navigationItem>
+                    <connections>
+                        <outlet property="activityIndicator" destination="YbP-R1-wLR" id="LTi-Iv-tlW"/>
+                        <outlet property="loadingLabel" destination="sKK-0c-jMR" id="AyO-b4-8i5"/>
+                        <outlet property="segmentedControl" destination="SMj-KH-q7A" id="pFg-tA-MCg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3MN-bs-det" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
