@@ -46,7 +46,6 @@
 		D82403C91C2D473500D6758F /* DigitsKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D82403C61C2D473500D6758F /* DigitsKit.framework */; };
 		D82403CA1C2D473500D6758F /* DigitsKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D82403C71C2D473500D6758F /* DigitsKitResources.bundle */; };
 		D82403CC1C2D53F400D6758F /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D82403CB1C2D53F400D6758F /* WebKit.framework */; };
-		D86D317D1AB8D6D10038009A /* Keys.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D86D317C1AB8D6D10038009A /* Keys.xcconfig */; };
 		D876F73F1A69DBB200C2FDF7 /* CAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D876F73E1A69DBB200C2FDF7 /* CAboutViewController.m */; };
 		D8CB78D51A7B13F800C46C83 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D81A64EF1A68DCB6007086AD /* Main.storyboard */; };
 		D8EBE77C1A6BF59700F9A5A0 /* CWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8EBE77B1A6BF59700F9A5A0 /* CWebViewController.m */; };
@@ -356,7 +355,7 @@
 				D81A648D1A68C5C8007086AD /* Sources */,
 				D81A648E1A68C5C8007086AD /* Frameworks */,
 				D81A648F1A68C5C8007086AD /* Resources */,
-				D81A64E41A68CF37007086AD /* ShellScript */,
+				D81A64E41A68CF37007086AD /* Run Script */,
 			);
 			buildRules = (
 			);
@@ -459,13 +458,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		D81A64E41A68CF37007086AD /* ShellScript */ = {
+		D81A64E41A68CF37007086AD /* Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = "Run Script";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
