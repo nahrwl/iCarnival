@@ -13,6 +13,9 @@
 
 @property (strong, nonatomic) WKWebView *wv;
 
+@property (nonatomic) CGPoint featuredOffset;
+@property (nonatomic) CGPoint latestOffset;
+
 @end
 
 @implementation CWebViewController
@@ -20,6 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.segmentedControl.hidden = YES;
     
     WKWebViewConfiguration *config = [[WKWebViewConfiguration alloc] init];
     //config.applicationNameForUserAgent = @"iCarnival Punahou Carnival";
@@ -36,7 +40,14 @@
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[wv]|" options:NSLayoutFormatAlignAllCenterX metrics:nil views:@{@"wv":self.wv}]];
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[wv]|" options:NSLayoutFormatAlignAllCenterX metrics:nil views:@{@"wv":self.wv}]];
     
-    //[self.wv.scrollView setContentInset:UIEdgeInsetsMake(20.0, 0, 50.0, 0)];
+    [self.wv.scrollView setContentInset:UIEdgeInsetsMake(64.0, 0, 50.0, 0)];
+    [self.wv.scrollView setScrollIndicatorInsets:UIEdgeInsetsMake(64.0, 0, 50.0, 0)];
+    
+    self.wv.scrollView.maximumZoomScale = 1.0;
+    self.wv.scrollView.minimumZoomScale = 1.0;
+    
+    self.featuredOffset = CGPointMake(0.0, -64.0);
+    self.latestOffset = CGPointMake(0.0, -64.0);;
     
     [self.wv loadRequest:[NSURLRequest
                           requestWithURL:[NSURL URLWithString:@"https://tagboard.com/punahoucarnival/208630"]]];
@@ -44,22 +55,36 @@
 }
 
 - (IBAction)segmentedControlChanged:(UISegmentedControl *)sender {
-    BOOL latest = sender.selectedSegmentIndex == 0 ? false : true;
+    BOOL latest = sender.selectedSegmentIndex == 0 ? NO : YES;
     [self switchToLatest:latest];
 }
 
 - (void)switchToLatest:(BOOL)latest {
-    NSString *idname;
-    if (latest) {
-        idname = @"latest";
-    } else {
-        idname = @"featured";
-    }
-    [self.wv evaluateJavaScript: [NSString stringWithFormat:@"this.tgb.state.switchState(jQuery('#%@-tab'));",idname]
-              completionHandler:^(id _Nullable obj, NSError * _Nullable error) {
-                  NSLog(@"Switched to latest.");
-              }];
-    
+    [UIView animateWithDuration:0.5 animations:^{
+        self.wv.layer.opacity = 0.0;
+    } completion:^(BOOL finished) {
+        NSString *idname;
+        if (latest) {
+            idname = @"latest";
+            
+            self.featuredOffset = self.wv.scrollView.contentOffset;
+            [self.wv.scrollView setContentOffset:self.latestOffset];
+            
+        } else {
+            idname = @"featured";
+            
+            self.latestOffset = self.wv.scrollView.contentOffset;
+            [self.wv.scrollView setContentOffset:self.featuredOffset];
+        }
+        [self.wv evaluateJavaScript: [NSString stringWithFormat:@"this.tgb.state.switchState(jQuery('#%@-tab'));",idname]
+                  completionHandler:^(id _Nullable obj, NSError * _Nullable error) {
+                      NSLog(@"Switched to latest.");
+                      
+                      [UIView animateWithDuration:0.5 delay:0.35 options:UIViewAnimationOptionTransitionNone animations:^{
+                          self.wv.layer.opacity = 1.0;
+                      } completion:nil];
+                  }];
+    }];
 }
 
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation {
@@ -86,7 +111,31 @@
 - (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message {
     NSLog(@"JS console: %@",message.body);
     if ([message.body isEqualToString:@"complete"]) {
+        
+        // Animate out the loading views
+        [UIView animateWithDuration:1.0 animations:^{
+            self.activityIndicator.layer.opacity = 0.0;
+            self.loadingLabel.layer.opacity = 0.0;
+        } completion:^(BOOL finished) {
+            [self.activityIndicator stopAnimating];
+            self.loadingLabel.hidden = YES;
+        }];
+        
+        
+        // Animate the web view and segmented control in,
         self.wv.hidden = NO;
+        self.wv.layer.opacity = 0.0;
+        
+        self.segmentedControl.layer.opacity = 0.0;
+        self.segmentedControl.userInteractionEnabled = NO;
+        self.segmentedControl.hidden = NO;
+
+        [UIView animateWithDuration:1.0 delay:0.5 options:UIViewAnimationOptionTransitionNone animations:^{
+            self.segmentedControl.layer.opacity = 1.0;
+            self.wv.layer.opacity = 1.0;
+        } completion:^(BOOL finished) {
+            self.segmentedControl.userInteractionEnabled = YES;
+        }];
     }
 }
 
