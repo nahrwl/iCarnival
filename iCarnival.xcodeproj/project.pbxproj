@@ -35,7 +35,6 @@
 		D81A64EA1A68D00A007086AD /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D81A64E71A68D00A007086AD /* Fabric.framework */; };
 		D81A64EC1A68D26E007086AD /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = D81A64EB1A68D26E007086AD /* .gitignore */; };
 		D81A64F41A68DE22007086AD /* items.plist in Resources */ = {isa = PBXBuildFile; fileRef = D81A64F31A68DE22007086AD /* items.plist */; };
-		D81A65071A68DF69007086AD /* CSocialTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D81A65061A68DF69007086AD /* CSocialTableViewController.m */; };
 		D81A650F1A68FD85007086AD /* CNotificationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D81A650C1A68FD85007086AD /* CNotificationCell.m */; };
 		D81A65101A68FD85007086AD /* CNotificationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D81A650E1A68FD85007086AD /* CNotificationsViewController.m */; };
 		D81A65121A68FE73007086AD /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D81A65111A68FE73007086AD /* ParseUI.framework */; };
@@ -47,6 +46,7 @@
 		D82403C81C2D473500D6758F /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D82403C51C2D473500D6758F /* TwitterCore.framework */; };
 		D82403C91C2D473500D6758F /* DigitsKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D82403C61C2D473500D6758F /* DigitsKit.framework */; };
 		D82403CA1C2D473500D6758F /* DigitsKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D82403C71C2D473500D6758F /* DigitsKitResources.bundle */; };
+		D82403CC1C2D53F400D6758F /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D82403CB1C2D53F400D6758F /* WebKit.framework */; };
 		D86D317D1AB8D6D10038009A /* Keys.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D86D317C1AB8D6D10038009A /* Keys.xcconfig */; };
 		D86D317E1AB8D6D10038009A /* Keys.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D86D317C1AB8D6D10038009A /* Keys.xcconfig */; };
 		D876F73F1A69DBB200C2FDF7 /* CAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D876F73E1A69DBB200C2FDF7 /* CAboutViewController.m */; };
@@ -103,8 +103,6 @@
 		D81A64EB1A68D26E007086AD /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		D81A64F01A68DCB6007086AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D81A64F31A68DE22007086AD /* items.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = items.plist; sourceTree = "<group>"; };
-		D81A65051A68DF69007086AD /* CSocialTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSocialTableViewController.h; sourceTree = "<group>"; };
-		D81A65061A68DF69007086AD /* CSocialTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSocialTableViewController.m; sourceTree = "<group>"; };
 		D81A650B1A68FD85007086AD /* CNotificationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNotificationCell.h; sourceTree = "<group>"; };
 		D81A650C1A68FD85007086AD /* CNotificationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNotificationCell.m; sourceTree = "<group>"; };
 		D81A650D1A68FD85007086AD /* CNotificationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNotificationsViewController.h; sourceTree = "<group>"; };
@@ -123,6 +121,7 @@
 		D82403C51C2D473500D6758F /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterCore.framework; sourceTree = "<group>"; };
 		D82403C61C2D473500D6758F /* DigitsKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DigitsKit.framework; sourceTree = "<group>"; };
 		D82403C71C2D473500D6758F /* DigitsKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = DigitsKitResources.bundle; path = DigitsKit.framework/Versions/A/Resources/DigitsKitResources.bundle; sourceTree = "<group>"; };
+		D82403CB1C2D53F400D6758F /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		D86D31771AB8C2A60038009A /* KeysTEMPLATE.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = KeysTEMPLATE.xcconfig; sourceTree = "<group>"; };
 		D86D317C1AB8D6D10038009A /* Keys.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Keys.xcconfig; sourceTree = "<group>"; };
 		D876F73D1A69DBB200C2FDF7 /* CAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAboutViewController.h; sourceTree = "<group>"; };
@@ -140,6 +139,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D82403CC1C2D53F400D6758F /* WebKit.framework in Frameworks */,
 				D81A65121A68FE73007086AD /* ParseUI.framework in Frameworks */,
 				D81A64E31A68C988007086AD /* StoreKit.framework in Frameworks */,
 				D81A64E11A68C964007086AD /* libsqlite3.dylib in Frameworks */,
@@ -246,6 +246,7 @@
 		D81A64BF1A68C7B2007086AD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D82403CB1C2D53F400D6758F /* WebKit.framework */,
 				D82403C51C2D473500D6758F /* TwitterCore.framework */,
 				D82403C61C2D473500D6758F /* DigitsKit.framework */,
 				D82403C71C2D473500D6758F /* DigitsKitResources.bundle */,
@@ -290,7 +291,7 @@
 			children = (
 				D81A650A1A68FD76007086AD /* Soundbooth Tab */,
 				D81A65081A68FD62007086AD /* Map Tab */,
-				D81A65041A68DF48007086AD /* Twitter Tab */,
+				D81A65041A68DF48007086AD /* Social Tab */,
 				D81A65001A68DF2D007086AD /* Info Tab */,
 			);
 			name = "View Controllers";
@@ -307,15 +308,13 @@
 			name = "Info Tab";
 			sourceTree = "<group>";
 		};
-		D81A65041A68DF48007086AD /* Twitter Tab */ = {
+		D81A65041A68DF48007086AD /* Social Tab */ = {
 			isa = PBXGroup;
 			children = (
-				D81A65051A68DF69007086AD /* CSocialTableViewController.h */,
-				D81A65061A68DF69007086AD /* CSocialTableViewController.m */,
 				D8EBE77A1A6BF59700F9A5A0 /* CWebViewController.h */,
 				D8EBE77B1A6BF59700F9A5A0 /* CWebViewController.m */,
 			);
-			name = "Twitter Tab";
+			name = "Social Tab";
 			sourceTree = "<group>";
 		};
 		D81A65081A68FD62007086AD /* Map Tab */ = {
@@ -481,7 +480,6 @@
 				D8EBE77C1A6BF59700F9A5A0 /* CWebViewController.m in Sources */,
 				D81A650F1A68FD85007086AD /* CNotificationCell.m in Sources */,
 				D81A651E1A68FF67007086AD /* CMapViewController.m in Sources */,
-				D81A65071A68DF69007086AD /* CSocialTableViewController.m in Sources */,
 				D81A64BC1A68C628007086AD /* CAppDelegate.m in Sources */,
 				D876F73F1A69DBB200C2FDF7 /* CAboutViewController.m in Sources */,
 				D81A65151A68FF0A007086AD /* CMapItem.m in Sources */,
