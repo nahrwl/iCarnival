@@ -16,8 +16,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <color key="tintColor" red="0.72537364130000004" green="0.63171794619999999" blue="0.278071603" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="barTintColor" red="0.0" green="0.01332576703" blue="0.41412618890000003" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="selectedImageTintColor" red="0.72537364130000004" green="0.63171794619999999" blue="0.278071603" alpha="1" colorSpace="calibratedRGB"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="0.0" green="0.01332576703" blue="0.41412618890000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </tabBar>
                     <connections>
                         <segue destination="ac2-Pl-96q" kind="relationship" relationship="viewControllers" id="35R-Bd-XFa"/>
@@ -237,7 +241,7 @@
         <scene sceneID="8PS-nv-bkc">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="C1X-Xw-kw6" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Info" image="info" id="T0S-0k-gTO"/>
+                    <tabBarItem key="tabBarItem" title="Info" image="info" selectedImage="info_filled" id="T0S-0k-gTO"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="eEt-M1-2Jh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -998,7 +1002,7 @@ Punahou School</string>
         <scene sceneID="nvo-uz-00E">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DXb-DS-u4x" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Map" image="map" id="TcF-X2-ymV"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="map" selectedImage="map_filled" id="TcF-X2-ymV"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Wd9-RW-2tk">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1035,7 +1039,7 @@ Punahou School</string>
         <scene sceneID="6b1-94-6mq">
             <objects>
                 <navigationController id="HRy-y3-PVe" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Social" image="speech" id="BTW-fG-Ufu"/>
+                    <tabBarItem key="tabBarItem" title="Social" image="speech" selectedImage="speech_filled" id="BTW-fG-Ufu"/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="T0z-lx-o5E">
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.72537364130000004" green="0.63171794619999999" blue="0.278071603" alpha="1" colorSpace="calibratedRGB"/>
@@ -1108,7 +1112,7 @@ Punahou School</string>
         <scene sceneID="sNE-4Q-VdA">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ac2-Pl-96q" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Sound Booth" image="megaphone" id="DuE-0N-cwj"/>
+                    <tabBarItem key="tabBarItem" title="Sound Booth" image="megaphone" selectedImage="megaphone_filled" id="DuE-0N-cwj"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="NIC-nA-5V9">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1127,10 +1131,14 @@ Punahou School</string>
     <resources>
         <image name="cars" width="22" height="22"/>
         <image name="info" width="25" height="25"/>
+        <image name="info_filled" width="25" height="25"/>
         <image name="map" width="25" height="25"/>
+        <image name="map_filled" width="25" height="25"/>
         <image name="megaphone" width="25" height="25"/>
+        <image name="megaphone_filled" width="25" height="25"/>
         <image name="settings" width="22" height="22"/>
         <image name="speech" width="25" height="25"/>
+        <image name="speech_filled" width="25" height="25"/>
         <image name="variety-show" width="320" height="247"/>
     </resources>
 </document>
