@@ -1048,7 +1048,7 @@ Punahou School</string>
             </objects>
             <point key="canvasLocation" x="628" y="1604"/>
         </scene>
-        <!--#PunahouCarnival-->
+        <!--Web View Controller-->
         <scene sceneID="cJI-Bk-Wwb">
             <objects>
                 <viewController id="KZE-Lq-ZHh" customClass="CWebViewController" sceneMemberID="viewController">
@@ -1061,7 +1061,21 @@ Punahou School</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="#PunahouCarnival" id="d0C-6B-alb"/>
+                    <navigationItem key="navigationItem" id="d0C-6B-alb">
+                        <nil key="title"/>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="SMj-KH-q7A">
+                            <rect key="frame" x="91.5" y="6.5" width="137" height="31"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="Featured"/>
+                                <segment title="Latest"/>
+                            </segments>
+                            <color key="tintColor" red="0.72537364130000004" green="0.63171794619999999" blue="0.278071603" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="segmentedControlChanged:" destination="KZE-Lq-ZHh" eventType="valueChanged" id="MZl-DS-oQb"/>
+                            </connections>
+                        </segmentedControl>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3MN-bs-det" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
