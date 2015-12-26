@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CWebViewController : UIViewController <UIWebViewDelegate, UIActionSheetDelegate>
-
-@property (weak, nonatomic) UIWebView *webView;
+@interface CWebViewController : UIViewController <UIActionSheetDelegate>
+- (IBAction)segmentedControlChanged:(UISegmentedControl *)sender;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
+@property (weak, nonatomic) IBOutlet UILabel *loadingLabel;
 
 // Web view selectors
 - (void)back;
