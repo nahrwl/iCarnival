@@ -39,22 +39,16 @@ static NSString * const kLastUpdatedKey = @"iCarnival-kLastUpdatedKey"; // ALSO 
                   clientKey:parseKeys[@"clientKey"]];
     
     
-    if (SYSTEM_VERSION_LESS_THAN(@"8.0")) {
-        // Register for Push Notifications in OSes less than 8.0
-        [application registerForRemoteNotificationTypes:UIRemoteNotificationTypeBadge|
-         UIRemoteNotificationTypeAlert|
-         UIRemoteNotificationTypeSound];
-    } else {
-        // Register for Push Notifications
-        UIUserNotificationType userNotificationTypes = (UIUserNotificationTypeAlert |
-                                                        UIUserNotificationTypeBadge |
-                                                        UIUserNotificationTypeSound);
-        UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:userNotificationTypes
-                                                                                 categories:nil];
-        
-        [application registerUserNotificationSettings:settings];
-        [application registerForRemoteNotifications];
-    }
+    // Register for Push Notifications
+    UIUserNotificationType userNotificationTypes = (UIUserNotificationTypeAlert |
+                                                    UIUserNotificationTypeBadge |
+                                                    UIUserNotificationTypeSound);
+    UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:userNotificationTypes
+                                                                             categories:nil];
+    
+    [application registerUserNotificationSettings:settings];
+    [application registerForRemoteNotifications];
+    
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     BOOL firstLaunch = [defaults boolForKey:kFirstLaunchKey];
