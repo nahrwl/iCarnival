@@ -2,11 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSAppTransportSecurity</key>
-	<dict>
-		<key>NSAllowsArbitraryLoads</key>
-		<true/>
-	</dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
@@ -28,16 +23,16 @@
 	<key>Fabric</key>
 	<dict>
 		<key>APIKey</key>
-		<string>$FABRIC_API_KEY</string>
+		<string>d5238b829a7c1bdad9a30cd84c04fcb3f07a4ff8</string>
 		<key>Kits</key>
 		<array>
 			<dict>
 				<key>KitInfo</key>
 				<dict>
 					<key>consumerKey</key>
-					<string>$TWITTER_KIT_CONSUMER_KEY</string>
+					<string>QFchS2ZHfpkr6O2unckhIYqGL</string>
 					<key>consumerSecret</key>
-					<string>$TWITTER_KIT_CONSUMER_SECRET</string>
+					<string>A9CUuFE7HAwUXqUF0arfmrPy1Dky5kauTMnghGYM9mF8UKGM7Q</string>
 				</dict>
 				<key>KitName</key>
 				<string>Twitter</string>
@@ -52,9 +47,9 @@
 				<key>KitInfo</key>
 				<dict>
 					<key>consumerKey</key>
-					<string>989fOq0HcNSyB8DoLTPxYZlrs</string>
+					<string>QFchS2ZHfpkr6O2unckhIYqGL</string>
 					<key>consumerSecret</key>
-					<string>SXPD8DJsY0qWFITVWQt7xXGYdZhVJgdZDCECElx1Cv6Q0zRX28</string>
+					<string>A9CUuFE7HAwUXqUF0arfmrPy1Dky5kauTMnghGYM9mF8UKGM7Q</string>
 				</dict>
 				<key>KitName</key>
 				<string>Digits</string>
@@ -63,6 +58,11 @@
 	</dict>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Location is required to save your parking spot.</string>
 	<key>Parse</key>
