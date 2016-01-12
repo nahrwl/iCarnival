@@ -10,7 +10,6 @@
 
 // ** FABRIC ** //
 #import <Fabric/Fabric.h>
-#import <TwitterKit/TwitterKit.h>
 #import <Crashlytics/Crashlytics.h>
 
 
@@ -65,7 +64,7 @@ static NSString * const kLastUpdatedKey = @"iCarnival-kLastUpdatedKey"; // ALSO 
     
     /* TWITTER FABRIC */
     
-    [Fabric with:@[TwitterKit, CrashlyticsKit]];
+    [Fabric with:@[[Crashlytics class]]];
     
     return YES;
 }
