@@ -1056,7 +1056,7 @@ Punahou School</string>
         <!--Sound Booth-->
         <scene sceneID="KzA-fr-oFI">
             <objects>
-                <viewController id="aW1-Zd-Uga" sceneMemberID="viewController">
+                <viewController id="aW1-Zd-Uga" customClass="CMessageSubmissionViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Z3M-qq-xxA"/>
                         <viewControllerLayoutGuide type="bottom" id="eVS-hv-wcI"/>
@@ -1083,6 +1083,9 @@ Punahou School</string>
                                                 <integer key="value" value="5"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="buyButtonTapped:" destination="aW1-Zd-Uga" eventType="touchUpInside" id="19t-1C-Cu1"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Send in a custom message to the Sound Booth for everyone to hear!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lIq-AY-c3p">
                                         <rect key="frame" x="24" y="23" width="273" height="63"/>

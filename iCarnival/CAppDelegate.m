@@ -15,6 +15,7 @@
 
 // My headers //
 #import "CNotificationsViewController.h"
+#import "CMessageSubmissionViewController.h"
 
 // KEYS //
 
@@ -29,6 +30,13 @@ static NSString * const kLastUpdatedKey = @"iCarnival-kLastUpdatedKey"; // ALSO 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+    /* IN APP PURCHASE */
+    
+    [PFPurchase addObserverForProduct:kMessagePackProductIdentifier block:^(SKPaymentTransaction *transaction) {
+        // Write business logic that should run once this product is purchased.
+        NSLog(@"Product purchase successful!");
+    }];
     
     /* PARSE */
     

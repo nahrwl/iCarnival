@@ -42,6 +42,7 @@
 		D83BDE931C448353009F8340 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D83BDE921C448353009F8340 /* ParseUI.framework */; };
 		D83BDE951C448372009F8340 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D83BDE941C448372009F8340 /* Bolts.framework */; };
 		D83BDE9C1C449D46009F8340 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D83BDE9B1C449D46009F8340 /* StoreKit.framework */; };
+		D83BDEA41C48BA82009F8340 /* CMessageSubmissionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D83BDEA31C48BA82009F8340 /* CMessageSubmissionViewController.m */; };
 		D876F73F1A69DBB200C2FDF7 /* CAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D876F73E1A69DBB200C2FDF7 /* CAboutViewController.m */; };
 		D8CB78D51A7B13F800C46C83 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D81A64EF1A68DCB6007086AD /* Main.storyboard */; };
 		D8EBE77C1A6BF59700F9A5A0 /* CWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8EBE77B1A6BF59700F9A5A0 /* CWebViewController.m */; };
@@ -110,6 +111,8 @@
 		D83BDE921C448353009F8340 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
 		D83BDE941C448372009F8340 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		D83BDE9B1C449D46009F8340 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		D83BDEA21C48BA82009F8340 /* CMessageSubmissionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMessageSubmissionViewController.h; sourceTree = "<group>"; };
+		D83BDEA31C48BA82009F8340 /* CMessageSubmissionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMessageSubmissionViewController.m; sourceTree = "<group>"; };
 		D86D31771AB8C2A60038009A /* KeysTEMPLATE.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = KeysTEMPLATE.xcconfig; sourceTree = "<group>"; };
 		D86D317C1AB8D6D10038009A /* Keys.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Keys.xcconfig; sourceTree = "<group>"; };
 		D876F73D1A69DBB200C2FDF7 /* CAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAboutViewController.h; sourceTree = "<group>"; };
@@ -269,6 +272,7 @@
 		D81A64FF1A68DF1F007086AD /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D83BDEA11C48B419009F8340 /* Buy SB Message Tab */,
 				D81A650A1A68FD76007086AD /* Soundbooth Tab */,
 				D81A65081A68FD62007086AD /* Map Tab */,
 				D81A65041A68DF48007086AD /* Social Tab */,
@@ -329,6 +333,15 @@
 				D81A650E1A68FD85007086AD /* CNotificationsViewController.m */,
 			);
 			name = "Soundbooth Tab";
+			sourceTree = "<group>";
+		};
+		D83BDEA11C48B419009F8340 /* Buy SB Message Tab */ = {
+			isa = PBXGroup;
+			children = (
+				D83BDEA21C48BA82009F8340 /* CMessageSubmissionViewController.h */,
+				D83BDEA31C48BA82009F8340 /* CMessageSubmissionViewController.m */,
+			);
+			name = "Buy SB Message Tab";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -471,6 +484,7 @@
 				D81A65151A68FF0A007086AD /* CMapItem.m in Sources */,
 				D81A64971A68C5C8007086AD /* main.m in Sources */,
 				D81A651C1A68FF67007086AD /* CMapPickerDetailViewController.m in Sources */,
+				D83BDEA41C48BA82009F8340 /* CMessageSubmissionViewController.m in Sources */,
 				D81A65101A68FD85007086AD /* CNotificationsViewController.m in Sources */,
 				D81A65211A690F0B007086AD /* CContentViewController.m in Sources */,
 				D81A651D1A68FF67007086AD /* CMapPickerViewController.m in Sources */,
