@@ -28,7 +28,6 @@
                         <segue destination="DXb-DS-u4x" kind="relationship" relationship="viewControllers" id="6EB-It-Hva"/>
                         <segue destination="HRy-y3-PVe" kind="relationship" relationship="viewControllers" id="TqS-pp-Bsw"/>
                         <segue destination="C1X-Xw-kw6" kind="relationship" relationship="viewControllers" id="uYR-b6-la3"/>
-                        <segue destination="cof-rv-FvT" kind="relationship" relationship="viewControllers" id="Oq5-GJ-t3c"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FNP-y4-bzi" sceneMemberID="firstResponder"/>
@@ -88,7 +87,7 @@
             </objects>
             <point key="canvasLocation" x="1154" y="180"/>
         </scene>
-        <!--iCarnival Messages-->
+        <!--Punahou Carnival-->
         <scene sceneID="SD2-T6-tpK">
             <objects>
                 <tableViewController id="MkY-t9-lGe" customClass="CNotificationsViewController" sceneMemberID="viewController">
@@ -141,7 +140,7 @@
                             <outlet property="delegate" destination="MkY-t9-lGe" id="tYS-fL-Fce"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="iCarnival Messages" id="wp5-4V-VHS">
+                    <navigationItem key="navigationItem" title="Punahou Carnival" id="wp5-4V-VHS">
                         <barButtonItem key="rightBarButtonItem" image="settings" id="D1s-M5-CeA">
                             <color key="tintColor" red="0.72537364130000004" green="0.63171794619999999" blue="0.278071603" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
