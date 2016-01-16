@@ -202,25 +202,56 @@ static NSString *kLongitudeKey = @"iCarnival_kLongitudeKey";
     
     /* Everything Else */
     
-    MKPinAnnotationView *pin = (MKPinAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:@"mapitems"];
-    if (!pin) pin = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"mapitems"];
-    
-    if([annotation.title isEqual:@"Scrip"]||[annotation.title isEqual:@"Ride Tickets"]){
-        pin.pinColor = MKPinAnnotationColorGreen;
+    if ([annotation.title isEqualToString:@"ATM"]) {
+        static NSString *bankIdentifier = @"bank-MapAnnotationIdentifier";
         
+        MKAnnotationView *bankAnnotation = [mapView dequeueReusableAnnotationViewWithIdentifier:bankIdentifier];
+        
+        if (!bankAnnotation) {
+            bankAnnotation = [[MKAnnotationView alloc] initWithAnnotation:annotation
+                                                          reuseIdentifier:bankIdentifier];
+            bankAnnotation.image = [UIImage imageNamed:@"Bank"];
+            bankAnnotation.canShowCallout = YES;
+            bankAnnotation.calloutOffset = CGPointMake(0, 0);
+        }
+        
+        return bankAnnotation;
+    } else if ([annotation.title isEqualToString:@"Scrip"]) {
+        static NSString *scripIdentifier = @"scrip-MapAnnotationIdentifier";
+        
+        MKAnnotationView *scripAnnotation = [mapView dequeueReusableAnnotationViewWithIdentifier:scripIdentifier];
+        
+        if (!scripAnnotation) {
+            scripAnnotation = [[MKAnnotationView alloc] initWithAnnotation:annotation
+                                                           reuseIdentifier:scripIdentifier];
+            scripAnnotation.image = [UIImage imageNamed:@"scrip"];
+            scripAnnotation.canShowCallout = YES;
+            scripAnnotation.calloutOffset = CGPointMake(0, 0);
+        }
+        
+        return scripAnnotation;
+    } else {
+        
+        MKPinAnnotationView *pin = (MKPinAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:@"mapitems"];
+        if (!pin) pin = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"mapitems"];
+        
+        if([annotation.title isEqualToString:@"Scrip"]||[annotation.title isEqualToString:@"Ride Tickets"]){
+            pin.pinColor = MKPinAnnotationColorGreen;
+            
+        }
+        else if ([annotation.title isEqualToString:@"Parking Spot"]){
+            pin.pinColor = MKPinAnnotationColorRed;
+        }
+        else{
+            pin.pinColor = MKPinAnnotationColorPurple;
+        }
+        
+        pin.animatesDrop=NO;
+        pin.canShowCallout = YES;
+        pin.calloutOffset = CGPointMake(-10, 0);
+        
+        return pin;
     }
-    else if ([annotation.title isEqualToString:@"Parking Spot"]){
-        pin.pinColor = MKPinAnnotationColorRed;
-    }
-    else{
-        pin.pinColor = MKPinAnnotationColorPurple;
-    }
-    
-    pin.animatesDrop=NO;
-    pin.canShowCallout = YES;
-	pin.calloutOffset = CGPointMake(-10, 0);
-    
-    return pin;
 }
 
 
