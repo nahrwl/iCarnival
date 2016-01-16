@@ -43,6 +43,8 @@
 		D83BDE951C448372009F8340 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D83BDE941C448372009F8340 /* Bolts.framework */; };
 		D83BDE9C1C449D46009F8340 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D83BDE9B1C449D46009F8340 /* StoreKit.framework */; };
 		D83BDEA41C48BA82009F8340 /* CMessageSubmissionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D83BDEA31C48BA82009F8340 /* CMessageSubmissionViewController.m */; };
+		D83BDEA61C49FE21009F8340 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D83BDEA51C49FE21009F8340 /* libsqlite3.tbd */; };
+		D83BDEA81C49FE33009F8340 /* libz.1.1.3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D83BDEA71C49FE33009F8340 /* libz.1.1.3.tbd */; };
 		D876F73F1A69DBB200C2FDF7 /* CAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D876F73E1A69DBB200C2FDF7 /* CAboutViewController.m */; };
 		D8CB78D51A7B13F800C46C83 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D81A64EF1A68DCB6007086AD /* Main.storyboard */; };
 		D8EBE77C1A6BF59700F9A5A0 /* CWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8EBE77B1A6BF59700F9A5A0 /* CWebViewController.m */; };
@@ -113,6 +115,8 @@
 		D83BDE9B1C449D46009F8340 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		D83BDEA21C48BA82009F8340 /* CMessageSubmissionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMessageSubmissionViewController.h; sourceTree = "<group>"; };
 		D83BDEA31C48BA82009F8340 /* CMessageSubmissionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMessageSubmissionViewController.m; sourceTree = "<group>"; };
+		D83BDEA51C49FE21009F8340 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		D83BDEA71C49FE33009F8340 /* libz.1.1.3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.1.3.tbd; path = usr/lib/libz.1.1.3.tbd; sourceTree = SDKROOT; };
 		D86D31771AB8C2A60038009A /* KeysTEMPLATE.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = KeysTEMPLATE.xcconfig; sourceTree = "<group>"; };
 		D86D317C1AB8D6D10038009A /* Keys.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Keys.xcconfig; sourceTree = "<group>"; };
 		D876F73D1A69DBB200C2FDF7 /* CAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAboutViewController.h; sourceTree = "<group>"; };
@@ -130,6 +134,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D83BDEA81C49FE33009F8340 /* libz.1.1.3.tbd in Frameworks */,
+				D83BDEA61C49FE21009F8340 /* libsqlite3.tbd in Frameworks */,
 				D83BDE951C448372009F8340 /* Bolts.framework in Frameworks */,
 				D82403CC1C2D53F400D6758F /* WebKit.framework in Frameworks */,
 				D81A64E11A68C964007086AD /* libsqlite3.dylib in Frameworks */,
@@ -234,6 +240,8 @@
 		D81A64BF1A68C7B2007086AD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D83BDEA71C49FE33009F8340 /* libz.1.1.3.tbd */,
+				D83BDEA51C49FE21009F8340 /* libsqlite3.tbd */,
 				D83BDE9B1C449D46009F8340 /* StoreKit.framework */,
 				D83BDE941C448372009F8340 /* Bolts.framework */,
 				D83BDE921C448353009F8340 /* ParseUI.framework */,

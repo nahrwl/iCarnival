@@ -33,10 +33,10 @@ static NSString * const kLastUpdatedKey = @"iCarnival-kLastUpdatedKey"; // ALSO 
     
     /* IN APP PURCHASE */
     
-    [PFPurchase addObserverForProduct:kMessagePackProductIdentifier block:^(SKPaymentTransaction *transaction) {
+    /*[PFPurchase addObserverForProduct:kMessagePackProductIdentifier block:^(SKPaymentTransaction *transaction) {
         // Write business logic that should run once this product is purchased.
         NSLog(@"Product purchase successful!");
-    }];
+    }];*/
     
     /* PARSE */
     

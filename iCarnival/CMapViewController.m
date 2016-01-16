@@ -6,6 +6,8 @@
 //  Copyright (c) 2014 Punahou School - Nathan Wallace '14. All rights reserved.
 //
 
+#import <Parse/Parse.h>
+
 #import "CMapViewController.h"
 #import "CMapPickerViewController.h"
 #import "CMapItem.h"
@@ -29,7 +31,8 @@
 //to continue to display an error message after didChangeAuthorizationStatus does it the first time
 @property (nonatomic) BOOL displayLocationError;
 
-- (void)loadMapItemsFromPlistInBundle:(NSString *)nameInBundle;
+- (NSArray *)mapItemsFromPlistInBundle:(NSString *)nameInBundle;
+- (NSArray *)mapItemsFromPFObjects:(NSArray *)objectsArray;
 - (void)dropPinsForMapItems:(NSArray *)items;
 - (void)saveCurrentLocation:(CLLocationCoordinate2D)coordinate;
 - (void)cancelLocationUpdates;
@@ -73,8 +76,25 @@ static NSString *kLongitudeKey = @"iCarnival_kLongitudeKey";
     
     self.bestLocation = nil;
     
-    [self loadMapItemsFromPlistInBundle:@"items"];
-    [self dropPinsForMapItems:self.mapItems];
+    
+    PFQuery *query = [PFQuery queryWithClassName:@"map"];
+    query.cachePolicy = kPFCachePolicyCacheThenNetwork;
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            // Results were successfully found, looking first on the
+            // network and then on disk.
+            
+            self.mapItems = [self mapItemsFromPFObjects:objects];
+            [self dropPinsForMapItems:self.mapItems];
+        } else {
+            // The network was inaccessible and we have no cached data for
+            // this query.
+            
+            // Load the old map
+            self.mapItems = [self mapItemsFromPlistInBundle:@"items"];
+            [self dropPinsForMapItems:self.mapItems];
+        }
+    }];
     
     // ask for permission
     // Check for iOS 8. Without this guard the code will crash with "unknown selector" on iOS 7.
@@ -87,8 +107,8 @@ static NSString *kLongitudeKey = @"iCarnival_kLongitudeKey";
 {
     MKCoordinateRegion region;
 	MKCoordinateSpan span;
-    span.latitudeDelta=0.003463 * sinf(35*3.14159/180);
-    span.longitudeDelta=0.011336* sinf(35*3.14159/180);
+    span.latitudeDelta=0.0017315 * sinf(35*3.14159/180);
+    span.longitudeDelta=0.005668 * sinf(35*3.14159/180);
     
     region.span=span;
     //latitude , 21.303145 longitude  -157.831074
@@ -143,15 +163,8 @@ static NSString *kLongitudeKey = @"iCarnival_kLongitudeKey";
 
 #pragma mark - Map
 
-- (void)loadMapItemsFromPlistInBundle:(NSString *)nameInBundle
+- (NSArray *)mapItemsFromPlistInBundle:(NSString *)nameInBundle
 {
-    /*NSURL *bundleURL;
-     if (![nameInBundle hasSuffix:@".plist"]) {
-     bundleURL = [[NSBundle mainBundle] URLForResource:nameInBundle withExtension:@"plist"];
-     } else {
-     bundleURL = [[NSBundle mainBundle] URLForResource:nameInBundle withExtension:nil];
-     }*/
-    
     NSArray *plistArray = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:nameInBundle ofType:@"plist"]];
     NSMutableArray *finalArray = [[NSMutableArray alloc] initWithCapacity:plistArray.count];
     for (NSDictionary *d in plistArray)
@@ -159,10 +172,21 @@ static NSString *kLongitudeKey = @"iCarnival_kLongitudeKey";
         [finalArray addObject:[[CMapItem alloc] initWithDictionary:d]];
     }
     
-    self.mapItems = [finalArray copy];
+    return [finalArray copy];
+}
+
+- (NSArray *)mapItemsFromPFObjects:(NSArray *)objectsArray
+{
+    NSMutableArray *finalArray = [[NSMutableArray alloc] initWithCapacity:objectsArray.count];
+    for (PFObject *p in objectsArray)
+    {
+        [finalArray addObject:[[CMapItem alloc] initWithTitle:p[@"title"]
+                                                     subtitle:p[@"subtitle"]
+                                                     itemType:[(NSNumber *)p[@"itemType"] intValue]
+                                                     location:CLLocationCoordinate2DMake([(NSNumber *)p[@"latitude"] doubleValue], [(NSNumber *)p[@"longitude"] doubleValue])]];
+    }
     
-    //[CMapItem generatePlist];
-    //[CMapItem sortPlist];
+    return [finalArray copy];
 }
 
 - (void)dropPinsForMapItems:(NSArray *)items
