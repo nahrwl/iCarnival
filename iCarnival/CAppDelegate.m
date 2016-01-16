@@ -70,6 +70,20 @@ static NSString * const kLastUpdatedKey = @"iCarnival-kLastUpdatedKey"; // ALSO 
         [defaults setObject:[NSDate date] forKey:kLastUpdatedKey];
     }
     
+    /* Track app launches from Push */
+    if (application.applicationState != UIApplicationStateBackground) {
+        // Track an app open here if we launch with a push, unless
+        // "content_available" was used to trigger a background push (introduced
+        // in iOS 7). In that case, we skip tracking here to avoid double
+        // counting the app-open.
+        BOOL preBackgroundPush = ![application respondsToSelector:@selector(backgroundRefreshStatus)];
+        BOOL oldPushHandlerOnly = ![self respondsToSelector:@selector(application:didReceiveRemoteNotification:fetchCompletionHandler:)];
+        BOOL noPushPayload = ![launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
+        if (preBackgroundPush || oldPushHandlerOnly || noPushPayload) {
+            [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+        }
+    }
+    
     /* TWITTER FABRIC */
     
     [Fabric with:@[[Crashlytics class]]];
@@ -136,24 +150,17 @@ didReceiveRemoteNotification:(NSDictionary *)userInfo {
         }
     }
     
-    /*UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Notification"
-                                                        message:userInfo[@"alert"]
-                                                       delegate:nil
-                                              cancelButtonTitle:@"OK"
-                                              otherButtonTitles:nil];
-    [alertView show];*/
-    // Extract the alert content
-    /*if (userInfo) {
-        NSString *content = [userInfo objectForKey:@"alert"];
-        if (content) {
-            NSMutableDictionary *d = [[NSMutableDictionary alloc] init];
-            [d setObject:content forKey:@"alert"];
-            [d setObject:[NSDate date] forKey:@"date"];
-        
-            // add in the notification to the master list
-            [[CNotificationCenter sharedNotificationCenter] addNotification:d toChannel:@"soundbooth"];
-        }
-    }*/
+    if (application.applicationState == UIApplicationStateInactive) {
+        // The application was just brought from the background to the foreground,
+        // so we consider the app as having been "opened by a push notification."
+        [PFAnalytics trackAppOpenedWithRemoteNotificationPayload:userInfo];
+    }
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
+    if (application.applicationState == UIApplicationStateInactive) {
+        [PFAnalytics trackAppOpenedWithRemoteNotificationPayload:userInfo];
+    }
 }
 
 @end
