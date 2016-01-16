@@ -254,6 +254,7 @@
                 if (self.latestTabEnabled) {
                     self.segmentedControl.layer.opacity = 1.0;
                 } else {
+                    // Very janky.
                     self.myNavigationItem.titleView = nil;
                     CATransition *fade = [CATransition animation];
                     fade.type = kCATransitionFade;
