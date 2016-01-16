@@ -491,8 +491,19 @@ static NSString *kLongitudeKey = @"iCarnival_kLongitudeKey";
 }
 
 - (IBAction)locationButtonTapped:(UIButton *)sender {
-    self.mapView.showsUserLocation = YES;
-    [self.mapView setCenterCoordinate:self.mapView.userLocation.location.coordinate animated:YES];
+    if ([CLLocationManager locationServicesEnabled] && [CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorizedWhenInUse) {
+        self.mapView.showsUserLocation = YES;
+        [self.mapView setCenterCoordinate:self.mapView.userLocation.location.coordinate animated:YES];
+    } else {
+        // ask the user to enable location services
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Location Services Disabled"
+                                                        message:@"Enable location services in Settings to view your location."
+                                                       delegate:self
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+        [self.locationManager stopUpdatingLocation];
+    }
 }
 
 @end
