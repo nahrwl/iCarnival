@@ -1292,6 +1292,7 @@ Punahou School</string>
                         <outlet property="activityIndicator" destination="YbP-R1-wLR" id="LTi-Iv-tlW"/>
                         <outlet property="errorLabel" destination="XPW-wt-Kio" id="516-MU-VMu"/>
                         <outlet property="loadingLabel" destination="sKK-0c-jMR" id="AyO-b4-8i5"/>
+                        <outlet property="myNavigationItem" destination="d0C-6B-alb" id="1qz-aY-fck"/>
                         <outlet property="retryButton" destination="o31-8U-wxW" id="4ks-GG-5vm"/>
                         <outlet property="segmentedControl" destination="SMj-KH-q7A" id="pFg-tA-MCg"/>
                     </connections>

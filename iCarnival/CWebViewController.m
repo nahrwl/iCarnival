@@ -7,6 +7,9 @@
 //
 
 #import "CWebViewController.h"
+
+#import <Parse/Parse.h>
+
 @import WebKit;
 
 @interface CWebViewController () <WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler>
@@ -24,9 +27,12 @@
 @property (nonatomic) BOOL initialLoadCheck;
 @property (nonatomic) BOOL successfulLoadCompleted;
 
+// Remote UI Settings
+@property (nonatomic) BOOL latestTabEnabled;
+
 @end
 
-#define kMinimumRefreshWaitTime 20.0
+#define kMinimumRefreshWaitTime 30.0
 
 @implementation CWebViewController
 
@@ -79,12 +85,36 @@
     self.featuredOffset = CGPointMake(0.0, -64.0);
     self.latestOffset = CGPointMake(0.0, -64.0);
     
+    [self initialLoad];
+}
+
+- (void)initialLoad {
+    
+    /* WEB VIEW */
+    
     self.initialLoadCheck = YES;
     self.successfulLoadCompleted = NO;
     
     self.currentNavigation = [self.wv loadRequest:[NSURLRequest
-                          requestWithURL:[NSURL URLWithString:@"https://tagboard.com/punahoucarnival/208630"]]];
+                                                   requestWithURL:[NSURL URLWithString:@"https://tagboard.com/punahoucarnival/208630"]]];
     
+    /* REMOTE UI SETTINGS */
+    
+    // Default
+    self.latestTabEnabled = NO;
+    
+    PFQuery *query = [PFQuery queryWithClassName:@"settings"];
+    [query whereKey:@"key" equalTo:@"LATEST_TAB_ENABLED"];
+    [query getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
+        if (!object) {
+            NSLog(@"The LATEST_TAB_ENABLED getFirstObject request failed.");
+        } else {
+            // The find succeeded.
+            if ([(NSNumber *)object[@"value"] intValue] == 1) {
+                self.latestTabEnabled = YES;
+            }
+        }
+    }];
 }
 
 - (void)refreshControlValueChanged:(UIRefreshControl *)refreshControl {
@@ -214,15 +244,26 @@
             self.wv.hidden = NO;
             self.wv.layer.opacity = 0.0;
             
-            self.segmentedControl.layer.opacity = 0.0;
-            self.segmentedControl.userInteractionEnabled = NO;
-            self.segmentedControl.hidden = NO;
+            if (self.latestTabEnabled) {
+                self.segmentedControl.layer.opacity = 0.0;
+                self.segmentedControl.userInteractionEnabled = NO;
+                self.segmentedControl.hidden = NO;
+            }
             
             [UIView animateWithDuration:1.0 delay:0.5 options:UIViewAnimationOptionTransitionNone animations:^{
-                self.segmentedControl.layer.opacity = 1.0;
+                if (self.latestTabEnabled) {
+                    self.segmentedControl.layer.opacity = 1.0;
+                } else {
+                    self.myNavigationItem.titleView = nil;
+                    CATransition *fade = [CATransition animation];
+                    fade.type = kCATransitionFade;
+                    fade.duration = 1.0;
+                    [self.navigationController.navigationBar.layer addAnimation:fade forKey:@"fadeText"];
+                    self.myNavigationItem.title = @"#PunahouCarnival";
+                }
                 self.wv.layer.opacity = 1.0;
             } completion:^(BOOL finished) {
-                self.segmentedControl.userInteractionEnabled = YES;
+                if (self.latestTabEnabled) self.segmentedControl.userInteractionEnabled = YES;
                 // Add in the refresh control
             }];
         }
@@ -256,7 +297,8 @@
     self.loadingLabel.hidden = NO;
     self.errorLabel.hidden = YES;
     self.retryButton.hidden = YES;
-    self.currentNavigation = [self.wv loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"https://tagboard.com/punahoucarnival/208630"]]];
+    
+    [self initialLoad];
 }
 
 - (void)back

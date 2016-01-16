@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *errorLabel;
 - (IBAction)retryButtonTapped:(UIButton *)sender;
 @property (weak, nonatomic) IBOutlet UIButton *retryButton;
+@property (weak, nonatomic) IBOutlet UINavigationItem *myNavigationItem; // For some reason, this was not set in the normal UIViewController property. Don't judge me.
 
 // Web view selectors
 - (void)back;
