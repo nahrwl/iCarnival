@@ -291,7 +291,7 @@ static NSString *kLongitudeKey = @"iCarnival_kLongitudeKey";
                     static NSString *artIdentifier = @"art-MapAnnotationIdentifier";
                     
                     return [self generateMapAnnotationViewWithIdentifier:artIdentifier annotation:mapItem imageName:@"art"];
-                } else if ([mapItem.title isEqualToString:@"Silent Auction"]) {
+                } else if ([mapItem.title isEqualToString:@"Auction"]) {
                     static NSString *auctionIdentifier = @"auction-MapAnnotationIdentifier";
                     
                     return [self generateMapAnnotationViewWithIdentifier:auctionIdentifier annotation:mapItem imageName:@"bust"];
