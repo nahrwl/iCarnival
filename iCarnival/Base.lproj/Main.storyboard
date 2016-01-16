@@ -1116,7 +1116,7 @@ Punahou School</string>
                                     <constraint firstItem="lIq-AY-c3p" firstAttribute="leading" secondItem="rDg-Re-q0c" secondAttribute="leading" constant="24" id="u5x-ex-Ynz"/>
                                 </constraints>
                             </view>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SyF-tT-RSb">
+                            <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SyF-tT-RSb">
                                 <rect key="frame" x="0.0" y="222" width="320" height="297"/>
                                 <connections>
                                     <segue destination="y0q-Hl-xee" kind="embed" id="Xir-jg-Kcf"/>
