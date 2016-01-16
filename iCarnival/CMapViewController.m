@@ -204,66 +204,104 @@ static NSString *kLongitudeKey = @"iCarnival_kLongitudeKey";
             {
                 static NSString *bankIdentifier = @"bank-MapAnnotationIdentifier";
                 
-                MKAnnotationView *bankAnnotation = [mapView dequeueReusableAnnotationViewWithIdentifier: @"bank-MapAnnotationIdentifier"];
+                return [self generateMapAnnotationViewWithIdentifier:bankIdentifier annotation:mapItem imageName:@"Bank"];
                 
-                if (!bankAnnotation) {
-                    bankAnnotation = [[MKAnnotationView alloc] initWithAnnotation:annotation
-                                                                  reuseIdentifier:bankIdentifier];
-                    bankAnnotation.image = [UIImage imageNamed:@"Bank"];
-                    bankAnnotation.canShowCallout = YES;
-                    bankAnnotation.calloutOffset = CGPointMake(0, 0);
-                }
-                
-                return bankAnnotation;
                 break;
             }
             case kBathroomType:
+            {
+                static NSString *toiletIdentifier = @"toilet-MapAnnotationIdentifier";
+                
+                return [self generateMapAnnotationViewWithIdentifier:toiletIdentifier annotation:mapItem imageName:@"toilet"];
                 
                 break;
+            }
             case kBoothType:
+            {
+                static NSString *boothIdentifier = @"booth-MapAnnotationIdentifier";
+                
+                return [self generateMapAnnotationViewWithIdentifier:boothIdentifier annotation:mapItem imageName:@"booth"];
                 
                 break;
+            }
             case kEmergencyType:
-                
+            {
+                if ([mapItem.title isEqualToString:@"Defibrillator"]) {
+                    static NSString *AEDIdentifier = @"AED-MapAnnotationIdentifier";
+                    
+                    return [self generateMapAnnotationViewWithIdentifier:AEDIdentifier annotation:mapItem imageName:@"AED"];
+                } else {
+                    static NSString *FirstAidIdentifier = @"FirstAid-MapAnnotationIdentifier";
+                    
+                    return [self generateMapAnnotationViewWithIdentifier:FirstAidIdentifier annotation:mapItem imageName:@"firstaid"];
+                }
                 break;
+            }
             case kFoodType:
+            {
+                static NSString *foodIdentifier = @"food-MapAnnotationIdentifier";
+                
+                return [self generateMapAnnotationViewWithIdentifier:foodIdentifier annotation:mapItem imageName:@"food"];
                 
                 break;
+            }
             case kGameType:
+            {
+                static NSString *gameIdentifier = @"game-MapAnnotationIdentifier";
+                
+                return [self generateMapAnnotationViewWithIdentifier:gameIdentifier annotation:mapItem imageName:@"leaderboard"];
                 
                 break;
+            }
             case kKiddielandType:
+            {
+                static NSString *kiddieIdentifier = @"kiddie-MapAnnotationIdentifier";
+                
+                return [self generateMapAnnotationViewWithIdentifier:kiddieIdentifier annotation:mapItem imageName:@"ball"];
                 
                 break;
+            }
             case kOtherType:
-                
+            {
+                if ([mapItem.title isEqualToString:@"Art Gallery"]) {
+                    static NSString *artIdentifier = @"art-MapAnnotationIdentifier";
+                    
+                    return [self generateMapAnnotationViewWithIdentifier:artIdentifier annotation:mapItem imageName:@"art"];
+                } else if ([mapItem.title isEqualToString:@"Silent Auction"]) {
+                    static NSString *auctionIdentifier = @"auction-MapAnnotationIdentifier";
+                    
+                    return [self generateMapAnnotationViewWithIdentifier:auctionIdentifier annotation:mapItem imageName:@"bust"];
+                } else {
+                    static NSString *showIdentifier = @"show-MapAnnotationIdentifier";
+                    
+                    return [self generateMapAnnotationViewWithIdentifier:showIdentifier annotation:mapItem imageName:@"variety"];
+                }
                 break;
+            }
             case kRideCouponType:
+            {
+                static NSString *ridecouponIdentifier = @"ridecoupon-MapAnnotationIdentifier";
+                
+                return [self generateMapAnnotationViewWithIdentifier:ridecouponIdentifier annotation:mapItem imageName:@"ridecoupon"];
                 
                 break;
+            }
             case kRideType:
+            {
+                static NSString *rideIdentifier = @"ride-MapAnnotationIdentifier";
+                
+                return [self generateMapAnnotationViewWithIdentifier:rideIdentifier annotation:mapItem imageName:@"ride"];
                 
                 break;
+            }
             case kScripType:
             {
                 static NSString *scripIdentifier = @"scrip-MapAnnotationIdentifier";
                 
-                MKAnnotationView *scripAnnotation = [mapView dequeueReusableAnnotationViewWithIdentifier:scripIdentifier];
-                
-                if (!scripAnnotation) {
-                    scripAnnotation = [[MKAnnotationView alloc] initWithAnnotation:annotation
-                                                                   reuseIdentifier:scripIdentifier];
-                    scripAnnotation.image = [UIImage imageNamed:@"scrip"];
-                    scripAnnotation.canShowCallout = YES;
-                    scripAnnotation.calloutOffset = CGPointMake(0, 0);
-                }
-                
-                return scripAnnotation;
+                return [self generateMapAnnotationViewWithIdentifier:scripIdentifier annotation:mapItem imageName:@"scrip"];
+
                 break;
             }
-                
-            default:
-                break;
         }
     } else {
         
@@ -287,7 +325,23 @@ static NSString *kLongitudeKey = @"iCarnival_kLongitudeKey";
         
         return pin;
     }
-    return nil;
+}
+
+- (MKAnnotationView *)generateMapAnnotationViewWithIdentifier:(NSString *)identifier annotation:(CMapItem *)annotation imageName:(NSString *)imageName
+{
+    MKAnnotationView *annotationView = [self.mapView dequeueReusableAnnotationViewWithIdentifier:identifier];
+    
+    if (!annotationView) {
+        annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation
+                                                       reuseIdentifier:identifier];
+        annotationView.image = [UIImage imageNamed:imageName];
+        annotationView.canShowCallout = YES;
+        annotationView.calloutOffset = CGPointMake(0, 0);
+    } else {
+        annotationView.annotation = annotation;
+    }
+    
+    return annotationView;
 }
 
 
