@@ -23,12 +23,9 @@ typedef NS_ENUM(NSUInteger, CMapItemType) {
     kATMType
 };
 
-@interface CMapItem : NSObject
+@interface CMapItem : MKPointAnnotation
 
-@property (strong, nonatomic) NSString *title;
-@property (strong, nonatomic) NSString *subtitle;
 @property (nonatomic) CMapItemType itemType;
-@property (nonatomic) CLLocationCoordinate2D location;
 
 - (id)initWithTitle:(NSString *)title subtitle:(NSString *)subtitle itemType:(CMapItemType)type location:(CLLocationCoordinate2D)location;
 - (id)initWithDictionary:(NSDictionary *)dictionary;

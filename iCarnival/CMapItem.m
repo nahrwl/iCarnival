@@ -14,10 +14,11 @@
 {
     if (self = [super init])
     {
-        _title = title;
-        _subtitle = subtitle;
+        self.title = title;
+        self.subtitle = subtitle;
+        self.coordinate = location;
+        
         _itemType = type;
-        _location = location;
     }
     return self;
 }
@@ -39,8 +40,8 @@
     [result setObject:self.title forKey:@"title"];
     [result setObject:self.subtitle forKey:@"subtitle"];
     [result setObject:[NSNumber numberWithInt:self.itemType] forKey:@"itemType"];
-    [result setObject:[NSNumber numberWithDouble:self.location.latitude] forKey:@"latitude"];
-    [result setObject:[NSNumber numberWithDouble:self.location.longitude] forKey:@"longitude"];
+    [result setObject:[NSNumber numberWithDouble:self.coordinate.latitude] forKey:@"latitude"];
+    [result setObject:[NSNumber numberWithDouble:self.coordinate.longitude] forKey:@"longitude"];
     
     return [result copy];
 }

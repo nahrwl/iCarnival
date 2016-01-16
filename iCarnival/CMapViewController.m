@@ -169,13 +169,8 @@ static NSString *kLongitudeKey = @"iCarnival_kLongitudeKey";
 {
     [self.mapView removeAnnotations:self.mapView.annotations];
     
-    for (CMapItem *m in items)
+    for (CMapItem *annotation in items)
     {
-        MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
-        annotation.title = m.title;
-        annotation.subtitle = m.subtitle;
-        annotation.coordinate = m.location;
-        
         [self.mapView addAnnotation:annotation];
     }
     
@@ -202,34 +197,74 @@ static NSString *kLongitudeKey = @"iCarnival_kLongitudeKey";
     
     /* Everything Else */
     
-    if ([annotation.title isEqualToString:@"ATM"]) {
-        static NSString *bankIdentifier = @"bank-MapAnnotationIdentifier";
-        
-        MKAnnotationView *bankAnnotation = [mapView dequeueReusableAnnotationViewWithIdentifier:bankIdentifier];
-        
-        if (!bankAnnotation) {
-            bankAnnotation = [[MKAnnotationView alloc] initWithAnnotation:annotation
-                                                          reuseIdentifier:bankIdentifier];
-            bankAnnotation.image = [UIImage imageNamed:@"Bank"];
-            bankAnnotation.canShowCallout = YES;
-            bankAnnotation.calloutOffset = CGPointMake(0, 0);
+    if ([annotation isKindOfClass:[CMapItem class]]) {
+        CMapItem *mapItem = (CMapItem *)annotation;
+        switch (mapItem.itemType) {
+            case kATMType:
+            {
+                static NSString *bankIdentifier = @"bank-MapAnnotationIdentifier";
+                
+                MKAnnotationView *bankAnnotation = [mapView dequeueReusableAnnotationViewWithIdentifier: @"bank-MapAnnotationIdentifier"];
+                
+                if (!bankAnnotation) {
+                    bankAnnotation = [[MKAnnotationView alloc] initWithAnnotation:annotation
+                                                                  reuseIdentifier:bankIdentifier];
+                    bankAnnotation.image = [UIImage imageNamed:@"Bank"];
+                    bankAnnotation.canShowCallout = YES;
+                    bankAnnotation.calloutOffset = CGPointMake(0, 0);
+                }
+                
+                return bankAnnotation;
+                break;
+            }
+            case kBathroomType:
+                
+                break;
+            case kBoothType:
+                
+                break;
+            case kEmergencyType:
+                
+                break;
+            case kFoodType:
+                
+                break;
+            case kGameType:
+                
+                break;
+            case kKiddielandType:
+                
+                break;
+            case kOtherType:
+                
+                break;
+            case kRideCouponType:
+                
+                break;
+            case kRideType:
+                
+                break;
+            case kScripType:
+            {
+                static NSString *scripIdentifier = @"scrip-MapAnnotationIdentifier";
+                
+                MKAnnotationView *scripAnnotation = [mapView dequeueReusableAnnotationViewWithIdentifier:scripIdentifier];
+                
+                if (!scripAnnotation) {
+                    scripAnnotation = [[MKAnnotationView alloc] initWithAnnotation:annotation
+                                                                   reuseIdentifier:scripIdentifier];
+                    scripAnnotation.image = [UIImage imageNamed:@"scrip"];
+                    scripAnnotation.canShowCallout = YES;
+                    scripAnnotation.calloutOffset = CGPointMake(0, 0);
+                }
+                
+                return scripAnnotation;
+                break;
+            }
+                
+            default:
+                break;
         }
-        
-        return bankAnnotation;
-    } else if ([annotation.title isEqualToString:@"Scrip"]) {
-        static NSString *scripIdentifier = @"scrip-MapAnnotationIdentifier";
-        
-        MKAnnotationView *scripAnnotation = [mapView dequeueReusableAnnotationViewWithIdentifier:scripIdentifier];
-        
-        if (!scripAnnotation) {
-            scripAnnotation = [[MKAnnotationView alloc] initWithAnnotation:annotation
-                                                           reuseIdentifier:scripIdentifier];
-            scripAnnotation.image = [UIImage imageNamed:@"scrip"];
-            scripAnnotation.canShowCallout = YES;
-            scripAnnotation.calloutOffset = CGPointMake(0, 0);
-        }
-        
-        return scripAnnotation;
     } else {
         
         MKPinAnnotationView *pin = (MKPinAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:@"mapitems"];
@@ -252,6 +287,7 @@ static NSString *kLongitudeKey = @"iCarnival_kLongitudeKey";
         
         return pin;
     }
+    return nil;
 }
 
 
