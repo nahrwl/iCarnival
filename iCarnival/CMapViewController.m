@@ -194,6 +194,14 @@ static NSString *kLongitudeKey = @"iCarnival_kLongitudeKey";
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id < MKAnnotation >)annotation
 {
+    /* User Location */
+    
+    if ([annotation isKindOfClass:[MKUserLocation class]]) {
+        return nil;
+    }
+    
+    /* Everything Else */
+    
     MKPinAnnotationView *pin = (MKPinAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:@"mapitems"];
     if (!pin) pin = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"mapitems"];
     
@@ -449,6 +457,10 @@ static NSString *kLongitudeKey = @"iCarnival_kLongitudeKey";
     self.isSearching = YES;
     [self dismissViewControllerAnimated:YES completion:nil];
     [self dropPinsForMapItems:items];
+}
+
+- (IBAction)locationButtonTapped:(UIButton *)sender {
+    self.mapView.showsUserLocation = YES;
 }
 
 @end

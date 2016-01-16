@@ -53,13 +53,23 @@
                                     <outlet property="delegate" destination="sIp-5A-BGs" id="MUp-lh-dtB"/>
                                 </connections>
                             </mapView>
+                            <button opaque="NO" alpha="0.90000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uam-wj-NLL">
+                                <rect key="frame" x="261" y="459" width="44" height="44"/>
+                                <color key="tintColor" red="0.72549019607843135" green="0.63137254901960782" blue="0.27843137254901962" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" image="location"/>
+                                <connections>
+                                    <action selector="locationButtonTapped:" destination="sIp-5A-BGs" eventType="touchUpInside" id="nKu-bI-1Oj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="lpf-Gt-kHY" secondAttribute="trailing" constant="-16" id="2pT-5f-i8c"/>
+                            <constraint firstItem="InO-DK-33J" firstAttribute="top" secondItem="uam-wj-NLL" secondAttribute="bottom" constant="16" id="AbX-7J-HUa"/>
                             <constraint firstItem="lpf-Gt-kHY" firstAttribute="leading" secondItem="bCt-ZX-PKd" secondAttribute="leadingMargin" constant="-16" id="c4L-MP-RQV"/>
                             <constraint firstItem="lpf-Gt-kHY" firstAttribute="bottom" secondItem="bCt-ZX-PKd" secondAttribute="bottomMargin" id="gcb-3P-Gg0"/>
                             <constraint firstItem="lpf-Gt-kHY" firstAttribute="top" secondItem="bCt-ZX-PKd" secondAttribute="topMargin" id="jnH-Am-wv6"/>
+                            <constraint firstAttribute="trailing" secondItem="uam-wj-NLL" secondAttribute="trailing" constant="15" id="up7-PP-sa6"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Map" id="9g8-Ql-x0m">
@@ -1312,6 +1322,7 @@ Punahou School</string>
         <image name="cars" width="22" height="22"/>
         <image name="info" width="25" height="25"/>
         <image name="info_filled" width="25" height="25"/>
+        <image name="location" width="44" height="44"/>
         <image name="map" width="25" height="25"/>
         <image name="map_filled" width="25" height="25"/>
         <image name="megaphone" width="25" height="25"/>

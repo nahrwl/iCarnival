@@ -24,4 +24,6 @@
 
 - (void)setSelectedItems:(NSArray *)items;
 
+- (IBAction)locationButtonTapped:(UIButton *)sender;
+
 @end
