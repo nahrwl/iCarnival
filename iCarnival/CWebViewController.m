@@ -22,6 +22,7 @@
 @property (strong, nonatomic) NSDate *lastLoadedDate;
 
 @property (nonatomic) BOOL initialLoadCheck;
+@property (nonatomic) BOOL successfulLoadCompleted;
 
 @end
 
@@ -79,6 +80,7 @@
     self.latestOffset = CGPointMake(0.0, -64.0);
     
     self.initialLoadCheck = YES;
+    self.successfulLoadCompleted = NO;
     
     self.currentNavigation = [self.wv loadRequest:[NSURLRequest
                           requestWithURL:[NSURL URLWithString:@"https://tagboard.com/punahoucarnival/208630"]]];
@@ -153,6 +155,8 @@
         
         // Set the last loaded date
         self.lastLoadedDate = [NSDate date];
+        
+        self.successfulLoadCompleted = YES;
         
         // Clean up the page
         /*[self.wv evaluateJavaScript: @"jQuery('header').hide(); jQuery('footer').hide(); jQuery('#global-navbar').hide(); jQuery('.container-fluid.tb-wrapper').css('margin-top','20px'); $('#posts').on('tgb:featuredLoaded', function() { window.webkit.messageHandlers.notification.postMessage('complete'); jQuery('.owned').unbind('click'); });"
@@ -236,11 +240,15 @@
 }
 
 - (void)loadingFailed {
-    self.initialLoadCheck = YES;
-    [self.activityIndicator stopAnimating];
-    self.loadingLabel.hidden = YES;
-    self.errorLabel.hidden = NO;
-    self.retryButton.hidden = NO;
+    if (!self.successfulLoadCompleted) {
+        self.initialLoadCheck = YES;
+        [self.activityIndicator stopAnimating];
+        self.loadingLabel.hidden = YES;
+        self.errorLabel.hidden = NO;
+        self.retryButton.hidden = NO;
+    } else {
+        [self.refreshControl endRefreshing];
+    }
 }
 
 - (IBAction)retryButtonTapped:(UIButton *)sender {
