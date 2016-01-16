@@ -461,6 +461,7 @@ static NSString *kLongitudeKey = @"iCarnival_kLongitudeKey";
 
 - (IBAction)locationButtonTapped:(UIButton *)sender {
     self.mapView.showsUserLocation = YES;
+    [self.mapView setCenterCoordinate:self.mapView.userLocation.location.coordinate animated:YES];
 }
 
 @end
