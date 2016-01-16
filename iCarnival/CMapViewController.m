@@ -82,8 +82,8 @@ static NSString *kLongitudeKey = @"iCarnival_kLongitudeKey";
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
             // Results were successfully found, looking first on the
-            // network and then on disk.
-            
+            // cache and then on the network.
+
             self.mapItems = [self mapItemsFromPFObjects:objects];
             [self dropPinsForMapItems:self.mapItems];
         } else {
