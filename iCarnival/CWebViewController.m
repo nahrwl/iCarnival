@@ -19,7 +19,11 @@
 
 @property (strong, nonatomic) WKNavigation *currentNavigation;
 
+@property (strong, nonatomic) NSDate *lastLoadedDate;
+
 @end
+
+#define kMinimumRefreshWaitTime 20.0
 
 @implementation CWebViewController
 
@@ -50,9 +54,12 @@
     UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
     [refreshControl addTarget:self action:@selector(refreshControlValueChanged:) forControlEvents:UIControlEventValueChanged];
     self.refreshControl = refreshControl;
-    // The refresh control is not added as a subview until the first page load is complete
+    [self.wv.scrollView addSubview:self.refreshControl];
     
     self.wv.hidden = YES;
+    
+    self.wv.backgroundColor = [UIColor colorWithRed:0.953 green:0.953 blue:0.953 alpha:1];
+    self.wv.scrollView.backgroundColor = [UIColor colorWithRed:0.953 green:0.953 blue:0.953 alpha:1];
     
     self.wv.translatesAutoresizingMaskIntoConstraints = NO;
     [self.view addSubview:self.wv];
@@ -77,24 +84,31 @@
 - (void)refreshControlValueChanged:(UIRefreshControl *)refreshControl {
     //refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"Updating #PunahouCarnival"];
     
-    self.currentNavigation = [self.wv reload];
-    
-    // Reset relevant variables
-    self.featuredOffset = CGPointMake(0.0, -64.0);
-    self.latestOffset = CGPointMake(0.0, -64.0);
-    
-    // Quickly hide the web view
-    [UIView animateWithDuration:0.5 animations:^{
-        //self.wv.layer.opacity = 0;
-    } completion:^(BOOL finished) {
-        // Nothing right now
-        //self.wv.hidden = YES;
-    }];
+    if (!self.wv.isLoading) {
+        self.currentNavigation = [self.wv reload];
+        
+        // Reset relevant variables
+        self.featuredOffset = CGPointMake(0.0, -64.0);
+        self.latestOffset = CGPointMake(0.0, -64.0);
+        
+        // Quickly hide the web view
+        //self.segmentedControl.userInteractionEnabled = NO;
+        [UIView animateWithDuration:0.5 animations:^{
+            //self.segmentedControl.layer.opacity = 0;
+        } completion:^(BOOL finished) {
+            // Nothing right now
+            //self.wv.hidden = YES;
+        }];
+    } else {
+        [refreshControl endRefreshing];
+    }
 }
 
 - (IBAction)segmentedControlChanged:(UISegmentedControl *)sender {
-    BOOL latest = sender.selectedSegmentIndex == 0 ? NO : YES;
-    [self switchToLatest:latest];
+    if (!self.wv.isLoading) {
+        BOOL latest = sender.selectedSegmentIndex == 0 ? NO : YES;
+        [self switchToLatest:latest];
+    }
 }
 
 - (void)switchToLatest:(BOOL)latest {
@@ -130,6 +144,12 @@
         // End refreshing (if necessary)
         [self.refreshControl endRefreshing];
         
+        // Reset the segmented control
+        [self.segmentedControl setSelectedSegmentIndex:0];
+        
+        // Set the last loaded date
+        self.lastLoadedDate = [NSDate date];
+        
         // Clean up the page
         /*[self.wv evaluateJavaScript: @"jQuery('header').hide(); jQuery('footer').hide(); jQuery('#global-navbar').hide(); jQuery('.container-fluid.tb-wrapper').css('margin-top','20px'); $('#posts').on('tgb:featuredLoaded', function() { window.webkit.messageHandlers.notification.postMessage('complete'); jQuery('.owned').unbind('click'); });"
                   completionHandler:^(id _Nullable obj, NSError * _Nullable error) {
@@ -144,9 +164,22 @@
 
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
     static BOOL firstLoad = YES;
-    if (firstLoad || navigationAction.navigationType == WKNavigationTypeReload) {
+    if (firstLoad) {
         decisionHandler(WKNavigationActionPolicyAllow);
         firstLoad = NO;
+    } else if (navigationAction.navigationType == WKNavigationTypeReload) {
+        if (self.lastLoadedDate) {
+            // timeIntervalSinceNow will return a negative number, hence the '-' sign
+            if ([self.lastLoadedDate timeIntervalSinceNow] < -kMinimumRefreshWaitTime) {
+                // Go ahead
+                decisionHandler(WKNavigationActionPolicyAllow);
+            } else {
+                [self.refreshControl endRefreshing];
+                decisionHandler(WKNavigationActionPolicyCancel);
+            }
+        } else {
+            decisionHandler(WKNavigationActionPolicyAllow);
+        }
     } else {
         decisionHandler(WKNavigationActionPolicyCancel);
     }
@@ -154,34 +187,38 @@
 
 - (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message {
     NSLog(@"JS console: %@",message.body);
-    if ([message.body isEqualToString:@"complete"]) {
-        
-        // Animate out the loading views
-        [UIView animateWithDuration:1.0 animations:^{
-            self.activityIndicator.layer.opacity = 0.0;
-            self.loadingLabel.layer.opacity = 0.0;
-        } completion:^(BOOL finished) {
-            [self.activityIndicator stopAnimating];
-            self.loadingLabel.hidden = YES;
-        }];
-        
-        
-        // Animate the web view and segmented control in,
-        self.wv.hidden = NO;
-        self.wv.layer.opacity = 0.0;
-        
-        self.segmentedControl.layer.opacity = 0.0;
-        self.segmentedControl.userInteractionEnabled = NO;
-        self.segmentedControl.hidden = NO;
-
-        [UIView animateWithDuration:1.0 delay:0.5 options:UIViewAnimationOptionTransitionNone animations:^{
-            self.segmentedControl.layer.opacity = 1.0;
-            self.wv.layer.opacity = 1.0;
-        } completion:^(BOOL finished) {
-            self.segmentedControl.userInteractionEnabled = YES;
-            // Add in the refresh control
-            [self.wv.scrollView addSubview:self.refreshControl];
-        }];
+    
+    static BOOL firstLoad = YES;
+    if (firstLoad) {
+        if ([message.body isEqualToString:@"complete"]) {
+            firstLoad = NO;
+            
+            // Animate out the loading views
+            [UIView animateWithDuration:1.0 animations:^{
+                self.activityIndicator.layer.opacity = 0.0;
+                self.loadingLabel.layer.opacity = 0.0;
+            } completion:^(BOOL finished) {
+                [self.activityIndicator stopAnimating];
+                self.loadingLabel.hidden = YES;
+            }];
+            
+            
+            // Animate the web view and segmented control in,
+            self.wv.hidden = NO;
+            self.wv.layer.opacity = 0.0;
+            
+            self.segmentedControl.layer.opacity = 0.0;
+            self.segmentedControl.userInteractionEnabled = NO;
+            self.segmentedControl.hidden = NO;
+            
+            [UIView animateWithDuration:1.0 delay:0.5 options:UIViewAnimationOptionTransitionNone animations:^{
+                self.segmentedControl.layer.opacity = 1.0;
+                self.wv.layer.opacity = 1.0;
+            } completion:^(BOOL finished) {
+                self.segmentedControl.userInteractionEnabled = YES;
+                // Add in the refresh control
+            }];
+        }
     }
 }
 
