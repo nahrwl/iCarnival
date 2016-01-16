@@ -13,6 +13,9 @@
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
 @property (weak, nonatomic) IBOutlet UILabel *loadingLabel;
+@property (weak, nonatomic) IBOutlet UILabel *errorLabel;
+- (IBAction)retryButtonTapped:(UIButton *)sender;
+@property (weak, nonatomic) IBOutlet UIButton *retryButton;
 
 // Web view selectors
 - (void)back;

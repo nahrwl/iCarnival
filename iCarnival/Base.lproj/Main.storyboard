@@ -1244,13 +1244,33 @@ Punahou School</string>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error Loading #PunahouCarnival" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XPW-wt-Kio">
+                                <rect key="frame" x="37" y="250" width="247" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o31-8U-wxW">
+                                <rect key="frame" x="135" y="301" width="50" height="36"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <state key="normal" title="Retry">
+                                    <color key="titleColor" red="0.72537364130000004" green="0.63171794619999999" blue="0.278071603" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="retryButtonTapped:" destination="KZE-Lq-ZHh" eventType="touchUpInside" id="nHj-LB-Ty0"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="o31-8U-wxW" firstAttribute="top" secondItem="XPW-wt-Kio" secondAttribute="bottom" constant="30" id="1he-WF-T8s"/>
                             <constraint firstItem="sKK-0c-jMR" firstAttribute="centerX" secondItem="V8y-ZL-vc7" secondAttribute="centerX" id="U7n-MX-Dhy"/>
+                            <constraint firstItem="XPW-wt-Kio" firstAttribute="centerX" secondItem="YbP-R1-wLR" secondAttribute="centerX" id="Xv0-WR-Wt6"/>
                             <constraint firstItem="YbP-R1-wLR" firstAttribute="centerX" secondItem="V8y-ZL-vc7" secondAttribute="centerX" id="eBh-aR-Jnj"/>
+                            <constraint firstItem="XPW-wt-Kio" firstAttribute="centerY" secondItem="YbP-R1-wLR" secondAttribute="centerY" id="k0J-MN-22R"/>
                             <constraint firstItem="YbP-R1-wLR" firstAttribute="centerY" secondItem="V8y-ZL-vc7" secondAttribute="centerY" constant="-23" id="o5P-ye-Xjz"/>
                             <constraint firstItem="sKK-0c-jMR" firstAttribute="top" secondItem="YbP-R1-wLR" secondAttribute="bottom" constant="26" id="q20-bM-UWK"/>
+                            <constraint firstItem="o31-8U-wxW" firstAttribute="centerX" secondItem="XPW-wt-Kio" secondAttribute="centerX" id="vRf-eI-Ldi"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="d0C-6B-alb">
@@ -1270,7 +1290,9 @@ Punahou School</string>
                     </navigationItem>
                     <connections>
                         <outlet property="activityIndicator" destination="YbP-R1-wLR" id="LTi-Iv-tlW"/>
+                        <outlet property="errorLabel" destination="XPW-wt-Kio" id="516-MU-VMu"/>
                         <outlet property="loadingLabel" destination="sKK-0c-jMR" id="AyO-b4-8i5"/>
+                        <outlet property="retryButton" destination="o31-8U-wxW" id="4ks-GG-5vm"/>
                         <outlet property="segmentedControl" destination="SMj-KH-q7A" id="pFg-tA-MCg"/>
                     </connections>
                 </viewController>

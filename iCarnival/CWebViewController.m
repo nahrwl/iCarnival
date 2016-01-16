@@ -21,6 +21,8 @@
 
 @property (strong, nonatomic) NSDate *lastLoadedDate;
 
+@property (nonatomic) BOOL initialLoadCheck;
+
 @end
 
 #define kMinimumRefreshWaitTime 20.0
@@ -75,6 +77,8 @@
     
     self.featuredOffset = CGPointMake(0.0, -64.0);
     self.latestOffset = CGPointMake(0.0, -64.0);
+    
+    self.initialLoadCheck = YES;
     
     self.currentNavigation = [self.wv loadRequest:[NSURLRequest
                           requestWithURL:[NSURL URLWithString:@"https://tagboard.com/punahoucarnival/208630"]]];
@@ -163,10 +167,9 @@
 }
 
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
-    static BOOL firstLoad = YES;
-    if (firstLoad) {
+    if (self.initialLoadCheck) {
         decisionHandler(WKNavigationActionPolicyAllow);
-        firstLoad = NO;
+        self.initialLoadCheck = NO;
     } else if (navigationAction.navigationType == WKNavigationTypeReload) {
         if (self.lastLoadedDate) {
             // timeIntervalSinceNow will return a negative number, hence the '-' sign
@@ -222,6 +225,32 @@
     }
 }
 
+- (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(null_unspecified WKNavigation *)navigation withError:(nonnull NSError *)error
+{
+    [self loadingFailed];
+}
+
+- (void)webView:(WKWebView *)webView didFailNavigation:(null_unspecified WKNavigation *)navigation withError:(nonnull NSError *)error
+{
+    [self loadingFailed];
+}
+
+- (void)loadingFailed {
+    self.initialLoadCheck = YES;
+    [self.activityIndicator stopAnimating];
+    self.loadingLabel.hidden = YES;
+    self.errorLabel.hidden = NO;
+    self.retryButton.hidden = NO;
+}
+
+- (IBAction)retryButtonTapped:(UIButton *)sender {
+    [self.activityIndicator startAnimating];
+    self.loadingLabel.hidden = NO;
+    self.errorLabel.hidden = YES;
+    self.retryButton.hidden = YES;
+    self.currentNavigation = [self.wv loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"https://tagboard.com/punahoucarnival/208630"]]];
+}
+
 - (void)back
 {
     NSLog(@"back");
@@ -263,5 +292,6 @@
     
     return YES;
 }
+
 
 @end
