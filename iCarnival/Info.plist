@@ -23,16 +23,16 @@
 	<key>Fabric</key>
 	<dict>
 		<key>APIKey</key>
-		<string>d5238b829a7c1bdad9a30cd84c04fcb3f07a4ff8</string>
+		<string>$FABRIC_API_KEY</string>
 		<key>Kits</key>
 		<array>
 			<dict>
 				<key>KitInfo</key>
 				<dict>
 					<key>consumerKey</key>
-					<string>QFchS2ZHfpkr6O2unckhIYqGL</string>
+					<string>$TWITTER_KIT_CONSUMER_KEY</string>
 					<key>consumerSecret</key>
-					<string>A9CUuFE7HAwUXqUF0arfmrPy1Dky5kauTMnghGYM9mF8UKGM7Q</string>
+					<string>$TWITTER_KIT_CONSUMER_SECRET</string>
 				</dict>
 				<key>KitName</key>
 				<string>Twitter</string>
@@ -42,17 +42,6 @@
 				<dict/>
 				<key>KitName</key>
 				<string>Crashlytics</string>
-			</dict>
-			<dict>
-				<key>KitInfo</key>
-				<dict>
-					<key>consumerKey</key>
-					<string>QFchS2ZHfpkr6O2unckhIYqGL</string>
-					<key>consumerSecret</key>
-					<string>A9CUuFE7HAwUXqUF0arfmrPy1Dky5kauTMnghGYM9mF8UKGM7Q</string>
-				</dict>
-				<key>KitName</key>
-				<string>Digits</string>
 			</dict>
 		</array>
 	</dict>
