@@ -3,18 +3,17 @@
     {
       "orientation" : "portrait",
       "idiom" : "iphone",
+      "filename" : "Simulator Screen Shot Jan 16, 2016, 3.11.37 AM.png",
       "extent" : "full-screen",
       "minimum-system-version" : "7.0",
-      "filename" : "LaunchScreen-4s.png",
       "scale" : "2x"
     },
     {
-      "extent" : "full-screen",
-      "idiom" : "iphone",
-      "subtype" : "retina4",
-      "filename" : "LaunchScreen-5.png",
-      "minimum-system-version" : "7.0",
       "orientation" : "portrait",
+      "idiom" : "iphone",
+      "extent" : "full-screen",
+      "minimum-system-version" : "7.0",
+      "subtype" : "retina4",
       "scale" : "2x"
     }
   ],
