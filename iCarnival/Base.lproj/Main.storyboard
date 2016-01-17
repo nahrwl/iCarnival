@@ -64,12 +64,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="lpf-Gt-kHY" secondAttribute="trailing" constant="-16" id="2pT-5f-i8c"/>
                             <constraint firstItem="InO-DK-33J" firstAttribute="top" secondItem="uam-wj-NLL" secondAttribute="bottom" constant="16" id="AbX-7J-HUa"/>
-                            <constraint firstItem="lpf-Gt-kHY" firstAttribute="leading" secondItem="bCt-ZX-PKd" secondAttribute="leadingMargin" constant="-16" id="c4L-MP-RQV"/>
-                            <constraint firstItem="lpf-Gt-kHY" firstAttribute="bottom" secondItem="bCt-ZX-PKd" secondAttribute="bottomMargin" id="gcb-3P-Gg0"/>
-                            <constraint firstItem="lpf-Gt-kHY" firstAttribute="top" secondItem="bCt-ZX-PKd" secondAttribute="topMargin" id="jnH-Am-wv6"/>
+                            <constraint firstAttribute="bottom" secondItem="lpf-Gt-kHY" secondAttribute="bottom" id="FLL-O2-Zhh"/>
+                            <constraint firstItem="lpf-Gt-kHY" firstAttribute="leading" secondItem="bCt-ZX-PKd" secondAttribute="leading" id="LVz-Gh-uHj"/>
+                            <constraint firstItem="lpf-Gt-kHY" firstAttribute="top" secondItem="bCt-ZX-PKd" secondAttribute="top" id="cMk-Zf-slw"/>
                             <constraint firstAttribute="trailing" secondItem="uam-wj-NLL" secondAttribute="trailing" constant="15" id="up7-PP-sa6"/>
+                            <constraint firstAttribute="trailing" secondItem="lpf-Gt-kHY" secondAttribute="trailing" id="zUa-e9-114"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Map" id="9g8-Ql-x0m">
