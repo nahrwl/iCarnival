@@ -46,7 +46,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" pitchEnabled="NO" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lpf-Gt-kHY">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" pitchEnabled="NO" showsUserLocation="YES" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lpf-Gt-kHY">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="tintColor" red="0.0" green="0.011764705882352941" blue="0.41568627450980389" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
